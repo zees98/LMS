@@ -1,0 +1,65 @@
+ <section id="top-rated">
+        <div class="jumbotron">
+            <h2>Top Rated</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/1.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/2.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/3.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/4.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="other-books">
+
+        <div class="jumbotron">
+            <h2>Other Books</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/1.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/2.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/3.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/4.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/5.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/1.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/2.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/3.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/4.jpg" alt=""></div>
+                    <div class="col-md-3 col-sm-6 book-shelf"><img class="btn" src="assets/5.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+#top-rated .jumbotron h2,
+#other-books .jumbotron h2 {
+    font-weight: bold;
+}
+
+#top-rated .jumbotron,
+#other-books .jumbotron {
+    background-color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.book-shelf {
+    padding: 5%;
+}
+
+.book-shelf img {
+    padding: 2px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px grey;
+}
+
+.book-shelf img:hover {
+    opacity: 0.8;
+    background-blend-mode: darken;
+    box-shadow: 0px 0px 20px red;
+}
