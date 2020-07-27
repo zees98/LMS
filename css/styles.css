@@ -139,16 +139,17 @@ input {
     font-weight: bold;
 }
 
-.book-shelf {
+div.book-shelf {
+    margin-bottom: 5%;
     padding: 2%;
     text-align: center;
 }
 
-.book-shelf p {
+div.book-shelf p {
     padding: 0.5%;
 }
 
-.book-shelf img {
+div.book-shelf img {
     position: relative;
     padding: 0px;
     width: 100%;
@@ -159,13 +160,13 @@ input {
     z-index: 0;
 }
 
-.book-shelf img:hover {
+.book-shelf-anim {
     position: absolute;
     padding: 0;
     /* opacity: 0.8; */
     background-blend-mode: darken;
     box-shadow: 0px 0px 20px red;
-    z-index: 2;
+    z-index: 200;
     animation: sizeAnim 0.1s linear forwards;
 }
 
