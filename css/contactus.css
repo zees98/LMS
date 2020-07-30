@@ -1,0 +1,63 @@
+.navbar {
+    background-color: #162447;
+}
+
+body {
+    background-image: url('../assets/Icons/map.jpg');
+}
+
+#mainContainer {
+    height: 520px;
+    width: 900px;
+    background-color: white;
+}
+
+#col {
+    padding-top: 200px;
+}
+
+#body2 {
+    background-image: url('../assets/Icons/map.jpg');
+}
+
+#imageside {
+    background-color: #162447;
+}
+
+#heading1 {
+    padding-top: 20px;
+    color: black;
+}
+
+#textsize {
+    font-size: 10px;
+}
+
+textarea {
+    outline-color: #719ECE;
+}
+
+h5 {
+    padding-top: 20px;
+    color: white;
+}
+
+#location {
+    height: 30px;
+}
+
+h6 {
+    color: white;
+    font-size: 14px;
+}
+
+#phone {
+    padding-top: 15px;
+    padding-left: 6px;
+    height: 35px;
+}
+
+#mail {
+    padding-left: 6px;
+    height: 20px;
+}
