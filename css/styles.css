@@ -1,6 +1,6 @@
 #navbar {
     color: white;
-    background-color: #162447;
+    background-color: #00131a;
 }
 
 .navbar h2 {
@@ -189,7 +189,7 @@ div.book-shelf img {
 /* Footer */
 
 footer {
-    background-color: #1b1b2f;
+    background-color: #00131a;
     padding: 2%;
     color: white;
     text-align: center;
