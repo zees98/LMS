@@ -1,73 +1,92 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css\customerregistrationform.css">
     <title>Customer Registration Form</title>
     <link rel="icon" href="assets\Icons\icon.png">
     <script src="js/customerregistrationform.js"></script>
-   
+
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-dark" id="navbar">
-    <span class="navbar-brand mb-0 h1  mx-auto " >Customer Registration Form</span>
-    <a href="index.html"><button class="btn btn-outline-light ">Home</button></a>
+    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
+        <a class="navbar-brand" href="">
+            <img src="" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../LMS/html/contactUs.html" class="nav-link">Contact Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Login</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div id="form">
-    <dialog>
-      <div id="imagediv">
-          <img  id="image">
-          <label for="file" class="filelabel"><span class="fas fa-camera fa-4x" id="icon" >
+        <br><br>
+        <dialog>
+            <div id="imagediv">
+                <img id="image">
+                <label for="file" class="filelabel"><span class="fas fa-camera fa-4x" id="icon" >
         </span> </label>
-        <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" />
-      </div>
-      <div id="data">
-        <form>
-            <msg id="msg"></msg>
-            <br>
-            <br>
-            <label id="fnlabel">First Name</label>
-            <input type="text" id="fn" placeholder="Enter First Name">
-            <label id="lnlabel">Last Name</label>
-            <input type="text" id="ln" placeholder="Enter Last Name">
-            <br>
-            <br>
-            <label id="emlabel">Email</label>
-            <input type="email" id="em" placeholder="Enter Email">
-            <br>
-            <br>
-            <label id="passlabel">Password</label>
-            <input type="password" id="pass" placeholder="Enter Password">
-            <label id="confirm_passlabel">Retype Password</label>
-            <input type="password" id="confirm_pass" placeholder="Confirm Password">
-            <br>
-            <br>
-            <lable id="pnlabel">Phone no</lable>
-            <input type="tel" id="pn" placeholder="Enter Phone Number">
-            <br>
-            <br>
-            <label id="genderlabel">Gender</label>
-            <input type="Radio" name="button" value="male" id="m" > Male
-            <input type="Radio" name="button" value="female" id="f" > Female
-            <br>
-            <br>
-            <label id="doblabel">DOB</label>       
-            <input type="date" id="dob">
-            <br>
-            <br>
-            <button class="btn btn-outline-dark btn-lg">Submit</button>   
-        </form>
-      </div>   
-    </dialog> 
+                <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" />
+            </div>
+            <div id="data">
+                <form>
+                    <h3 id="heading">Customer Registration Form</h3>
+                    <br>
+                    <br>
+                    <label id="fnlabel">First Name</label>
+                    <input type="text" id="fn" placeholder="Enter First Name">
+                    <label id="lnlabel">Last Name</label>
+                    <input type="text" id="ln" placeholder="Enter Last Name">
+                    <br>
+                    <br>
+                    <label id="emlabel">Email</label>
+                    <input type="email" id="em" placeholder="Enter Email">
+                    <lable id="pnlabel">Phone no</lable>
+                    <input type="tel" id="pn" placeholder="Enter Phone Number">
+                    <br>
+                    <br>
+                    <label id="passlabel">Password</label>
+                    <input type="password" id="pass" placeholder="Enter Password">
+                    <label id="confirm_passlabel">Retype Password</label>
+                    <input type="password" id="confirm_pass" placeholder="Confirm Password">
+                    <br>
+                    <br>
+                    <label id="doblabel">DOB</label>
+                    <input type="date" id="dob">
+                    <label id="genderlabel">Gender</label>
+                    <input type="Radio" name="button" value="male" id="m"> Male
+                    <input type="Radio" name="button" value="female" id="f"> Female
+
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-dark btn-lg">Submit</button>
+                </form>
+            </div>
+        </dialog>
     </div>
 
-          
+
 </body>
 
 </html>

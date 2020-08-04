@@ -4,6 +4,7 @@
 
 body {
     background-image: url('../assets/Icons/map.jpg');
+    size: 100%;
 }
 
 #mainContainer {
@@ -14,6 +15,10 @@ body {
 
 #col {
     padding-top: 200px;
+}
+
+#c1 {
+    padding-right: 500px;
 }
 
 #body2 {
@@ -61,6 +66,3 @@ h6 {
     padding-left: 6px;
     height: 20px;
 }
-
-
-
