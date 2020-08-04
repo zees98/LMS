@@ -1,0 +1,48 @@
+.navbar {
+    color: white;
+    background-color: #00131a;
+}
+.nav-item {
+    box-shadow: 0 0 0px grey;
+    transition-duration: 500ms;
+
+}
+.nav-item:hover {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(70, 70, 70);   
+}
+
+.row {
+    height: 50%;
+ }
+
+ .jumbotron {
+     border-radius: 0;
+ }
+
+#description {
+    
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(50, 50, 50, 0.2);
+    
+}
+
+/* Book cover CSS */
+
+/*  */
+
+
+/* Expand CSS */
+#expand i{
+    
+    transition-duration: 300ms;
+}
+#expand i:visited {
+    transform: rotate(180deg);
+}
+
+/* Review */
+
+#reviews {
+    background-color: white;
+}
