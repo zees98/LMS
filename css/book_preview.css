@@ -46,3 +46,19 @@
 #reviews {
     background-color: white;
 }
+input[type = "text"] {
+    width: 100%;
+}
+#field {
+    border: grey solid 2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#ratingDiv {
+    padding: 1%;
+}
+
+#search {
+    border-radius: 100%;
+    text-align: center;
+}
