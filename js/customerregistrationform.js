@@ -3,6 +3,7 @@ window.onload= (e)=>{
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#icon');
     
+    
     file.addEventListener('change',()=>{
         Reader(file);
     });
