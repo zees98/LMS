@@ -1,0 +1,95 @@
+.navbar {
+    background-color: #00131a;
+}
+
+#logo {
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+body {
+    background-color: #142136;
+}
+
+#title {
+    font-size: 25px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
+#dashboard {
+    background-color: #02171f;
+}
+
+#dp {
+    height: 70px;
+    border-radius: 50%;
+}
+
+#name {
+    color: white;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+}
+
+.fa {
+    padding: 10px;
+    color: white;
+}
+
+#profile {
+    padding-top: 5px;
+    text-align: start;
+    color: white;
+}
+
+#para {
+    color: white;
+}
+
+
+#totalbooks1 {
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    background-color: orange;
+    color: white;
+    height: 100px;
+    width: 200;
+    border-radius: 10px;
+}
+
+#totalbooks2 {
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    color: white;
+    background-color: rebeccapurple;
+    height: 100px;
+    width: 200;
+    border-radius: 10px;
+}
+
+#totalbooks3 {
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    color: white;
+    background-color: rgb(126, 30, 30);
+    height: 100px;
+    width: 200;
+    border-radius: 10px;
+}
+
+#first {
+    height: 400px;
+    padding-left: 350px;
+    padding-right: 350px;
+}
+
+h1 {
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
