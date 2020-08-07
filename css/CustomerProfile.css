@@ -2,16 +2,23 @@
     background-color: #00131a;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 #logo {
     padding-left: 10px;
     padding-right: 20px;
     height: 40px;
 }
+
 #title {
     font-size: 25px;
     font-family: 'Lemonada', cursive;
     color: white;
 }
+
 #dashboard {
     background-color: #02171f;
 }
@@ -20,11 +27,13 @@
     height: 70px;
     border-radius: 50%;
 }
+
 #name {
     color: white;
     padding-top: 40px;
     padding-left: 20px;
 }
+
 hr.solid {
     border-top: 1px solid #bbb;
 }
@@ -40,47 +49,48 @@ hr.solid {
     color: white;
 }
 
-#profile_img{
- width: 250px;
- height: 250px;
- border-radius: 150px;
- border: #00131a solid 10px;
+#profile_img {
+    width: 250px;
+    height: 250px;
+    border-radius: 150px;
+    border: #00131a solid 10px;
 }
-#imagediv{
+
+#imagediv {
     position: relative;
+    text-align: center;
     top: -50px;
     left: 160px;
     width: 50px;
     height: 50px;
-    color:white;
+    color: white;
     background-color: black;
     border-radius: 40px;
 }
-#cameraicon{
+
+#cameraicon {
     position: relative;
-    top: 10px;
-    left: 10px;
+    top: 15px;
 }
 
 input {
-    border-color:#00131a;
+    border-color: #00131a;
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: groove;
     background-color: white;
-    padding-left:40px;
-    width: 235px;
-    
-  }
- 
-  input:focus {
+    padding-left: 40px;
+    width: 245px;
+}
+
+input:focus {
     border-bottom-style: groove;
-    border-color:#0784eb;
+    border-color: #0784eb;
     outline: none;
 }
 
-input:disabled{
+input:disabled {
     color: black;
 }
 
@@ -97,29 +107,50 @@ input:disabled{
     color: black;
     border-color: #00131a;
 }
-#editdiv{
+
+#editdiv {
     background-color: black;
 }
-#label{
+
+#label {
     position: relative;
     font-size: 13px;
     color: grey;
 }
 
-#ficon,#licon,#passicon,#confirm_passicon,#emailicon,#phoneicon,#dobicon,#gendericon{
+#ficon,
+#licon,
+#passicon,
+#confirm_passicon,
+#emailicon,
+#phoneicon,
+#dobicon,
+#gendericon {
     color: black;
     position: relative;
     top: -32px;
     left: 0px;
 }
 
-#submitbutton{
-    display:none;
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
 }
-.filelabel{
+
+#submitbutton {
     display: none;
 }
 
-#confirm_pass,#confirm_passicon,#confirmlabel{
+.filelabel {
     display: none;
+}
+
+#confirm_pass,
+#confirm_passicon,
+#confirmlabel {
+    display: none;
+}
+
+#edit {
+    width: 200px;
 }
