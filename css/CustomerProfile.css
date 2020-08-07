@@ -154,3 +154,7 @@ input:disabled {
 #edit {
     width: 200px;
 }
+
+.Container-fluid{
+    height: 100%;
+}
