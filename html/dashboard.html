@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
+        <div class="row">
+            <img id="logo" src="../assets/Icons/booklogo.png" alt="">
+            <p id="title">ZFH</p>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../html/aboutUs.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../html/dashboard.html" class="nav-link"><img id="dp1" src="../assets/fahad.JPEG" alt="Avatar"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- dashboard -->
+    <div class="container-fluid">
+        <div class="row" id="mainrow">
+            <div class="col-lg-2" id="dashboard">
+                <div class="row">
+                    <div class="col-4">
+                        <br>
+                        <img id="dp" src="../assets/fahad.JPEG" alt="Avatar">
+                    </div>
+                    <div class="col-8" id="name">
+                        Fahad Khalid
+                    </div>
+                </div>
+                <hr class="solid">
+                <div class="row">
+                    <div class="col-2">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="col-10" id="profile">
+                        <a href="customerProfile.html">Profile</a>
+                    </div>
+                </div>
+                <hr class="solid">
+                <div class="row">
+                    <div class="col-2">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <div class="col-10" id="profile">
+                        Issued Books
+                    </div>
+                </div>
+                <hr class="solid">
+
+                <div class="row">
+                    <div class="col-2">
+                        <i class="fa fa-history"></i>
+                    </div>
+                    <div class="col-10" id="profile">
+                        History
+                    </div>
+                </div>
+                <hr class="solid">
+                <div class="row">
+                    <div class="col-2">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="col-10" id="profile">
+                        Past Due books
+                    </div>
+                </div>
+                <hr class="solid">
+                <br><br><br><br><br><br><br><br><br><br><br>
+                <br>
+                <hr class="solid">
+                <div class="row">
+                    <div class="col-2">
+                        <i class="fa fa-sign-out"></i>
+                    </div>
+                    <div class="col-10" id="profile">
+                        LogOut
+                    </div>
+                </div>
+                <hr class="solid">
+            </div>
+            <div class="col-lg-10" id="side">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-3">
+                                <br><br>
+                                <div class="container" id="totalbooks1">
+                                    <p>Total Books Issued</p>
+                                    <h1>23</h1>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-3">
+                                <br><br>
+                                <div class="container" id="totalbooks2">
+                                    <p>Total Past Due Books</p>
+                                    <h1>3</h1>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-3">
+                                <br><br>
+                                <div class="container" id="totalbooks3">
+                                    <p>Total Books Issued</p>
+                                    <h1>23</h1>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+                        <br><br><br><br>
+                        <h1>New Arrivals</h1>
+                        <br>
+                        <div class="container-fluid" id="newarrivals">
+                            <div class="row">
+                                <img id='book' src="../assets/books/1.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/2.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/3.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/4.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/5.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/book1.png" alt="Avatar">
+                                <img id='book' src="../assets/books/1.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/2.jpg" alt="Avatar">
+                            </div>
+                            <hr class="solid" id="line">
+                        </div>
+                        <br><br><br><br>
+                        <h1>Books You May like</h1>
+                        <br>
+                        <div class="container-fluid" id="newarrivals">
+                            <div class="row">
+                                <img id='book' src="../assets/books/1.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/2.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/3.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/4.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/5.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/book1.png" alt="Avatar">
+                                <img id='book' src="../assets/books/1.jpg" alt="Avatar">
+                                <img id='book' src="../assets/books/2.jpg" alt="Avatar">
+                            </div>
+                            <hr class="solid" id="line">
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="bootstrap.min.js"></script>
+
+</body>
+
+
+
+
+
+</html>

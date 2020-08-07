@@ -2,9 +2,26 @@
     background-color: #00131a;
 }
 
+#logo {
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+#title {
+    font-size: 25px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
 body {
     background-image: url('../assets/Icons/map.jpg');
     size: 100%;
+}
+
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
 }
 
 #mainContainer {
