@@ -4,9 +4,9 @@ $conn = mysqli_connect(
     // Hostname
     "68.183.162.131",
     // Username
-    "hariscorp",
+    "hariscorp_hariscorp",
     // Password
-    "",
+    "kdw{koz4]c[%",
     // Database
     $database,
     // Port
