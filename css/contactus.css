@@ -19,6 +19,11 @@ body {
     size: 100%;
 }
 
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
+}
+
 #mainContainer {
     height: 520px;
     width: 900px;

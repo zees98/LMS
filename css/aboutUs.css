@@ -15,7 +15,17 @@
 }
 
 body {
+    background-image: url('../assets/bg1.jpeg');
     background-color: #142136;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
 }
 
 #maincontainer {
