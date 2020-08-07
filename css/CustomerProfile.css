@@ -106,19 +106,11 @@ input:disabled{
     color: grey;
 }
 
-#ficon,#licon,#passicon,#confirm_passicon{
+#ficon,#licon,#passicon,#confirm_passicon,#emailicon,#phoneicon,#dobicon,#gendericon{
     color: black;
     position: relative;
     top: -32px;
     left: 0px;
-}
-
-#emailicon,#phoneicon,#dobicon,#gendericon{
-    color: black;
-    position: relative;
-    top: 0px;
-    left: -240px;
-    
 }
 
 #submitbutton{
