@@ -119,3 +119,7 @@ input:disabled{
 .filelabel{
     display: none;
 }
+
+#confirm_pass,#confirm_passicon,#confirmlabel{
+    display: none;
+}
