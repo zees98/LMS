@@ -1,19 +1,4 @@
 $(document).ready(function() {
-    $("#newarrivals").slideUp("slow");
-    $("#maylike").slideUp("slow");
-});
-
-$(document).ready(function() {
-    $("#arrow1").click(function(e) {
-
-        $("#newarrivals").slideToggle(1000);
-
-    });
-    $("#arrow2").click(function(e) {
-
-        $("#maylike").slideToggle(1000);
-
-    });
 
     $("#history").click(function(e) {
         e.preventDefault();
@@ -26,7 +11,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#issuedbooks").click(function(e) {
+    $("#dashboard").click(function(e) {
         e.preventDefault();
         $("#side").fadeOut();
         if (this.href) {
@@ -47,7 +32,7 @@ $(document).ready(function() {
             }, 350);
         }
     });
-    $("#pastdue").click(function(e) {
+    $("#issuedbooks").click(function(e) {
         e.preventDefault();
         $("#side").fadeOut();
         if (this.href) {
