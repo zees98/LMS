@@ -41,7 +41,11 @@ body {
     border-radius: 50%;
 }
 
-#profilediv,#issuedbooksdiv,#historydiv,#pastduediv,#logoutdiv {
+#profilediv,
+#issuedbooksdiv,
+#historydiv,
+#pastduediv,
+#logoutdiv {
     padding-top: 5px;
     text-align: start;
     color: white;
@@ -61,8 +65,6 @@ a {
     padding-left: 20px;
 }
 
-
-
 #heading {
     padding-top: 30px;
     font-size: 50px;
@@ -70,23 +72,30 @@ a {
     font-family: 'Lemonada', cursive;
 }
 
-.table-bordered{
+.table-bordered {
     border-radius: 10px;
-    border: 2px transparent solid ;
-    
+    border: 2px transparent solid;
 }
 
-#Activitytable{
+#Activitytable {
     box-shadow: 1px 2px 10px 5px grey;
 }
 
-
-a:hover{
-    color:#00e6e6;
+a:hover {
+    color: #00e6e6;
     text-decoration: none;
 }
-#name:hover{
-    color:#00e6e6;  
+
+#name:hover {
+    color: #00e6e6;
 }
 
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
 
+#mainrow {
+    height: 100%;
+    width: 100%;
+}
