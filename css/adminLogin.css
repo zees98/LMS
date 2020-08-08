@@ -44,6 +44,7 @@ h1 {
     border-radius: 20px;
     border: none;
     width: 400px;
+    height: 100%;
 }
 
 #logintitle {
@@ -77,4 +78,28 @@ a {
     background-color: #3CA2F3;
     color: white;
     width: 400px;
+}
+
+.spinner {
+    border-radius: 100%;
+    background-color: cyan;
+    height: 50px;
+    width: 50px;
+    border-top: 5px solid rgb(150, 150, 255);
+    border-left: 5px solid red;
+    animation: rotateAnim linear 2s infinite;
+}
+
+@keyframes rotateAnim {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 30px rgba(150, 150, 150, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(150, 150, 150, 0.8);
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 30px rgba(150, 150, 150, 0.8);
+    }
 }

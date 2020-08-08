@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION["admin_name"])) {
+    header("Location: admin_login.html");
+} else {
+    $name = $_SESSION["admin_name"];
+    $img = $_SESSION["admin_img"];
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,80 +35,82 @@
             background-color: azure;
             height: 100%;
         }
-        
+
         .container-fluid {
             height: 100%;
         }
-        
+
         #sidemenu.row {
             height: 100%;
         }
-        
+
         #tag {
             background-color: black;
         }
-        
+
         ul {
             list-style-type: none;
         }
-        
+
         ul.sideNav {
             margin-top: 25%;
         }
-        
+
         .sideNav li {
             position: relative;
             z-index: 0;
             padding: 10% 0;
             transition: linear 200ms;
         }
-        
+
         .sideNav li:hover {
             margin: 5% 0;
             padding: 6%;
             box-shadow: 0 0 20px rgba(150, 150, 150, 0.5);
             z-index: 100;
         }
-        
+
         #subMenuItems {
             background-color: black;
             padding: 6%;
         }
-        
+
         #buttons {
             position: absolute;
             bottom: 0;
         }
-        
+
         #statsCards div.col-3 {
             margin: auto;
             padding: 20px;
             box-shadow: 0 0 30px rgba(150, 150, 150, 0.5);
             border-radius: 20px;
         }
-        
+
         .graph {
             margin: auto;
             box-shadow: 0 0 30px rgba(150, 150, 150, 0.5);
             border-radius: 20px;
         }
-        
+
         #logo {
             animation: rotateAnim 10s linear infinite;
         }
-        
+
         @keyframes rotateAnim {
             0% {
                 transform: rotateY(0);
             }
+
             50% {
                 transform: rotateY(360deg);
             }
+
             100% {
                 transform: rotateY(0deg);
             }
         }
-        
+
         #leftNav {
             position: fixed;
             top: 0px;
@@ -104,6 +118,17 @@
             bottom: 0px;
             z-index: 2;
         }
+
+        a {
+            color: white;
+        }
+        #admin_name {
+            font-size: 0.8rem;
+        }
+        #admin_img {
+            border-radius: 100%;
+        }
+       
     </style>
 </head>
 
@@ -113,13 +138,19 @@
         <div class="row" id="sidemenu">
             <div id="leftNav" class="col-lg-2 col-md-3 bg-dark text-info">
                 <div id="tag" class="row p-4 my-auto">
-                    <i class="fa fa-user my-auto mr-3"></i>
-                    <h5 class="my-auto">Admin Panel</h5>
-                </div>
+                    <img id = "admin_img" class="col-md-4 mx-auto" src=<?php echo "../../assets/$img" ?> alt="" width="100%">
+                    <h5 id= "admin_name" class="col-md-8 my-auto">
+                        <?php
+                        echo $name;
+                        ?>
+                    </h5>
 
+                </div>
+                <h4 class="mt-3 text-light">Admin Panel</h4>
                 <ul class="sideNav mb-auto">
                     <li>
-                        <i class="fa fa-dashboard"></i> Dashboard
+                        <i class="fa fa-dashboard"></i>
+                        <a href="dashboard.html"> Dashboard </a>
                     </li>
                     <li class="subMenu">
                         <i class="fa fa-clipboard"></i> <a href="Manage.html">Manage</a>
