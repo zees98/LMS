@@ -168,3 +168,12 @@ input:focus {
     padding-left: 10px;
 }
 
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+#mainrow {
+    height: 100%;
+    width: 100%;
+}

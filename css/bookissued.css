@@ -110,3 +110,59 @@ a:hover{
 #name:hover{
     color:#00e6e6;  
 }
+
+#newarrival {
+    border-radius: 10px;
+    height: 220px;
+    width: 1200px;
+    background-color: white;
+}
+
+#book {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 180px;
+}
+
+#t {
+    padding-left: 20px;
+}
+
+#line {
+    border-bottom: 10px solid rgb(17, 13, 13);
+}
+
+h1 {
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
+#c1 {
+    height: 20px;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#c2 {
+    height: 20px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#view {
+    padding-top: 2px;
+    color: rgb(90, 90, 231);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#return {
+    padding-top: 2px;
+    color: rgb(168, 20, 20);
+    font-size: 10px;
+    font-weight: bold;
+}
