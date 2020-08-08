@@ -4,9 +4,9 @@ $conn = mysqli_connect(
     // Hostname
     "68.183.162.131",
     // Username
-    "hariscorp",
+    "hariscorp_hariscorp",
     // Password
-    "",
+    "kdw{koz4]c[%",
     // Database
     $database,
     // Port
@@ -16,10 +16,21 @@ $conn = mysqli_connect(
 echo $conn ? "Connected" : "Failed";
 
 
-$queryInsertUser = 'Insert into 2EeU51fxMG.users VALUES ("", "Zeeshan98", "Zeeshan Ali", "1234")';
 
-$execInsertQuery = mysqli_query($conn, $queryInsertUser);
+    $queryInsertUser = '
 
-echo $execInsertQuery;
+        Insert into
+        
+            Member(id,firstname,lastname,email,password,phone,dob,gender,image_path) 
+        
+        VALUES ("", "Zeeshan", "Ali", "zeeshanhamdani98@gmail.com", "1234", "03005531902","1998-11-06", "M" , null)';
+
+    $execInsertQuery = mysqli_query($conn, $queryInsertUser);
+
+    echo "<br>".$execInsertQuery;
+
+
+$conn -> close();
+
 
 ?>
