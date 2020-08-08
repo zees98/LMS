@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     $("#return").click(function(e) {
         //Show and hide alert box
         $("#dlgbx").fadeIn();
