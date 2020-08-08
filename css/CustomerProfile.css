@@ -158,3 +158,19 @@ input:disabled {
 .Container-fluid{
     height: 100%;
 }
+
+a:hover{
+    color:#00e6e6;
+    text-decoration: none;
+}
+#name:hover{
+    color:#00e6e6;  
+}
+
+/* a:active{
+    color:white;
+} */
+
+a{
+    color: white;
+}

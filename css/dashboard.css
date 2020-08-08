@@ -145,3 +145,12 @@ a {
 #t {
     padding-left: 20px;
 }
+
+a:hover{
+    color:#00e6e6;
+    text-decoration: none;
+}
+
+#name:hover{
+    color:#00e6e6;  
+}

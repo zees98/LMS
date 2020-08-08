@@ -103,3 +103,10 @@ a {
 #datatable {
     overflow: scroll;
 }
+a:hover{
+    color:#00e6e6;
+    text-decoration: none;
+}
+#name:hover{
+    color:#00e6e6;  
+}
