@@ -2,58 +2,59 @@
     color: white;
     background-color: #00131a;
 }
+
 .nav-item {
     box-shadow: 0 0 0px grey;
     transition-duration: 500ms;
-
 }
+
 .nav-item:hover {
     border-radius: 20px;
-    box-shadow: 0 0 10px rgb(70, 70, 70);   
+    box-shadow: 0 0 10px rgb(70, 70, 70);
 }
 
 .row {
     height: 50%;
- }
-
- .jumbotron {
-     border-radius: 0;
- }
-
-#description {
-    
-    border-radius: 10px;
-    box-shadow: 0 0 50px rgba(50, 50, 50, 0.2);
-    
 }
 
+.jumbotron {
+    border-radius: 0;
+}
+
+#description {
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(50, 50, 50, 0.2);
+}
+
+
 /* Book cover CSS */
+
 
 /*  */
 
 
 /* Expand CSS */
-#expand i{
-    
+
+#expand i {
     transition-duration: 300ms;
 }
-#expand i:visited {
+
+#expand i:checked {
     transform: rotate(180deg);
 }
+
 
 /* Review */
 
 #reviews {
     background-color: white;
 }
-input[type = "text"] {
+
+input[type="text"] {
+    border: 2px solid rgba(200, 200, 255);
     width: 100%;
 }
-#field {
-    border: grey solid 2px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
+
 #ratingDiv {
     padding: 1%;
 }

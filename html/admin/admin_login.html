@@ -13,6 +13,8 @@
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../css/adminLogin.css">
+    <script src="../../js/admin/admin_login.js"></script>
+
 </head>
 
 <body>
@@ -30,20 +32,21 @@
             </div>
 
             <div class="col-md-7" id="textside">
-                <div>
+                <div id="custom-form">
                     <br>
                     <h1 id="logintitle">Login</h1>
                     <br>
                     <p>Email</p>
-                    <input type="text" class="usrData">
+                    <input type="text" class="usrData" id="email">
                     <br>
                     <p>Password</p>
-                    <input type="password" class="usrData">
+                    <input type="password" class="usrData" id="password">
                     <a href="">
                         <p id="forgottext">Forgot your password?</p>
                     </a>
                     <br><br><br>
-                    <button class="btn btn-outline-dark">Login</button>
+                    <button id="login-btn" class="btn btn-outline-dark">Login</button>
+
                 </div>
             </div>
         </div>
