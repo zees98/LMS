@@ -155,22 +155,38 @@ input:disabled {
     width: 200px;
 }
 
-.Container-fluid{
+.Container-fluid {
     height: 100%;
 }
 
-a:hover{
-    color:#00e6e6;
+a:hover {
+    color: #00e6e6;
     text-decoration: none;
 }
-#name:hover{
-    color:#00e6e6;  
+
+#name:hover {
+    color: #00e6e6;
 }
+
 
 /* a:active{
     color:white;
 } */
 
-a{
+a {
     color: white;
+}
+
+#t1 {
+    font-weight: bolder;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+#mainrow {
+    height: 100%;
+    width: 100%;
 }
