@@ -1,0 +1,105 @@
+.navbar {
+    background-color: #00131a;
+}
+
+#logo {
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+}
+
+body {
+    background-color: #142136;
+}
+
+#title {
+    font-size: 25px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
+#dashboard {
+    background-color: #02171f;
+}
+
+#dp {
+    height: 70px;
+    border-radius: 50%;
+}
+
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
+}
+
+#profile {
+    padding-top: 5px;
+    text-align: start;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.fa {
+    color: white;
+}
+
+#name {
+    color: white;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+#totalbooks1 {
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    background-color: orange;
+    color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+#total {
+    padding-top: 25px;
+}
+
+.heading {
+    padding-top: 30px;
+    font-size: 50px;
+    color: white;
+    font-family: 'Lemonada', cursive;
+}
+
+#tabledata {
+    border-radius: 5px;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+#mainrow {
+    height: 100%;
+    width: 100%;
+}
+
+#tableheight {
+    height: 10px;
+}
+
+#datatable {
+    overflow: scroll;
+}

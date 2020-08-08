@@ -44,6 +44,13 @@ body {
     background-color: white;
 }
 
+#maylike {
+    border-radius: 10px;
+    height: 220px;
+    width: 1200px;
+    background-color: white;
+}
+
 #name {
     color: white;
     padding-top: 40px;
@@ -129,4 +136,12 @@ h1 {
     padding-right: 20px;
     padding-left: 20px;
     height: 180px;
+}
+
+a {
+    color: white;
+}
+
+#t {
+    padding-left: 20px;
 }
