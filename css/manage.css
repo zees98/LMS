@@ -107,3 +107,7 @@
             text-decoration: none;
         }
         
+        #addbutton{
+            position: relative;
+            left: 75px;
+        }

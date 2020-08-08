@@ -1,0 +1,168 @@
+.navbar {
+    background-color: #00131a;
+}
+
+#logo {
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+}
+
+body {
+    background-color: #142136;
+}
+
+#title {
+    font-size: 25px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
+#dashboard {
+    background-color: #02171f;
+}
+
+#dp {
+    height: 70px;
+    border-radius: 50%;
+}
+
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
+}
+
+#profile {
+    padding-top: 5px;
+    text-align: start;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.fa {
+    color: white;
+}
+
+#name {
+    color: white;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+#totalbooks1 {
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+    background-color: orange;
+    color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+#total {
+    padding-top: 25px;
+}
+
+.heading {
+    padding-top: 30px;
+    font-size: 50px;
+    color: white;
+    font-family: 'Lemonada', cursive;
+}
+
+#tabledata {
+    border-radius: 5px;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+#mainrow {
+    height: 100%;
+    width: 100%;
+}
+
+#tableheight {
+    height: 10px;
+}
+
+#datatable {
+    overflow: scroll;
+}
+a:hover{
+    color:#00e6e6;
+    text-decoration: none;
+}
+#name:hover{
+    color:#00e6e6;  
+}
+
+#newarrival {
+    border-radius: 10px;
+    height: 220px;
+    width: 1200px;
+    background-color: white;
+}
+
+#book {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 180px;
+}
+
+#t {
+    padding-left: 20px;
+}
+
+#line {
+    border-bottom: 10px solid rgb(17, 13, 13);
+}
+
+h1 {
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
+#c1 {
+    height: 20px;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#c2 {
+    height: 20px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#view {
+    padding-top: 2px;
+    color: rgb(90, 90, 231);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#return {
+    padding-top: 2px;
+    color: rgb(168, 20, 20);
+    font-size: 10px;
+    font-weight: bold;
+}

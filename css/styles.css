@@ -191,6 +191,7 @@ div.book-shelf img {
 footer {
     background-color: #00131a;
     padding: 2%;
+    height: 200px;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -208,4 +209,38 @@ footer {
 
 a {
     color: white;
+}
+
+#copy {
+    font-weight: lighter;
+    font-size: 10px;
+}
+
+#fb {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 40px;
+}
+
+#twitter {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 38px;
+}
+
+#pinterest {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 35px;
+}
+
+#google {
+    padding-right: 10px;
+    padding-left: 15px;
+    height: 35px;
+}
+
+#buttons {
+    font-weight: lighter;
+    font-size: 13px;
 }
