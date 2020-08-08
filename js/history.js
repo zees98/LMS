@@ -3,7 +3,7 @@
 
  $("#dashboard").click(function(e){
     e.preventDefault();
-    $("body").fadeOut();
+    $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
         setTimeout(function(){
@@ -14,7 +14,7 @@
 
 $("#issuedbooks").click(function(e){
     e.preventDefault();
-    $("body").fadeOut();
+    $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
         setTimeout(function(){
@@ -25,7 +25,7 @@ $("#issuedbooks").click(function(e){
 
 $("#customerprofile").click(function(e){
     e.preventDefault();
-    $("body").fadeOut();
+    $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
         setTimeout(function(){
