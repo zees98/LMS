@@ -195,3 +195,17 @@ footer {
     text-align: center;
     font-weight: bold;
 }
+
+.vl {
+    border-left: 2px solid white;
+    height: 20px;
+    padding-left: 10px;
+}
+
+#space {
+    padding-right: 10px;
+}
+
+a {
+    color: white;
+}
