@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/bookissued.css">
     <script src="../js/dashboard.js"></script>
     <link rel="icon" href="../assets/Icons/icon.png">
+    <script src="../js/returnbook.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,22 @@
 </head>
 
 <body>
+    <div id="dlgbx">
+        <div id="dlgbxBody">
+            <div class="container">
+                <br><br>
+                <p id="t2">Are you sure you want to return this book?</p>
+                <div class="row justify-content-center">
+                    <div class="col-3"></div>
+                    <div class="col-8">
+                        <button id="confirm" class="btn btn-primary ml-auto">Confirm</button>
+                        <button id="cancel" class="btn btn-outline-primary ml-2">Cancel</button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <div class="row">
             <img id="logo" src="../assets/Icons/booklogo.png" alt="">
@@ -40,7 +57,7 @@
                     <div class="row">
                         <div class="col-4">
                             <br>
-                            <img id="dp" src="../assets/fahad.JPEG" alt="Avatar">
+                            <img id="dp" src="../assets/fahad.jpg" alt="Avatar">
                         </div>
                         <div class="col-8" id="name">
                             Fahad Khalid
@@ -146,12 +163,12 @@
                                         <td>12-08-2020</td>
                                         <td>
                                             <div class="row">
-                                                <div class="container" id="c1">
+                                                <button id="hide"> 
                                                     <p id="view">View</p>
-                                                </div>
-                                                <div class="container" id="c2">
+                                                </button>
+                                                <button id="hide"> 
                                                     <p id="return">Return</p>
-                                                </div>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
