@@ -1,0 +1,195 @@
+.navbar {
+    background-color: #00131a;
+}
+
+#logo {
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+}
+
+body {
+    background-color: #142136;
+}
+
+#title {
+    font-size: 25px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
+#dashboarddiv {
+    background-color: #02171f;
+}
+
+#dp {
+    height: 70px;
+    border-radius: 50%;
+}
+
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
+}
+
+#profilediv,
+#issuedbooksdiv,
+#historydiv,
+#pastduediv,
+#logoutdiv {
+    padding-top: 5px;
+    text-align: start;
+    color: white;
+}
+
+
+a {
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    color: white;
+}
+
+#namediv {
+    color: white;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+a:hover {
+    color: #00e6e6;
+    text-decoration: none;
+}
+
+#namediv:hover {
+    color: #00e6e6;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+#mainrow {
+    height: 100%;
+    width: 100%;
+}
+
+#searchbar{
+    width: 300px;
+    background-color: #00131a; 
+    border-radius:20px;
+    border: none;
+    color:white;
+    outline: none;
+    padding-left: 20px;
+}
+#searchbar:hover{
+    border: 2px solid #0784eb;
+    outline: none;
+}
+
+#searchbar::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    margin-right:12px;
+    background-image: url(../assets/Icons/cross.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    position: relative;
+    top: 5px;
+  }
+
+  .searchbutton{
+      width: 30px;
+      height: 30px;
+      border-radius:100px;
+      color:black;
+      position: relative;
+      top: 20px;
+      left: -30px;
+
+  }
+  .searchbutton:active{
+    box-shadow:1px 2px 10px 5px grey;
+}
+#searchicon{
+    color: black;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: -10px;
+    left: -15px;
+}
+
+.btn-outline-dark {
+    position: relative;
+    left: 20px;
+    background-color: #00131a;
+    color: white;
+    border: none;
+    width: 80px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+ 
+}
+
+.btn-outline-dark:hover {
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+.btn-outline-dark:active {
+    background-color: #00131a;
+    color: white;
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#02171f), to(#ffff));
+    background-image: -webkit-linear-gradient(bottom, #02171f 0%, #ffff 100%);
+    background-image: linear-gradient(to top, #02171f 0%, #ffff 100%);
+}
+
+.card{
+    background-color: #00131a;
+    color:white;
+    box-shadow:1px 2px 10px 5px grey;
+    border: none;
+    border-radius: 50px;
+}
+
+.card-img-top{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    object-fit:cover; 
+}
+#author{
+    font-weight: 30;
+    font-size: 15px;
+}
+
+.card:hover{
+    box-shadow:2px 3px 11px 8px grey; 
+}
+
