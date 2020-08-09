@@ -131,7 +131,7 @@
                             <div class="col-2">
                                 <br><br>
                                 <div class="container" id="totalbooks1">
-                                    <h1 id="total">23</h1>
+                                    <h1 id="total"></h1>
                                 </div>
                                 <br>
                             </div>
@@ -153,114 +153,6 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tablebody">
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <a><p id="view">View</p></a>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <p id="view">View</p>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <p id="view">View</p>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <p id="view">View</p>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <p id="view">View</p>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <p id="view">View</p>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -14,7 +14,7 @@ $conn = mysqli_connect(
 
 );
 
-$queryInsertUser = 'Select * from Book';
+$queryInsertUser = "select title, cat_name, name, due_date, return_date FROM `Issue` join Book join book_category join Category join Publisher where Book.book_id = Issue.book_id and Book.book_id = book_category.book_id and Book.pub_id = Publisher.pub_id and Category.cat_id = book_category.cat_id and mem_id = 5";
 
 $result = mysqli_query($conn, $queryInsertUser);
 
