@@ -23,7 +23,7 @@ body {
     color: white;
 }
 
-#dashboard {
+#dashboarddiv {
     background-color: #02171f;
 }
 
@@ -51,7 +51,7 @@ body {
     background-color: white;
 }
 
-#name {
+#namediv {
     color: white;
     padding-top: 40px;
     padding-left: 20px;
@@ -70,7 +70,11 @@ hr.solid {
     color: white;
 }
 
-#profile {
+#profilediv,
+#issuedbooksdiv,
+#historydiv,
+#pastduediv,
+#logoutdiv {
     padding-top: 5px;
     text-align: start;
     color: white;
@@ -151,6 +155,17 @@ a:hover{
     text-decoration: none;
 }
 
-#name:hover{
+#namediv:hover{
     color:#00e6e6;  
+}
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#02171f), to(#ffff));
+    background-image: -webkit-linear-gradient(bottom, #02171f 0%, #ffff 100%);
+    background-image: linear-gradient(to top, #02171f 0%, #ffff 100%);
 }

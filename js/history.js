@@ -35,6 +35,15 @@ $("#customerprofile").click(function(e){
 });
 
 
-
+$("#history").click(function(e){
+    e.preventDefault();
+    $("#form").fadeOut();
+    if (this.href) {
+        var target = this.href;
+        setTimeout(function(){
+            window.location = target;
+        }, 350);
+    }
+});
 
 
