@@ -37,7 +37,7 @@ $("#customerprofile").click(function(e){
 
 $("#history").click(function(e){
     e.preventDefault();
-    $("#form").fadeOut();
+    $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
         setTimeout(function(){
@@ -47,3 +47,13 @@ $("#history").click(function(e){
 });
 
 
+$("#pastdue").click(function(e){
+    e.preventDefault();
+    $("#side").fadeOut();
+    if (this.href) {
+        var target = this.href;
+        setTimeout(function(){
+            window.location = target;
+        }, 350);
+    }
+});

@@ -19,7 +19,7 @@
     
     $("#issuedbooks").click(function(e){
         e.preventDefault();
-        $("#form").fadeOut();
+        $("#side").fadeOut();
         if (this.href) {
             var target = this.href;
             setTimeout(function(){
