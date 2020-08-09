@@ -29,107 +29,7 @@ if (!isset($_SESSION["admin_name"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
     <script src="../../js/admin/graph.js"></script>
-    <style>
-        html,
-        body {
-            background-color: azure;
-            height: 100%;
-        }
-
-        .container-fluid {
-            height: 100%;
-        }
-
-        #sidemenu.row {
-            height: 100%;
-        }
-
-        #tag {
-            background-color: black;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul.sideNav {
-            margin-top: 25%;
-        }
-
-        .sideNav li {
-            position: relative;
-            z-index: 0;
-            padding: 10% 0;
-            transition: linear 200ms;
-        }
-
-        .sideNav li:hover {
-            margin: 5% 0;
-            padding: 6%;
-            box-shadow: 0 0 20px rgba(150, 150, 150, 0.5);
-            z-index: 100;
-        }
-
-        #subMenuItems {
-            background-color: black;
-            padding: 6%;
-        }
-
-        #buttons {
-            position: absolute;
-            bottom: 0;
-        }
-
-        #statsCards div.col-3 {
-            margin: auto;
-            padding: 20px;
-            box-shadow: 0 0 30px rgba(150, 150, 150, 0.5);
-            border-radius: 20px;
-        }
-
-        .graph {
-            margin: auto;
-            box-shadow: 0 0 30px rgba(150, 150, 150, 0.5);
-            border-radius: 20px;
-        }
-
-        #logo {
-            animation: rotateAnim 10s linear infinite;
-        }
-
-        @keyframes rotateAnim {
-            0% {
-                transform: rotateY(0);
-            }
-
-            50% {
-                transform: rotateY(360deg);
-            }
-
-            100% {
-                transform: rotateY(0deg);
-            }
-        }
-
-        #leftNav {
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            bottom: 0px;
-            z-index: 2;
-        }
-
-        a {
-            color: white;
-        }
-        #admin_name {
-            font-size: 0.8rem;
-        }
-        #admin_img {
-            border-radius: 100%;
-        }
-       
-    </style>
+    <link rel="stylesheet" href="../../css/admin/dashboard.css">
 </head>
 
 <body>
@@ -153,7 +53,7 @@ if (!isset($_SESSION["admin_name"])) {
                         <a href="dashboard.html"> Dashboard </a>
                     </li>
                     <li class="subMenu">
-                        <i class="fa fa-clipboard"></i> <a href="Manage.html">Manage</a>
+                        <i class="fa fa-clipboard"></i> <a href="Manage.php">Manage</a>
                     </li>
                     <div id="subMenuItems">
                         <li>

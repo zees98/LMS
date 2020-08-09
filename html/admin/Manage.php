@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION["admin_name"])) {
+    header("Location: admin_login.html");
+} else {
+    $name = $_SESSION["admin_name"];
+    $img = $_SESSION["admin_img"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,29 +26,100 @@
     <link rel="stylesheet" href="../../css/manage.css">
     <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
     <script src="../../js/manage.js"></script>
+    <script src="../../js/admin/manage_books.js"></script>
+    <link rel="stylesheet" href="../../css/admin/dashboard.css">
+    <link rel="stylesheet" href="../../css/spinner.css">
 
-    <style>
-        a {
-            color: white;
-        }
-    </style>
+
 
 </head>
 
+
 <body>
 
+    <div id="dlgbx" class="">
+        <div id="dlgbxBody" class="">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="">Add A new Book</h1>
+                    <hr>
+                    <h3 class="mb-4">
+                        Book Details
+                    </h3>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-info">Name</h5>
+                            <input type="text" class="form-control" name="book_title">
+                        </div>
+                        <div class="col-6">
+                            <h5 class="text-info">Author</h5>
+                            <input type="text" class="form-control" name="book_author">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-info">Date</h5>
+                            <input type="date" class="form-control" pattern="[0-9]{4}" name="book_title">
+                        </div>
+                        <div class="col-6">
+                            <h5 class="text-info">Category</h5>
+                            <select name="category" class="form-control" id="">
+                                <option value="Thriller">Thriller</option>
+                                <option value="Action">Action</option>
+                                <option value="Mystery">Mystery</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="mb-4">
+                        Publisher details
+                    </h3>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="text-info">Name</h5>
+                            <input type="text" class="form-control" name="book_title">
+                        </div>
+                        <div class="col-6">
+                            <h5 class="text-info">Author</h5>
+                            <input type="text" class="form-control" name="book_author">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="buttons mx-1 ml-auto">
+                            <button id="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button id="cancel" class="btn btn-btn-outline-primary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="" class="col-md-4 m-auto">
+                    <div id="camera-icon" class="m-auto text-center">
+                        <i class="fa fa-camera "></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row" id="sidemenu">
             <div id="leftNav" class="col-lg-2 col-md-3 bg-dark text-info">
                 <div id="tag" class="row p-4 my-auto">
-                    <i class="fa fa-user my-auto mr-3"></i>
-                    <h5 class="my-auto">Admin Panel</h5>
+                    <img id="admin_img" class="col-md-4 mx-auto" src=<?php echo "../../assets/$img" ?> alt="" width="100%">
+                    <h5 id="admin_name" class="col-md-8 my-auto">
+                        <?php
+                        echo $name;
+                        ?>
+                    </h5>
+
                 </div>
+                <h4 class="mt-3 text-light">Admin Panel</h4>
 
                 <ul class="sideNav mb-auto">
                     <li>
                         <i class="fa fa-dashboard"></i>
-                        <a href="dashboard.html"> Dashboard </a>
+                        <a href="dashboard.php"> Dashboard </a>
                     </li>
                     <li class="subMenu">
                         <i class="fa fa-clipboard"></i> Manage
@@ -58,19 +140,20 @@
                         <i class="fa fa-gear"></i> Settings
                     </li>
                 </ul>
-                <div class="row">
-                    <div id="buttons">
-                        <button class="btn btn-dark m-2">
-                            <i class="fa fa-sign-out"></i>
-                            Sign Out
-                        </button>
-                        <button class="btn btn-dark m-2">
-                            <i class="fa fa-sign-in"></i>
-                            Log In as Member
-                        </button>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <div class="row">
+                        <div id="buttons">
+                            <button name="signout" class="btn btn-dark m-2">
+                                <i class="fa fa-sign-out"></i>
+                                Sign Out
+                            </button>
+                            <button name="login" class="btn btn-dark m-2">
+                                <i class="fa fa-sign-in"></i>
+                                Log In as Member
+                            </button>
+                        </div>
                     </div>
-                </div>
-
+                </form>
             </div>
             <div class="col-lg-2 col-md-3"></div>
             <div id="right" class="col-lg-10 col-md-9 p-3">
@@ -86,94 +169,27 @@
                                         <br>
                                         <table class="table table-bordered table-hover" id="booktable">
                                             <thead>
-                                                <tr>
-                                                    <th scope="col">Book ID</th>
-                                                    <th scope="col">Book Name</th>
-                                                    <th scope="col">Year Of Publication</th>
-                                                    <th scope="col">Author</th>
-                                                    <th scope="col">Book Category</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
+
+                                                <th scope="col">Book ID</th>
+                                                <th scope="col">Book Name</th>
+                                                <th scope="col">Year Of Publication</th>
+                                                <th scope="col">Author</th>
+                                                <th scope="col">Book Category</th>
+                                                <th scope="col">Action</th>
+
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td><a href="" id="nameanchor">Mark</a></td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
-                                                        <button class="btn"><i class="fa fa-circle-o-notch"
-                                                                aria-hidden="true" id="update"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td><a href="" id="nameanchor">Mark</a></td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
-                                                        <button class="btn"><i class="fa fa-circle-o-notch"
-                                                                aria-hidden="true" id="update"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td><a href="" id="nameanchor">Mark</a></td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
-                                                        <button class="btn"><i class="fa fa-circle-o-notch"
-                                                                aria-hidden="true" id="update"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td><a href="" id="nameanchor">Mark</a></td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
-                                                        <button class="btn"><i class="fa fa-circle-o-notch"
-                                                                aria-hidden="true" id="update"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">5</th>
-                                                    <td><a href="" id="nameanchor">Mark</a></td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
-                                                        <button class="btn"><i class="fa fa-circle-o-notch"
-                                                                aria-hidden="true" id="update"></i></button>
-                                                    </td>
-                                                </tr>
+                                            <tbody id="manage-books-table-body">
+
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+
                                 <div class="row">
-                                    <div class="col-10">
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="row">
-                                            <br>
-                                            <button class="btn btn-outline-dark" id="addbutton">Add Book </button>
-                                        </div>
-                                    </div>
+                                    <div class="spinner mx-auto"></div>
+                                </div>
+                                <div class="row">
+                                    <button class="btn btn-outline-dark ml-auto mr-3" id="addbutton">Add Book </button>
                                 </div>
                             </div>
                         </div>
@@ -209,8 +225,7 @@
                                                     <td>@mdo</td>
                                                     <td>@mdo</td>
                                                     <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
+                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -221,8 +236,7 @@
                                                     <td>@mdo</td>
                                                     <td>@mdo</td>
                                                     <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
+                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -233,8 +247,7 @@
                                                     <td>@mdo</td>
                                                     <td>@mdo</td>
                                                     <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
+                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -245,8 +258,7 @@
                                                     <td>@mdo</td>
                                                     <td>@mdo</td>
                                                     <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
+                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -257,8 +269,7 @@
                                                     <td>@mdo</td>
                                                     <td>@mdo</td>
                                                     <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true"
-                                                                id="trash"></i></button>
+                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -287,3 +298,13 @@
 </body>
 
 </html>
+
+<?php
+
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: adminLogin.html");
+}
+
+?>
