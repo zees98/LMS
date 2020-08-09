@@ -1,6 +1,17 @@
 .navbar {
-    color: white;
     background-color: #00131a;
+    color: white;
+}
+
+#logo {
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 40px;
+}
+
+#dp1 {
+    height: 30px;
+    border-radius: 50%;
 }
 
 .nav-item {

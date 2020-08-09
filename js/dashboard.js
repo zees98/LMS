@@ -1,11 +1,12 @@
 $(document).ready(function() {
-    $("#newarrivals").slideUp("slow");
-    $("#maylike").slideUp("slow");
+    $("#newarrivals").slideUp("fast");
+    $("#maylike").slideUp("fast");
 });
 
 $(document).ready(function() {
-    $("#arrow1").click(function(e) {
 
+    $("#arrow1").click(function(e) {
+        document.getElementById("showmore").innerHTML = "See More";
         $("#newarrivals").slideToggle(1000);
 
     });
