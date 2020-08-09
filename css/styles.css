@@ -41,6 +41,13 @@ input {
     border: none;
 }
 
+#title {
+    padding-top: 10px;
+    font-size: 40px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}
+
 
 /* Carousel */
 
