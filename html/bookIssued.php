@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
+                     <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -52,7 +52,7 @@
     <div class="container-fluid">
         <div class="row" id="mainrow">
             <div class="col-lg-2" id="dashboarddiv">
-                <a href="../html/dashboard.html" id="dashboard">
+                <a href="../html/dashboard.php" id="dashboard">
                     <div class="row">
                         <div class="col-4">
                             <br>
@@ -78,8 +78,8 @@
                         <i class="fa fa-book"></i>
                     </div>
                     <div class="col-10" id="issuedbooksdiv">
-                        <a href="bookIssued.html" id="issuedbooks">
-                            <p id="t1">Book Issued</p>
+                        <a href="bookIssued.php" id="issuedbooks">
+                            <p id="t1">Issued Books</p>
                         </a>
                     </div>
                 </div>
