@@ -98,7 +98,7 @@
                         <i class="fa fa-calendar"></i>
                     </div>
                     <div class="col-10" id="pastduediv">
-                        <a href="pastDue.html" id="pastdue">
+                        <a href="pastDue.php" id="pastdue">
                             <p id="t1">Past Due Books</p>
                         </a>
                     </div>
@@ -132,7 +132,7 @@
                             <div class="col-2">
                                 <br><br>
                                 <div class="container" id="totalbooks1">
-                                    <h1 id="total">6</h1>
+                                    <h1 id="total"></h1>
                                 </div>
                                 <br>
                             </div>
@@ -153,115 +153,8 @@
 
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <button id="hide"> 
-                                                    <p id="view">View</p>
-                                                </button>
-                                                <button id="hide" style=" position: relative;left:20px;"> 
-                                                        <p id="return">return</p>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="container" id="c1">
-                                                    <p id="view">View</p>
-                                                </div>
-                                                <div class="container" id="c2">
-                                                    <p id="return">Return</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="container" id="c1">
-                                                    <p id="view">View</p>
-                                                </div>
-                                                <div class="container" id="c2">
-                                                    <p id="return">Return</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="container" id="c1">
-                                                    <p id="view">View</p>
-                                                </div>
-                                                <div class="container" id="c2">
-                                                    <p id="return">Return</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="container" id="c1">
-                                                    <p id="view">View</p>
-                                                </div>
-                                                <div class="container" id="c2">
-                                                    <p id="return">Return</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>LittleFoot</td>
-                                        <td>Story</td>
-                                        <td>ACD</td>
-                                        <td>12-07-2020</td>
-                                        <td>12-08-2020</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="container" id="c1">
-                                                    <p id="view">View</p>
-                                                </div>
-                                                <div class="container" id="c2">
-                                                    <p id="return">Return</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <tbody id="tablebody">
+                                   
                                 </tbody>
                             </table>
                         </div>
