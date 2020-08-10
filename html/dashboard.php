@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -36,7 +36,7 @@
     <div class="container-fluid">
         <div class="row" id="mainrow">
             <div class="col-lg-2" id="dashboarddiv">
-                <a href="../html/dashboard.html" id="dashboard">
+                <a href="../html/dashboard.php" id="dashboard">
                     <div class="row">
                         <div class="col-4">
                             <br>
@@ -62,7 +62,7 @@
                         <i class="fa fa-book"></i>
                     </div>
                     <div class="col-10" id="issuedbooksdiv">
-                        <a href="bookIssued.html" id="issuedbooks">Issued Books</a>
+                        <a href="bookIssued.php" id="issuedbooks">Issued Books</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -107,7 +107,7 @@
                                 <br><br>
                                 <div class="container" id="totalbooks1">
                                     <p>Total Books Issued</p>
-                                    <h1>23</h1>
+                                    <h1 id="totalIssued">1</h1>
                                 </div>
                                 <br>
                             </div>
@@ -115,15 +115,15 @@
                                 <br><br>
                                 <div class="container" id="totalbooks2">
                                     <p>Total Past Due Books</p>
-                                    <h1>3</h1>
+                                    <h1 id="totalPastdue"></h1>
                                 </div>
                                 <br>
                             </div>
                             <div class="col-3">
                                 <br><br>
                                 <div class="container" id="totalbooks3">
-                                    <p>Total Books Issued</p>
-                                    <h1>23</h1>
+                                    <p>Total Books Returned</p>
+                                    <h1 id="totalReturned"></h1>
                                 </div>
                                 <br>
                             </div>
