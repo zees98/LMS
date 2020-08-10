@@ -10,7 +10,7 @@
 
     if($conn) {
 
-
+        echo "hello";
         $query = "SELECT book_id, title, pub_year, author, cat_name FROM (`Book` NATURAL join `Publisher`) Natural join (book_category natural join Category)";
 
         $res = mysqli_query($conn, $query);
