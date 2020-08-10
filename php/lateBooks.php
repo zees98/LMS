@@ -14,7 +14,7 @@ $conn = mysqli_connect(
 
 );
 
-$queryInsertUser = "select title, cat_name, name, due_date, return_date FROM `Issue` natural join Book natural join Category natural join Publisher WHERE mem_id = 5 and return_date > CURRENT_DATE";
+$queryInsertUser = "select title, cat_name, name, due_date, return_date FROM `Issue` natural join Book natural join Category natural join Publisher WHERE mem_id = 5 and return_date != 'NULL'";
 
 $result = mysqli_query($conn, $queryInsertUser);
 

@@ -14,7 +14,7 @@ $(document).ready(function() {
     }
 
     function getTableButtons() {
-        return '<td><div class="row"><button id="hide"> <a><p id="view">View</p></a></button><button id="hide" style=" position: relative;left:20px;"><p id="return">return</p></button></div></td>'
+        return '<td><div class="row"><button id="hide"> <a><p id="view">View</p></a></button></div></td>'
     }
 
     var req = new XMLHttpRequest();

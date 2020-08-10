@@ -39,15 +39,11 @@ $(document).ready(function() {
                 var publisher = data[a].name;
                 var cat_name = data[a].cat_name;
                 var issue_date = data[a].due_date;
-                var return_date = data[a].return_date;
-
                 var row = generateHTMLRow(
                     data[a].title,
                     data[a].cat_name,
                     data[a].name,
                     data[a].due_date,
-                    data[a].return_date,
-
                 );
                 console.log(row);
                 $(".spinner").fadeOut();

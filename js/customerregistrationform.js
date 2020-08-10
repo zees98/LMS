@@ -34,23 +34,20 @@ window.onload = (e) => {
         if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (male.checked === false && female.checked === false)) {
             errormessage.innerHTML = "Please Fill All The Fields!";
             setTimeout(() => errormessage.remove(), 3000);
-        }
-        else {
+        } else {
 
 
             if (!firstname.value.match(/^[A-Za-z]+$/)) {
                 console.log("hello");
                 firstname.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 firstname.style.cssText = "border-color:#0784eb";
             }
             if (!lastname.value.match(/^[A-Za-z]+$/)) {
                 console.log("hello");
                 lastname.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 lastname.style.cssText = "border-color:#0784eb";
             }
@@ -58,31 +55,27 @@ window.onload = (e) => {
 
                 console.log("hello");
                 email.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 email.style.cssText = "border-color:#0784eb";
             }
             if (ValidatePhoneNumber(phoneno.value)) {
 
                 phoneno.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 phoneno.style.cssText = "border-color:#0784eb";
             }
             if (password.value.length < 8) {
                 password.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 password.style.cssText = "border-color:#0784eb";
             }
             if (confirm_password.value !== password.value) {
 
                 confirm_password.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 confirm_password.style.cssText = "border-color:#0784eb";
             }
@@ -108,6 +101,7 @@ window.onload = (e) => {
     file.addEventListener('change', () => {
         Reader(file);
     });
+
     function Reader(input) {
         if (input.files && input.files[0]) {
             var a = new FileReader();

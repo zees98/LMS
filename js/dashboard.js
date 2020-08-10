@@ -16,10 +16,12 @@ $(document).ready(function() {
             var data = JSON.parse(this.responseText);
             var pastdue = data[0].totalPastDue;
             var totalIssued = data[0].totalIssued;
+            var totalReturn = data[0].totalReturn;
 
 
             document.querySelector('#totalIssued').innerHTML = totalIssued;
             document.querySelector('#totalPastdue').innerHTML = pastdue;
+            document.querySelector('#totalReturned').innerHTML = totalReturn;
         }
     }
 

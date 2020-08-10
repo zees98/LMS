@@ -17,7 +17,7 @@ $conn = mysqli_connect(
 
 
 
-$totalIssuedBooks = "select totalIssued, totalPastDue from (select COUNT(Book.book_id) as totalIssued FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = 5) Issued join (SELECT COUNT(book_id) as totalPastDue FROM `Issue` WHERE return_date > CURRENT_DATE) as PastDue";
+$totalIssuedBooks = "select totalIssued, totalPastDue, totalReturn from (select COUNT(Book.book_id) as totalIssued FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = 5 and return_date = 'Null') Issued join (SELECT COUNT(book_id) as totalPastDue FROM `Issue` WHERE return_date > due_date or CURRENT_DATE > due_date) as PastDue join (select count(Book.book_id) as totalReturn FROM `Issue` natural join Book natural join Category natural join Publisher WHERE mem_id = 5 and return_date != 'NULL') as returnBooks";
 $result = mysqli_query($conn, $totalIssuedBooks);
 $data = array();
 

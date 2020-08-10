@@ -19,8 +19,6 @@ $(document).ready(function() {
 
 function addBooks() {
 
-
-
     $("#submit").click(function(e) {
         var book_title = $("#book_title").val();
         var book_author = $("#book_author").val();
@@ -30,8 +28,6 @@ function addBooks() {
         var pub_name = $("#pub-name").val();
         var pub_address = $("#pub_address").val();
         alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
-
-
         var addRequest = new XMLHttpRequest();
         addRequest.open("POST", "../../php/admin/add_book.php", true);
         addRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
