@@ -12,7 +12,7 @@
 if (
     isset($_POST["bookname"]) &&
     isset($_POST["bookAuthor"]) &&
-    isset($_POST["date"]) &&
+    isset($_POST["date"]) && 
     isset($_POST["category"]) &&
     isset($_POST["summary"]) &&
     isset($_POST["pub_name"]) &&
@@ -29,7 +29,7 @@ if (
     echo $bookname;
 
 
-    $conn = $conn = mysqli_connect(
+    $conn = mysqli_connect(
         "68.183.162.131",
         "hariscorp_hariscorp",
         "kdw{koz4]c[%",

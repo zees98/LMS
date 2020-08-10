@@ -8,7 +8,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         "68.183.162.131",
         "hariscorp_hariscorp",
         "kdw{koz4]c[%",
-        "hariscorp_zfhlibrary",
+        "hariscorp_zfhlibrary", 
         3306
     );
     if ($conn) {

@@ -28,7 +28,7 @@ $(document).ready(function() {
             username: username,
             password: password,
         }).done(function(data) {
-            console.log(data);
+            console.log(data); 
             if (data == "success")
                 window.location = "../../html/admin/dashboard.php";
             else {
