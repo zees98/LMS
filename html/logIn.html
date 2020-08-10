@@ -14,6 +14,30 @@
 </head>
 
 <body class="bg-dark">
+    <div id="dlgbx">
+        <div id="dlgbxBody">
+            <div class="container-fluid">
+                <h4 id="t5">Forgot Your Password?</h4>
+                <br>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">New Password</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter password">
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <button id="confirm" class="btn btn-primary ml-auto"><div id="t7">Confirm</div></button>
+                        <button id="cancel" class="btn btn-outline-primary ml-2"><div id="t7">Cancel</div></button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div id="imgDiv" class="col-lg-6 ">
@@ -39,7 +63,9 @@
                 <a href="../CustomerRegistrationform.html"><button id="register-btn" class="btn btn-outline-dark">Register</button>
                 </a>
                 <p>
-                    <a href="">Forgot Your Password?</a>
+                    <button id="forgot">
+                        <p id="forgottext">Forgot your password?</p>
+                    </button>
                 </p>
                 <div class="row">
                     <a href="admin/admin_login.html" class="btn btn-primary mx-auto">

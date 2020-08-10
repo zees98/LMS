@@ -108,3 +108,48 @@ form {
         box-shadow: 0 0 30px rgba(150, 150, 150, 0.8);
     }
 }
+
+#dlgbx {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 8, 8, 0.425);
+}
+
+#dlgbxBody {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 33%;
+    margin-top: -15%;
+    margin-left: -15%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#dlgbx table {
+    margin-top: 2%;
+}
+
+#forgot {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+#t5 {
+    color: black;
+}
+
+.form-group {
+    color: black;
+}

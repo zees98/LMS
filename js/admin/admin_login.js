@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+    $("#forgot").click(function(e) {
+        //Show and hide alert box
+        $("#dlgbx").fadeIn();
+    });
+
+    $("#confirm").click(function(e) {
+        $("#dlgbx h1").text(
+            "Success"
+        );
+
+    });
+    $("#cancel").click(function(e) {
+        $("#dlgbx").fadeOut();
+
+    });
+
     $("#login-btn").click(function(e) {
         e.preventDefault();
         $("#login-btn").hide();
