@@ -2,15 +2,77 @@ $(document).ready(function() {
 
     $("#dlgbx").hide();
 
+    //Refresh the books table 
+    $("#refresh").click(function(e) {
+        getBooks();
+        alert("Refresh Done");
+
+    });
+
+    formHide_Show();
+    getBooks();
+    addBooks();
 
 
+
+});
+
+function addBooks() {
+
+
+
+    $("#submit").click(function(e) {
+        var book_title = $("#book_title").val();
+        var book_author = $("#book_author").val();
+        var book_date = $("#book_date").val();
+        var category = $("#category").val();
+        var summary = $("#summary").val();
+        var pub_name = $("#pub-name").val();
+        var pub_address = $("#pub_address").val();
+        alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
+
+
+        var addRequest = new XMLHttpRequest();
+        addRequest.open("POST", "../../php/admin/add_book.php", true);
+        addRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        addRequest.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                getBooks();
+
+
+            }
+        }
+
+        addRequest.send(
+            "bookname=" + book_title + "&" +
+            "bookAuthor=" + book_author + "&" +
+            "date=" + book_date + "&" +
+            "category=" + category + "&" +
+            "summary=" + summary + "&" +
+            "pub_name=" + pub_name + "&" +
+            "pub_address=" + pub_address
+        );
+    });
+
+}
+
+
+
+
+function formHide_Show() {
     $("#addbutton").click(function(e) {
         // alert("Hi");
 
         $('#dlgbx').slideDown();
         $("#dlgbxBody").fadeIn();
     });
-    getBooks();
+    $("#submit").click(function(e) {
+        // alert("Hi");
+
+        $('#dlgbx').slideDown();
+        $("#dlgbxBody").fadeIn();
+    });
 
     $("#cancel").click(function(e) {
 
@@ -21,9 +83,7 @@ $(document).ready(function() {
 
     });
 
-
-
-});
+}
 
 function generateHTMLRow(...args) {
     var row = "<tr>";
@@ -38,7 +98,7 @@ function generateHTMLRow(...args) {
 
 
 function getTableButtons() {
-    return '<td>  <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button><button class="btn"><i class="fa fa-circle-o-notch" aria-hidden="true" id="update"></i></button></td>'
+    return '<td><button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button><button class="btn"><i class="fa fa-circle-o-notch" aria-hidden="true" id="update"></i></button></td>'
 }
 
 function getBooks() {
@@ -55,7 +115,7 @@ function getBooks() {
 
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
+            var trs;
             // alert(this.responseText);
             var data = JSON.parse(this.responseText);
             console.log(data);
@@ -76,10 +136,12 @@ function getBooks() {
                     data[a].cat_name
                 );
                 console.log(row);
-                $(".spinner").fadeOut();
-                $("#manage-books-table-body").append(row);
+
+                trs += row;
 
             }
+            $(".spinner").fadeOut();
+            $("#manage-books-table-body").html(trs);
 
 
 

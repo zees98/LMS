@@ -139,12 +139,12 @@
         }
         
         #dlgbxBody {
-            position: fixed;
+            position: relative;
             top: 50%;
             left: 50%;
             width: 50%;
-            height: 63%;
-            margin-top: -15%;
+            height: 100%;
+            margin-top: -25%;
             margin-left: -25%;
             background-color: white;
             padding: 20px;
@@ -173,4 +173,9 @@
             background-color: black;
             color: white;
             border-radius: 20px;
+        }
+        
+        #refresh {
+            border-radius: 0px;
+            margin: 4% 0;
         }
