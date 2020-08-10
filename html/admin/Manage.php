@@ -50,21 +50,21 @@ if (!isset($_SESSION["admin_name"])) {
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-info">Name</h5>
-                            <input type="text" class="form-control" name="book_title">
+                            <input type="text" class="form-control" id="book_title">
                         </div>
                         <div class="col-6">
                             <h5 class="text-info">Author</h5>
-                            <input type="text" class="form-control" name="book_author">
+                            <input type="text" class="form-control" id="book_author">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-info">Date</h5>
-                            <input type="date" class="form-control" pattern="[0-9]{4}" name="book_title">
+                            <input type="date" class="form-control" id="book_date">
                         </div>
                         <div class="col-6">
                             <h5 class="text-info">Category</h5>
-                            <select name="category" class="form-control" id="">
+                            <select name="category" class="form-control" id="category">
                                 <option value="Thriller">Thriller</option>
                                 <option value="Action">Action</option>
                                 <option value="Mystery">Mystery</option>
@@ -72,6 +72,11 @@ if (!isset($_SESSION["admin_name"])) {
                             </select>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12"> <textarea name="summary" id="summary" cols="10" rows="10" class="form-control m-auto" placeholder="Book Summary"></textarea></div>
+                    </div>
+
                     <hr>
                     <h3 class="mb-4">
                         Publisher details
@@ -79,28 +84,31 @@ if (!isset($_SESSION["admin_name"])) {
                     <div class="row">
                         <div class="col-6">
                             <h5 class="text-info">Name</h5>
-                            <input type="text" class="form-control" name="book_title">
+                            <input type="text" class="form-control" id="pub-name">
                         </div>
                         <div class="col-6">
-                            <h5 class="text-info">Author</h5>
-                            <input type="text" class="form-control" name="book_author">
+                            <h5 class="text-info">Address</h5>
+                            <input type="text" class="form-control" id="pub_address">
+
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="buttons mx-1 ml-auto">
                             <button id="submit" class="btn btn-primary mr-2">Submit</button>
                             <button id="cancel" class="btn btn-btn-outline-primary">Cancel</button>
                         </div>
                     </div>
+
                 </div>
                 <div id="" class="col-md-4 m-auto">
-                <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
-                <label for="file" class="filelabel">
-                    <img src="" id="image">
-                    <div id="camera-icon" class="m-auto text-center">
-                        <i class="fa fa-camera "></i>
-                    </div>
-                </label>
+                    <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
+                    <label for="file" class="filelabel">
+                        <img src="" id="image">
+                        <div id="camera-icon" class="m-auto text-center">
+                            <i class="fa fa-camera "></i>
+                        </div>
+                    </label>
                 </div>
             </div>
 
@@ -160,13 +168,19 @@ if (!isset($_SESSION["admin_name"])) {
                 </form>
             </div>
             <div class="col-lg-2 col-md-3"></div>
-            <div id="right" class="col-lg-10 col-md-9 p-3">
+            <div id="right" class="col-lg-10 col-md-9 px-3 my-0">
                 <div class="row">
                     <div class="col">
                         <br><br>
                         <div id="bookdiv">
                             <div id="booktablediv">
-                                <h1 id="bookheading">Manage Books</h1>
+
+                                <div class="row tableOP m-auto">
+                                    <h1 id="bookheading" class="mt-auto">Manage Books</h1>
+                                    <button id="refresh" class="btn btn-primary ml-auto mb-auto mr-3">
+                                        <i class="fa fa-refresh"></i>
+                                        Refresh</button>
+                                </div>
                                 <div class="row">
                                     <!-- <div class="col-lg-1"></div> -->
                                     <div class="col-lg-12">
@@ -199,12 +213,19 @@ if (!isset($_SESSION["admin_name"])) {
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="row">
                     <div class="col">
                         <div id="userdiv">
                             <br><br>
                             <div id="usertablediv">
-                                <h1 id="userheading">Manage Users</h1>
+
+                                <div class="row m-auto">
+                                    <h1 id="userheading" class="mt-auto">Manage Users</h1>
+                                    <button id="refresh" class="btn btn-primary ml-auto mb-auto mr-3">
+                                        <i class="fa fa-refresh"></i>
+                                        Refresh</button>
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <br>
