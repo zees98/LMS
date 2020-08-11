@@ -90,7 +90,7 @@
                         <i class="fa fa-history"></i>
                     </div>
                     <div class="col-10" id="historydiv">
-                        <a href="history.html" id="history"> History</a>
+                        <a href="history.php" id="history"> History</a>
                     </div>
                 </div>
                 <hr class="solid">

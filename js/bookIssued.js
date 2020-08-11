@@ -13,7 +13,7 @@ $(document).ready(function() {
         // alert(row);
         return row;
     }
-
+ 
     function getTableButtons() {
         return '<td><div class="row"><button id="hide"> <a><p id="view">View</p></a></button><button id="hide" style=" position: relative;left:20px;"><p id="return">return</p></button></div></td>'
     }
@@ -59,7 +59,7 @@ $(document).ready(function() {
     }
 
     $("#history").click(function(e) {
-        e.preventDefault();
+        e.preventDefault(); 
         $("#side").fadeOut();
         if (this.href) {
             var target = this.href;
