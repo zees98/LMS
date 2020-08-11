@@ -5,6 +5,13 @@ if (!isset($_SESSION["admin_name"])) {
 } else {
     $name = $_SESSION["admin_name"];
     $img = $_SESSION["admin_img"];
+
+    // Logout Admin
+    if (isset($_POST["signout"])) {
+        session_destroy();
+        session_unset();
+        header("Location: admin_login.html");
+    }
 }
 
 ?>
@@ -244,8 +251,8 @@ if (!isset($_SESSION["admin_name"])) {
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="manage-members"> 
-                                               
+                                            <tbody id="manage-members">
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -272,13 +279,3 @@ if (!isset($_SESSION["admin_name"])) {
 </body>
 
 </html>
-
-<?php
-
-if (isset($_POST["signout"])) {
-    session_destroy();
-    session_unset();
-    header("Location: adminLogin.html");
-}
-
-?>

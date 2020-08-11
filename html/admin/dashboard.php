@@ -5,7 +5,42 @@ if (!isset($_SESSION["admin_name"])) {
 } else {
     $name = $_SESSION["admin_name"];
     $img = $_SESSION["admin_img"];
+
+    $user_count = 0;
+    $books_count = 0;
+    $pending_books = 0;
+
+    $conn = mysqli_connect(
+        "68.183.162.131",
+        "hariscorp_hariscorp",
+        "kdw{koz4]c[%",
+        "hariscorp_zfhlibrary",
+        3306
+    );
+
+    if ($conn) {
+        $user_query = "SELECT count(id) as users FROM hariscorp_zfhlibrary.Member;";
+        $book_query = "SELECT count(book_id) FROM hariscorp_zfhlibrary.Book;";
+        $pending_books_query = "SELECT count(issue_id) FROM hariscorp_zfhlibrary.Issue where return_date is null;";
+
+        $user_res =  mysqli_query($conn, $user_query);
+        $book_res = mysqli_query($conn, $book_query);
+        $pending_res = mysqli_query($conn, $pending_books_query);
+
+        $user_data = mysqli_fetch_row($user_res);
+        $book_data = mysqli_fetch_row($book_res);
+        $pending_data = mysqli_fetch_row($pending_res);
+    }
+
+    // Log out admin
+    if (isset($_POST["signout"])) {
+        session_destroy();
+        session_unset();
+        header("Location: admin_login.html");
+    }
 }
+
+
 
 
 ?>
@@ -38,8 +73,8 @@ if (!isset($_SESSION["admin_name"])) {
         <div class="row" id="sidemenu">
             <div id="leftNav" class="col-lg-2 col-md-3 bg-dark text-info">
                 <div id="tag" class="row p-4 my-auto">
-                    <img id = "admin_img" class="col-md-4 mx-auto" src=<?php echo "../../assets/$img" ?> alt="" width="100%">
-                    <h5 id= "admin_name" class="col-md-8 my-auto">
+                    <img id="admin_img" class="col-md-4 mx-auto" src=<?php echo "../../assets/$img" ?> alt="" width="100%">
+                    <h5 id="admin_name" class="col-md-8 my-auto">
                         <?php
                         echo $name;
                         ?>
@@ -50,7 +85,7 @@ if (!isset($_SESSION["admin_name"])) {
                 <ul class="sideNav mb-auto">
                     <li>
                         <i class="fa fa-dashboard"></i>
-                        <a href="dashboard.html"> Dashboard </a>
+                        <a href="dashboard.php"> Dashboard </a>
                     </li>
                     <li class="subMenu">
                         <i class="fa fa-clipboard"></i> <a href="Manage.php">Manage</a>
@@ -71,18 +106,20 @@ if (!isset($_SESSION["admin_name"])) {
                         <i class="fa fa-gear"></i> Settings
                     </li>
                 </ul>
-                <div class="row">
-                    <div id="buttons">
-                        <button class="btn btn-dark m-2">
-                            <i class="fa fa-sign-out"></i>
-                            Sign Out
-                        </button>
-                        <button class="btn btn-dark m-2">
-                            <i class="fa fa-sign-in"></i>
-                            Log In as Member
-                        </button>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <div class="row">
+                        <div id="buttons">
+                            <button name="signout" class="btn btn-dark m-2">
+                                <i class="fa fa-sign-out"></i>
+                                Sign Out
+                            </button>
+                            <button name="login" class="btn btn-dark m-2">
+                                <i class="fa fa-sign-in"></i>
+                                Log In as Member
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
 
             </div>
             <div class="col-lg-2 col-md-3"></div>
@@ -96,8 +133,14 @@ if (!isset($_SESSION["admin_name"])) {
                     <div class="col-3">
                         <div class="row">
                             <div class="col-8">
-                                <h5>New Users</h5>
-                                <h3>500</h3>
+                                <h5>Users</h5>
+                                <h3>
+                                    <?php
+
+                                    echo $user_data[0];
+
+                                    ?>
+                                </h3>
                             </div>
                             <div class="col-4 m-auto">
                                 <img src="../../assets/Icons/read.png" alt="" width="100%">
@@ -108,7 +151,13 @@ if (!isset($_SESSION["admin_name"])) {
                         <div class="row">
                             <div class="col-8">
                                 <h5>Total Books</h5>
-                                <h3>250</h3>
+                                <h3>
+                                    <?php
+
+                                    echo $book_data[0];
+
+                                    ?>
+                                </h3>
                             </div>
                             <div class="col-4 m-auto">
                                 <img src="../../assets/Icons/book.png" alt="" width="100%">
@@ -119,7 +168,13 @@ if (!isset($_SESSION["admin_name"])) {
                         <div class="row">
                             <div class="col-8">
                                 <h5>Pending Returns</h5>
-                                <h3>53</h3>
+                                <h3>
+                                    <?php
+
+                                    echo $pending_data[0];
+
+                                    ?>
+                                </h3>
                             </div>
                             <div class="col-4 m-auto">
                                 <img src="../../assets/Icons/time-and-date.png" alt="" width="100%">
