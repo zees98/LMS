@@ -18,21 +18,6 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
-
-    var div = document.createElement("div");
-    var deletebutton = document.createElement("button");
-    var trashicon = document.createElement("i");
-    deletebutton.className="btn";
-    trashicon.id="trash";
-    trashicon.className="fa fa-trash";
-    trashicon.setAttribute("aria-hidden","true");
-    deletebutton.appendChild(trashicon);
-    div.appendChild(deletebutton);
-    console.log(deletebutton);
-
-    deletebutton.addEventListener("click",function(){
-        alert("hello");
-    });
     
     file.addEventListener('change', () => {
         console.log("hello 2");
@@ -51,28 +36,59 @@ $(document).ready(function() {
             a.readAsDataURL(input.files[0]);
         }
     };
+    
 
+
+
+    GetUsers();
 
     function generateHTMLRow(...args) {
-        
-        var row = "<tr>";
-        row.id="row";
+        var row = document.createElement("tr");
+    
         for (var i = 0; i < args.length; i++) {
-            row += "<td>" + args[i] + "</td>"
+            var td = document.createElement("td");
+            td.innerText = args[i];
+            row.appendChild(td);
         }
-        row+= "<td>" + getTableButton() + "</td>";
-        row += "</tr>";
+        row.appendChild(GetDeleteButton(args[0]));
         return row;
     }
 
-    function getTableButton() {
-        return  div.innerHTML;
+    function GetDeleteButton(id) {
+        var deleteButton = document.createElement("button");
+        var trashIcon = document.createElement("i");
+        deleteButton.addEventListener("click", function(e) {
+           DeleteUser(id);
+        });
+        deleteButton.classList.add("btn");
+        deleteButton.className="btn";
+
+        trashIcon.className="fa fa-trash";
+        trashIcon.id="trash";
+        trashIcon.setAttribute("aria-hidden","true");
+
+        deleteButton.append(trashIcon);
+        return deleteButton; 
     }
-
+   
+    function DeleteUser(user_id){
+       var request = new XMLHttpRequest();
+       request.open("POST","../../php/admin/deleteusers.php",true);
+       request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+       request.onreadystatechange= function(e){
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Member " + user_id + " :" + "Deleted");
+            location.reload();
+            
+        }
+       }
+      
+       request.send("id="+user_id);
+    }
     
     
 
-
+    function GetUsers(){
     var req = new XMLHttpRequest();
     var method = "GET";
     var url = '../../php/admin/users.php';
@@ -105,5 +121,6 @@ $(document).ready(function() {
             }
         }
     }
+}
 
 });
