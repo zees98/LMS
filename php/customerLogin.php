@@ -38,7 +38,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             session_start();
             $_SESSION["member_id"] = $id;
             $_SESSION["first_name"] = $fname;
-            $_SESSION["last_name"] = $fname;
+            $_SESSION["last_name"] = $lname;
             $_SESSION["member_img"] = $img;
 
         }

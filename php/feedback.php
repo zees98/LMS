@@ -8,12 +8,9 @@ if (
     $name = $_POST["Membername"];
     $email = $_POST["Email"];
     $message = $_POST["Message"];
-    $category = $_POST["category"];
-    $summary = $_POST["summary"];
-    $pub_name = $_POST["pub_name"];
-    $pub_address = $_POST["pub_address"];
+    
 
-    echo $bookname;
+    echo $name;
 
 
     $conn = mysqli_connect(
@@ -35,8 +32,8 @@ if (
         echo "<br>" . $id;
 
 
-        $insert_feedback = "INSERT INTO `Feedback` (`feedback_id`, `mem_id`, `description`, `date`) VALUES (NULL, '$id', '$message', 'current_timestamp()');";
-        $exec_feedback = mysqli_query($conn, $insert_book);
+        $insert_feedback = "INSERT INTO `Feedback` (`feedback_id`, `mem_id`, `description`) VALUES (NULL, '$id', '$message');";
+        $exec_feedback = mysqli_query($conn, $insert_feedback);
 
         $conn->close();
         echo "success";
