@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["phoneno"]) && isset($_POST["dob"]) && isset($_POST["gender"]) && isset($_POST["password"]) && isset($_POST["img_url"])) {
+// if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["phoneno"]) && isset($_POST["dob"]) && isset($_POST["gender"]) && isset($_POST["password"])) {
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
@@ -8,7 +8,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
     $dob = $_POST["dob"];
     $gender = $_POST["gender"];
     $password = $_POST["password"];
-    $imgurl = $_POST["img_url"];
+    // $imgurl = $_POST["img_url"];
 
     
 
@@ -26,16 +26,16 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
         echo "failed";
     }
 
-    $query = "INSERT INTO `Member`(`firstname`, `lastname`, `email`, `password`, `phone`, `dob`, `gender`, `image_path`) VALUES ('$firstname','$lastname','$email','$password','$phoneno', '$dob','$gender','$imgurl')";
+    $query = "INSERT INTO `Member`(`firstname`, `lastname`, `email`, `password`, `phone`, `dob`, `gender`) VALUES ('$firstname','$lastname','$email','$password','$phoneno', '$dob','$gender')";
 
     $exec_insert = mysqli_query($conn, $query);
 
     if ($exec_insert) {
-        echo "<br><br>data inserted";
+        echo "Account Created Successfully";
     } else {
         echo "<br><br>insertion error";
     }
-} else {
-    echo "<br>isset failed";
-}
+// } else {
+//     echo "<br>isset failed";
+// }
 ?>

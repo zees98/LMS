@@ -18,6 +18,7 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
+<<<<<<< HEAD
 
     var div = document.createElement("div");
     var deletebutton = document.createElement("button");
@@ -34,6 +35,9 @@ $(document).ready(function() {
         alert("hello");
     });
 
+=======
+    
+>>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
     file.addEventListener('change', () => {
 
         Reader(file);
@@ -52,15 +56,27 @@ $(document).ready(function() {
             a.readAsDataURL(input.files[0]);
         }
     };
+    
 
+
+
+    GetUsers();
 
     function generateHTMLRow(...args) {
+<<<<<<< HEAD
 
         var row = "<tr>";
         row.id = "row";
+=======
+        var row = document.createElement("tr");
+    
+>>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
         for (var i = 0; i < args.length; i++) {
-            row += "<td>" + args[i] + "</td>"
+            var td = document.createElement("td");
+            td.innerText = args[i];
+            row.appendChild(td);
         }
+<<<<<<< HEAD
         row += "<td>" + getTableButton() + "</td>";
         row += "</tr>";
         return row;
@@ -72,8 +88,47 @@ $(document).ready(function() {
 
 
 
+=======
+        row.appendChild(GetDeleteButton(args[0]));
+        return row;
+    }
 
+    function GetDeleteButton(id) {
+        var deleteButton = document.createElement("button");
+        var trashIcon = document.createElement("i");
+        deleteButton.addEventListener("click", function(e) {
+           DeleteUser(id);
+        });
+        deleteButton.classList.add("btn");
+        deleteButton.className="btn";
 
+        trashIcon.className="fa fa-trash";
+        trashIcon.id="trash";
+        trashIcon.setAttribute("aria-hidden","true");
+
+        deleteButton.append(trashIcon);
+        return deleteButton; 
+    }
+   
+    function DeleteUser(user_id){
+       var request = new XMLHttpRequest();
+       request.open("POST","../../php/admin/deleteusers.php",true);
+       request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+       request.onreadystatechange= function(e){
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Member " + user_id + " : " + "Deleted");
+            location.reload();
+            
+        }
+       }
+      
+       request.send("id="+user_id);
+    }
+    
+    
+>>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
+
+    function GetUsers(){
     var req = new XMLHttpRequest();
     var method = "GET";
     var url = '../../php/admin/users.php';
@@ -106,5 +161,6 @@ $(document).ready(function() {
             }
         }
     }
+}
 
 });
