@@ -1,4 +1,5 @@
 <?php
+
 $database =  "hariscorp_zfhlibrary";
 $conn = mysqli_connect(
     // Hostname
@@ -13,10 +14,9 @@ $conn = mysqli_connect(
     3306
 
 );
+$select_query="select id,firstname,lastname,email,phone,dob,gender from `Member`";
 
-$queryInsertUser = "select title, cat_name, name, due_date, return_date FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = 5 and return_date = 'Null'";
-
-$result = mysqli_query($conn, $queryInsertUser);
+$result = mysqli_query($conn, $select_query);
 
 $data = array();
 

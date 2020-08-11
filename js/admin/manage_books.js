@@ -19,10 +19,14 @@ $(document).ready(function() {
 
 function addBooks() {
 
+<<<<<<< HEAD
 
 
     $("#book-form").submit(function(e) {
         e.preventDefault();
+=======
+    $("#submit").click(function(e) {
+>>>>>>> 670db9694206d6690defd4fe592bb9da70a76ac9
         var book_title = $("#book_title").val();
         var book_author = $("#book_author").val();
         var book_date = $("#book_date").val();
@@ -30,9 +34,13 @@ function addBooks() {
         var summary = $("#summary").val();
         var pub_name = $("#pub-name").val();
         var pub_address = $("#pub_address").val();
+<<<<<<< HEAD
         // alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
 
         // if (!isNullOrEmpty(book_title, book_author, book_date, category, summary, pub_name, pub_address)) {
+=======
+        alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
+>>>>>>> 670db9694206d6690defd4fe592bb9da70a76ac9
         var addRequest = new XMLHttpRequest();
         addRequest.open("POST", "../../php/admin/add_book.php", true);
         addRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

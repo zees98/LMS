@@ -235,7 +235,8 @@ if (!isset($_SESSION["admin_name"])) {
                                             <thead>
                                                 <tr>
                                                     <th scope="col">User ID</th>
-                                                    <th scope="col">Name</th>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Last Name</th>
                                                     <th scope="col">Phone no</th>
                                                     <th scope="col">Email Address</th>
                                                     <th scope="col">Gender</th>
@@ -243,62 +244,8 @@ if (!isset($_SESSION["admin_name"])) {
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">5</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>@mdo</td>
-                                                    <td>
-                                                        <button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>
-                                                    </td>
-                                                </tr>
+                                            <tbody id="manage-members"> 
+                                               
                                             </tbody>
                                         </table>
                                     </div>

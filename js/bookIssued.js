@@ -13,7 +13,7 @@ $(document).ready(function() {
         // alert(row);
         return row;
     }
-
+ 
     function getTableButtons() {
         return '<td><div class="row"><button id="hide"> <a><p id="view">View</p></a></button><button id="hide" style=" position: relative;left:20px;"><p id="return">return</p></button></div></td>'
     }
@@ -39,15 +39,11 @@ $(document).ready(function() {
                 var publisher = data[a].name;
                 var cat_name = data[a].cat_name;
                 var issue_date = data[a].due_date;
-                var return_date = data[a].return_date;
-
                 var row = generateHTMLRow(
                     data[a].title,
                     data[a].cat_name,
                     data[a].name,
                     data[a].due_date,
-                    data[a].return_date,
-
                 );
                 console.log(row);
                 $(".spinner").fadeOut();
@@ -63,7 +59,7 @@ $(document).ready(function() {
     }
 
     $("#history").click(function(e) {
-        e.preventDefault();
+        e.preventDefault(); 
         $("#side").fadeOut();
         if (this.href) {
             var target = this.href;

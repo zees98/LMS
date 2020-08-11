@@ -81,7 +81,7 @@
                         <i class="fa fa-calendar"></i>
                     </div>
                     <div class="col-10" id="pastduediv">
-                        <a href="pastDue.html" id="pastdue">Past Due Books</a>
+                        <a href="pastDue.php" id="pastdue">Returned Books</a>
                     </div>
                 </div>
                 <hr class="solid">

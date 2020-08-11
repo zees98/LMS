@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    console.log("hello");
-    var books = document.querySelector('#totalIssued');
-    console.log($('#totalIssued').innerText);
     $("#newarrivals").slideUp("fast");
     $("#maylike").slideUp("fast");
 
@@ -16,32 +13,15 @@ $(document).ready(function() {
 
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
-            // alert(this.responseText);
             var data = JSON.parse(this.responseText);
-            console.log(data);
-            console.log(data.length);
-            for (var a = 0; a < data.length; a++) {
-                console.log(a);
-                var count = data[a].title;
-                var publisher = data[a].name;
-                var cat_name = data[a].cat_name;
-                var issue_date = data[a].due_date;
-                var return_date = data[a].return_date;
+            var pastdue = data[0].totalPastDue;
+            var totalIssued = data[0].totalIssued;
+            var totalReturn = data[0].totalReturn;
 
-                var row = generateHTMLRow(
-                    data[a].title,
-                    data[a].cat_name,
-                    data[a].name,
-                    data[a].due_date,
-                    data[a].return_date,
 
-                );
-                console.log(row);
-                $(".spinner").fadeOut();
-                $("#tablebody").append(row);
-
-            }
+            document.querySelector('#totalIssued').innerHTML = totalIssued;
+            document.querySelector('#totalPastdue').innerHTML = pastdue;
+            document.querySelector('#totalReturned').innerHTML = totalReturn;
         }
     }
 

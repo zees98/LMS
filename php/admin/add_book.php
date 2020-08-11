@@ -12,7 +12,7 @@
 if (
     isset($_POST["bookname"]) &&
     isset($_POST["bookAuthor"]) &&
-    isset($_POST["date"]) &&
+    isset($_POST["date"]) && 
     isset($_POST["category"]) &&
     isset($_POST["summary"]) &&
     isset($_POST["pub_name"]) &&

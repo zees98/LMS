@@ -7,6 +7,7 @@
     <title>Contact Us</title>
     <link rel="icon" href="../assets/Icons/icon.png">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script defer src="../js/contactus.js"></script>
     <link rel="stylesheet" href="../css/contactus.css">
 </head>
 
@@ -36,7 +37,7 @@
                     <div class="row">
                         <div class="col-lg-7" id="textside">
                             <h5 id="heading1">Send us a Message</h5>
-                            <form>
+                            <form onsubmit="return validateForm()" method="post">
                                 <label id="textsize">Your Name</label>
                                 <input type="text" class="form-control" id="yourname" placeholder="Fahad Khalid">
                                 <label id="textsize">Your Email</label>
@@ -44,7 +45,7 @@
                                 <label id="textsize">Your Message</label>
                                 <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 500px;" onclick="this.value=''" placeholder="Enter a message"></textarea>
                                 <br><br>
-                                <button type="button" class="btn btn-primary btn-lg btn-block">Send</button>
+                                <button id="click" type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
                                 <br>
                             </form>
                         </div>

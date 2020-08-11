@@ -16,6 +16,8 @@ window.onload = (e) => {
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#icon');
 
+    var gender = "hello";
+
     submit.addEventListener('click', (e) => {
         e.preventDefault();
         // console.log(firstname.value);
@@ -28,29 +30,23 @@ window.onload = (e) => {
         // console.log(file.value)
         // console.log(firstname.value.length);
 
-
-
-
         if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (male.checked === false && female.checked === false)) {
             errormessage.innerHTML = "Please Fill All The Fields!";
             setTimeout(() => errormessage.remove(), 3000);
-        }
-        else {
+        } else {
 
 
             if (!firstname.value.match(/^[A-Za-z]+$/)) {
                 console.log("hello");
                 firstname.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 firstname.style.cssText = "border-color:#0784eb";
             }
             if (!lastname.value.match(/^[A-Za-z]+$/)) {
                 console.log("hello");
                 lastname.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 lastname.style.cssText = "border-color:#0784eb";
             }
@@ -58,37 +54,61 @@ window.onload = (e) => {
 
                 console.log("hello");
                 email.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 email.style.cssText = "border-color:#0784eb";
             }
             if (ValidatePhoneNumber(phoneno.value)) {
 
                 phoneno.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 phoneno.style.cssText = "border-color:#0784eb";
             }
             if (password.value.length < 8) {
                 password.style.cssText = "border-color:red";
-            }
-            else {
+            } else {
 
                 password.style.cssText = "border-color:#0784eb";
             }
             if (confirm_password.value !== password.value) {
 
                 confirm_password.style.cssText = "border-color:red";
-            }
-            else {
-
+            } else {
                 confirm_password.style.cssText = "border-color:#0784eb";
             }
-
-
+            if (male.checked) {
+                gender = male.value;
+                console.log(gender);
+            } else {
+                gender = female.value;
+            }
         }
+
+        var sendData = new XMLHttpRequest();
+        sendData.open("POST", "customerregistration.php", true);
+        sendData.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        sendData.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert(this.responseText);
+                console.log("success!");
+            } else {
+                console.log("failed");
+            }
+        }
+        console.log(gender.value);
+        sendData.send(
+            "firstname =" + firstname.value.toLowerCase() + "&" +
+            "lastname=" + lastname.value.toLowerCase() + "&" +
+            "email =" + email.value.toLowerCase() + "&" +
+            "phoneno=" + phoneno.value.toLowerCase() + "&" +
+            "dob=" + dob.value.toLowerCase() + "&" +
+            "gender=" + gender.value + "&" +
+            "password=" + password.value.toLowerCase() + "&" +
+            "img_url =" + img.src
+        );
+
 
     });
 
@@ -108,6 +128,7 @@ window.onload = (e) => {
     file.addEventListener('change', () => {
         Reader(file);
     });
+
     function Reader(input) {
         if (input.files && input.files[0]) {
             var a = new FileReader();
