@@ -150,14 +150,24 @@ a {
     padding-left: 20px;
 }
 
-a:hover{
-    color:#00e6e6;
+a:hover {
+    color: #00e6e6;
     text-decoration: none;
 }
 
-#namediv:hover{
-    color:#00e6e6;  
+button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
+
+#namediv:hover {
+    color: #00e6e6;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     background-color: transparent
