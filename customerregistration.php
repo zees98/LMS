@@ -10,6 +10,8 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
     $password = $_POST["password"];
     $imgurl = $_POST["img_url"];
 
+    
+
     $conn = $conn = mysqli_connect(
         "68.183.162.131",
         "hariscorp_hariscorp",
