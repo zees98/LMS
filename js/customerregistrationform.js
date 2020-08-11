@@ -97,16 +97,17 @@ window.onload = (e) => {
                 console.log("failed");
             }
         }
-        console.log(gender.value);
+        console.log(firstname.value.toLowerCase());
+        console.log(email.value.toLowerCase());
         sendData.send(
-            "firstname =" + firstname.value.toLowerCase() + "&" +
+            "firstname=" + firstname.value.toLowerCase() + "&" +
             "lastname=" + lastname.value.toLowerCase() + "&" +
-            "email =" + email.value.toLowerCase() + "&" +
+            "email=" + email.value.toLowerCase() + "&" +
             "phoneno=" + phoneno.value.toLowerCase() + "&" +
             "dob=" + dob.value.toLowerCase() + "&" +
-            "gender=" + gender.value + "&" +
-            "password=" + password.value.toLowerCase() + "&" +
-            "img_url =" + img.src
+            "gender=" + gender + "&" +
+            "password=" + password.value.toLowerCase()
+            // "img_url=" + img.src
         );
 
 
