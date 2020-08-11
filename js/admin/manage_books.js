@@ -143,12 +143,12 @@ function createDelButton(id) {
     delButton.addEventListener("click", function(e) {
         delBook(id);
     });
-    delButton.classList.add("btn", "btn-primary", "");
+    delButton.classList.add("btn");
     var trashIcon = document.createElement("i");
     trashIcon.classList.add("fa", "fa-trash");
 
     delButton.appendChild(trashIcon);
-    return delButton;
+    return delButton; 
 }
 
 function getBooks() {
