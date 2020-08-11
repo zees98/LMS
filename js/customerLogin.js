@@ -25,13 +25,13 @@ $(document).ready(function() {
         var username = $("#email").val();
         var password = $("#password").val();
 
-        $.post("../../php/customerLogin.php", {
+        $.post("../php/customerLogin.php", {
             username: username,
             password: password,
         }).done(function(data) {
             console.log(data);
             if (data == "success")
-                window.location = "../../html/dashboard.html";
+                window.location = "../html/dashboard.php";
             else {
                 $("#login-btn").show();
                 $(".spinner").hide();
