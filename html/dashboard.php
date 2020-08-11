@@ -111,7 +111,7 @@ if (!isset($_SESSION["member_id"])) {
                             <i class="fa fa-sign-out"></i>
                         </div>
                         <div class="col-10" id="logoutdiv">
-                            <button> <a href="">LogOut</a></button>
+                            <button name="signout"> <a href="">LogOut</a></button>
                         </div>
                     </div>
                 </form>
@@ -213,7 +213,7 @@ if (!isset($_SESSION["member_id"])) {
 if (isset($_POST["signout"])) {
     session_destroy();
     session_unset();
-    header("Location: adminLogin.html");
+    header("Location: ../login.html");
 }
 
 ?>
