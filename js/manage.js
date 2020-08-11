@@ -46,7 +46,7 @@ $(document).ready(function() {
         for (var i = 0; i < args.length; i++) {
             row += "<td>" + args[i] + "</td>"
         }
-        row += getTableButtons();
+        row += getTableButton();
         row += "</tr>";
         // alert(row);
         return row;
@@ -60,7 +60,7 @@ $(document).ready(function() {
 
     var req = new XMLHttpRequest();
     var method = "GET";
-    var url = '../php/admin/users.php';
+    var url = '../../php/admin/users.php';
     var async = true;
     req.open(method, url, async);
     req.send();
