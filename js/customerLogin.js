@@ -33,6 +33,7 @@ $(document).ready(function() {
             if (data == "success")
                 window.location = "../html/dashboard.php";
             else {
+                alert("Account Doesnt exit");
                 $("#login-btn").show();
                 $(".spinner").hide();
             }

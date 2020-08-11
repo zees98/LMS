@@ -8,8 +8,6 @@ if (!isset($_SESSION["member_id"])) {
     $lname  = $_SESSION["last_name"]; 
     $img= $_SESSION["member_img"] ;
 }
-
-
 ?>
 
 
@@ -42,7 +40,7 @@ if (!isset($_SESSION["member_id"])) {
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
+                    <a href="../html/contactUs.php" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -111,7 +109,7 @@ if (!isset($_SESSION["member_id"])) {
                             <i class="fa fa-sign-out"></i>
                         </div>
                         <div class="col-10" id="logoutdiv">
-                            <button name="signout"> <a href="">LogOut</a></button>
+                            <button name="signout">LogOut</button>
                         </div>
                     </div>
                 </form>
@@ -213,7 +211,7 @@ if (!isset($_SESSION["member_id"])) {
 if (isset($_POST["signout"])) {
     session_destroy();
     session_unset();
-    header("Location: ../login.html");
+    header("Location: adminLogin.html");
 }
 
 ?>

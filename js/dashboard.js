@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $("#newarrivals").slideUp("fast");
     $("#maylike").slideUp("fast");
 
