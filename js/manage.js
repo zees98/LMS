@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 
     var req = new XMLHttpRequest();
-    req.open("GET", "../members.php", true);
+    req.open("GET", "../php/member.php", true);
     req.send();
 
     req.onreadystatechange = function() {
