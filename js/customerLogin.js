@@ -36,6 +36,7 @@ $(document).ready(function() {
                 alert("Account Doesnt exit");
                 $("#login-btn").show();
                 $(".spinner").hide();
+                alert(data);
             }
         });
 

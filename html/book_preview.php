@@ -1,3 +1,29 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+$bookID = $_SESSION["bookID"];
+
+$conn = mysqli_connect(
+    "68.183.162.131",
+    "hariscorp_hariscorp",
+    "kdw{koz4]c[%",
+    "hariscorp_zfhlibrary",
+    3306
+);
+
+
+if ($conn) {
+
+    $query = "SELECT book_id, title, pub_year, author, cat_name, summary FROM (`Book` NATURAL join `Publisher`) Natural join Category where book_id = '{$bookID}'";
+    $res = mysqli_query($conn, $query);
+
+    $row = mysqli_fetch_row($res);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,35 +39,7 @@
     <script src="../js/book_preview.js"></script>
     <script src="https://use.fontawesome.com/3ac16a555a.js"></script>
 
-    <style>
-        #dlgbx {
-            display: none;
-            position: fixed;
-            z-index: 5;
-            top: 0%;
-            left: 0%;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        #dlgbxBody {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 30%;
-            height: 30%;
-            margin-top: -15%;
-            margin-left: -15%;
-            background-color: white;
-            padding: 20px;
-            border-radius: 40px;
-        }
-        
-        #dlgbx table {
-            margin-top: 5%;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -85,7 +83,13 @@
             <div class="row">
                 <div class="col-md-5 col-lg-3"><img src="../assets/books/1.jpg" alt="" width="100%"></div>
                 <div class="col-md-7 col-lg-8">
-                    <h2>Mr Nachron's List</h2>
+                    <h2>
+                        <?php
+
+                        echo $row[1];
+
+                        ?>
+                    </h2>
                     <h5 class="text-info">Mike Corbett</h5>
                     <h5 class="text-info">2008</h5>
                     <h5>⭐⭐⭐⭐⭐</h5>
@@ -96,8 +100,7 @@
                     <div class="container-fluid">
                         <div id="desc-control" class="row">
                             <h4 class="col-lg-3 col-md-6 col-6 p-0">Description</h4>
-                            <h5 id="expand" class="text-info col-md-3 col-3"><i class="fa fa-chevron-circle-up"
-                                    aria-hidden="true"></i>
+                            <h5 id="expand" class="text-info col-md-3 col-3"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
                             </h5>
                         </div>
                     </div>
@@ -143,8 +146,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-9 col-sm-8 my-auto" id="">
-                    <input class = "btn" type="text" name="review" id="">
-                    
+                    <input class="btn" type="text" name="review" id="">
+
                 </div>
                 <div class="col-md-1 my-auto" id="ratingDiv">
                     <select name="rating" id="rating">
