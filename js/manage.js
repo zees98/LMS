@@ -58,36 +58,34 @@ $(document).ready(function () {
 
 
     var req = new XMLHttpRequest();
-    req.open("GET", "../html/members.php", true);
+    var method = "GET";
+    var url = '../php/admin/users.php';
+    var async = true;
+    req.open(method, url, async);
     req.send(); 
 
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
+            
+            // alert(this.responseText);
             var data = JSON.parse(this.responseText);
             console.log(data);
             console.log(data.length);
             for (var a = 0; a < data.length; a++) {
                 console.log(a);
-                var user_id = data[a].id;
+                var id = data[a].id;
                 var firstname = data[a].firstname;
                 var lastname = data[a].lastname;
-                var phoneno = data[a].phone;
+                var phone = data[a].phone;
                 var email = data[a].email;
                 var gender = data[a].gender;
                 var dob = data[a].dob;
-
+                
                 var row = generateHTMLRow(
-                    data[a].id,
-                    data[a].firstname,
-                    data[a].lastname,
-                    data[a].phone,
-                    data[a].email,
-                    data[a].gender,
-                    data[a].dob
+                    id,firstname,lastname,phone,email,gender,dob
                 );
                 console.log(row);
-                $("manage-members").append(row);
+                $("#manage-members").append(row);
             }
         }
     }
