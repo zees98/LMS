@@ -16,6 +16,7 @@
     <title>DashBoard</title>
 </head>
 
+
 <body>
     <div id="dlgbx">
         <div id="dlgbxBody">
@@ -44,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
+                     <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -79,7 +80,9 @@
                         <i class="fa fa-book"></i>
                     </div>
                     <div class="col-10" id="issuedbooksdiv">
-                        <a href="bookIssued.php" id="issuedbooks">Issued Books</a>
+                        <a href="bookIssued.php" id="issuedbooks">
+                            <p >Issued Books</p>
+                        </a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -98,9 +101,7 @@
                         <i class="fa fa-calendar"></i>
                     </div>
                     <div class="col-10" id="pastduediv">
-                        <a href="pastDue.php" id="pastdue">
-                            <p id="t1">Past Due Books</p>
-                        </a>
+                    <a href="pastDue.php" id="pastdue"><p id="t1">Returned Books<p></a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -121,12 +122,12 @@
                 <div class="row">
                     <div class="col-10">
                         <div class="row justify-content-end">
-                            <div class="col-7">
+                            <div class="col-5">
                                 <br><br>
-                                <h1 class="heading">Past Due Books</h1>
+                                <h1 class="heading">Returned Books</h1>
                                 <br>
                             </div>
-                            <div class="col-3">
+                            <div class="col-5">
                             </div>
 
                             <div class="col-2">
@@ -147,14 +148,13 @@
                                         <th scope="col">Book Name</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Publisher</th>
-                                        <th scope="col">Issued Date</th>
+                                        <th scope="col">Due Date</th>
                                         <th scope="col">Return Date</th>
                                         <th scope="col">Actions</th>
 
                                     </tr>
                                 </thead>
                                 <tbody id="tablebody">
-                                   
                                 </tbody>
                             </table>
                         </div>
@@ -185,7 +185,7 @@
                 <br>
 
                 <div class="row justify-content-end">
-                    <a href="../html/searchbooks.html">
+                    <a href="#">
                         <h4>See More</h4>
                     </a>
                 </div>
@@ -196,7 +196,7 @@
 
     </div>
     </div>
-
 </body>
 
 </html>
+
