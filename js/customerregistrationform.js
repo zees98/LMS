@@ -10,7 +10,7 @@ window.onload = (e) => {
     const male = document.querySelector('#m');
     const female = document.querySelector('#f');
     const file = document.querySelector('#file');
-    const submit = document.querySelector('#submit')
+    const submit = document.querySelector('#submit');
 
     const errormessage = document.querySelector("#msg");
     const img = document.querySelector('#image');
@@ -29,7 +29,7 @@ window.onload = (e) => {
         // console.log(confirm_password.value);
         // console.log(file.value)
         // console.log(firstname.value.length);
-
+        
         if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (male.checked === false && female.checked === false)) {
             errormessage.innerHTML = "Please Fill All The Fields!";
             setTimeout(() => errormessage.remove(), 3000);

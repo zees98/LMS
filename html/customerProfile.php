@@ -107,7 +107,7 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-3">
                                 <br><br>
-                                <img src="../assets/fahad.jpg" id="profile_img">
+                                <img src=" " id="profile_img">
 
 
                                 <label for="file" class="filelabel">
@@ -121,64 +121,78 @@
                                 <br><br><br><br>
                                 <form>
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-5">
                                             <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
                                             <label for="fn">First Name</label>
-                                            <input type="text" value="Fahad" id="fn">
+                                            <input type="text"  id="fn">
                                             <i class="fa fa-user" id="ficon"></i>
                                         </div>
                                         <div class="col-lg-2"></div>
                                         <div class="col-3">
                                             <label for="ln">Last Name</label>
-                                            <input type="text" value="Khalid" id="ln">
+                                            <input type="text"  id="ln">
                                             <i class="fa fa-user" id="licon"></i>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-5">
                                             <label for="email">Email</label>
-                                            <input type="text" value="fahadlocalhost@gmail.com" id="email">
+                                            <input type="text"  id="email">
                                             <i class="fa fa-envelope" id="emailicon"></i>
                                         </div>
                                         <div class="col-lg-2"></div>
                                         <div class="col-3">
                                             <label for="phoneno">Phone Number</label>
-                                            <input type="text" value="033615548999" id="phoneno">
+                                            <input type="text"  id="phoneno">
                                             <i class="fa fa-mobile" id="phoneicon"></i>
                                         </div>
                                     </div>
                                     <br><br>
                                     <div class="row">
-                                        <div class="col-3">
+                                    <div class="col-5">
                                             <label for="dob">DOB</label>
-                                            <input type="date" value="2014-02-09" id="dob">
+                                            <input type="date"  id="dob"  >
                                             <i class="fa fa-birthday-cake" id="dobicon"></i>
                                         </div>
                                         <div class="col-lg-2"></div>
                                         <div class="col-3">
                                             <label for="gender">Gender</label>
                                             <br>
-                                            <input type="text" list="list" value="Male" id="gender">
+                                            <input type="text" list="list"  id="gender">
                                             <i class="fa fa-user-o" id="gendericon"></i>
                                             <datalist id="list">
                                                 <option value="Female"></option>
                                                 <option value="Male"></option>
                                             </datalist>
                                         </div>
+                                        
+                                        
 
                                     </div>
                                     <br><br>
                                     <div class="row">
-                                        <div class="col-3">
+                                        
+                                    <div class="col-5">
                                             <label for="pass">Password</label>
-                                            <input type="password" id="pass" value="1234">
+                                            <input type="password" id="pass" >
                                             <i class="fa fa-lock" id="passicon"></i>
                                         </div>
-                                        <div class="col-lg-2"></div>
-                                        <div class="col-3">
+                                        <!-- <div class="col-lg-2"></div> 
+                                        <div class="col-lg-3" style="border:2px red solid; width:400px">
                                             <label for="pass" id="confirmlabel">Retype Password</label>
-                                            <input type="password" id="confirm_pass" value="1234">
+                                            <input type="password" id="confirm_pass" value="354" >
+                                            <i class="fa fa-lock" id="confirm_passicon"></i>
+                                        </div> -->
+                                         
+                                    
+                                         
+                                    </div>
+                                  <br><br>
+                                    <div class="row">
+                                    <div class="col-lg-3" >
+                                            <label for="pass" id="confirmlabel" >Retype Password</label>
+                                            <input type="password" id="confirm_pass" >
                                             <i class="fa fa-lock" id="confirm_passicon"></i>
                                         </div>
                                     </div>
