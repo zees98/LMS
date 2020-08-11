@@ -21,7 +21,8 @@ function addBooks() {
 
 
 
-    $("#submit").click(function(e) {
+    $("#book-form").submit(function(e) {
+        e.preventDefault();
         var book_title = $("#book_title").val();
         var book_author = $("#book_author").val();
         var book_date = $("#book_date").val();
@@ -29,16 +30,21 @@ function addBooks() {
         var summary = $("#summary").val();
         var pub_name = $("#pub-name").val();
         var pub_address = $("#pub_address").val();
-        alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
+        // alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
 
-
+        // if (!isNullOrEmpty(book_title, book_author, book_date, category, summary, pub_name, pub_address)) {
         var addRequest = new XMLHttpRequest();
         addRequest.open("POST", "../../php/admin/add_book.php", true);
         addRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         addRequest.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                // alert(this.responseText);
+                $("#dlgbxBody").fadeOut();
+                $("#dlgbx").slideUp();
+
                 getBooks();
+
 
 
             }
@@ -53,12 +59,18 @@ function addBooks() {
             "pub_name=" + pub_name + "&" +
             "pub_address=" + pub_address
         );
+
+
     });
 
 }
 
 
-
+function isNullOrEmpty(...vals) {
+    var res = vals.contains("") || vals.contains(null);
+    alert(res)
+    return res;
+}
 
 function formHide_Show() {
     $("#addbutton").click(function(e) {
@@ -67,12 +79,7 @@ function formHide_Show() {
         $('#dlgbx').slideDown();
         $("#dlgbxBody").fadeIn();
     });
-    $("#submit").click(function(e) {
-        // alert("Hi");
 
-        $('#dlgbx').slideDown();
-        $("#dlgbxBody").fadeIn();
-    });
 
     $("#cancel").click(function(e) {
 
@@ -86,19 +93,56 @@ function formHide_Show() {
 }
 
 function generateHTMLRow(...args) {
-    var row = "<tr>";
+    var row = document.createElement("tr");
+
     for (var i = 0; i < args.length; i++) {
-        row += "<td>" + args[i] + "</td>"
+        var td = document.createElement("td");
+        td.innerText = args[i];
+        row.appendChild(td);
     }
-    row += getTableButtons();
-    row += "</tr>";
+
+
+
+
+    row.appendChild(createDelButton(args[0]));
     // alert(row);
     return row;
 }
 
+function delBook(id) {
 
-function getTableButtons() {
-    return '<td><button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button><button class="btn"><i class="fa fa-circle-o-notch" aria-hidden="true" id="update"></i></button></td>'
+    if (confirm("Delete Book " + id + "?")) {
+
+        var delRequest = new XMLHttpRequest();
+        delRequest.open("POST", "../../php/admin/delete_book.php", true);
+        delRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        delRequest.onreadystatechange = function(e) {
+            if (this.readyState == 4 && this.status == 200) {
+                alert("Book " + id + ":" + "Deleted");
+                getBooks();
+            }
+        }
+
+        delRequest.send("book_id=" + id);
+    }
+
+}
+
+
+
+
+function createDelButton(id) {
+    var delButton = document.createElement("BUTTON");
+    delButton.addEventListener("click", function(e) {
+        delBook(id);
+    });
+    delButton.classList.add("btn", "btn-primary", "");
+    var trashIcon = document.createElement("i");
+    trashIcon.classList.add("fa", "fa-trash");
+
+    delButton.appendChild(trashIcon);
+    return delButton;
 }
 
 function getBooks() {
@@ -115,7 +159,8 @@ function getBooks() {
 
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var trs;
+            $("#booktable tbody").remove();
+            var tbody = document.createElement("tbody");
             // alert(this.responseText);
             var data = JSON.parse(this.responseText);
             console.log(data);
@@ -137,11 +182,11 @@ function getBooks() {
                 );
                 console.log(row);
 
-                trs += row;
+                tbody.appendChild(row);
 
             }
             $(".spinner").fadeOut();
-            $("#manage-books-table-body").html(trs);
+            $("#booktable").append(tbody);
 
 
 

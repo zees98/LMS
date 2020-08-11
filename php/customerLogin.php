@@ -32,7 +32,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $id = $data["id"];
             $fname = $data["firstname"];
             $lname = $data["lastname"];
-            $img = $data["img_path"];
+            $img = $data["image_path"] ?? "";
         
 
             session_start();
@@ -45,4 +45,5 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         else
             echo "failed";
     }
+    
 }

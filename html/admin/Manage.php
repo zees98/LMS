@@ -39,79 +39,81 @@ if (!isset($_SESSION["admin_name"])) {
 
     <div id="dlgbx" class="">
         <div id="dlgbxBody" class="">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1 class="">Add A new Book</h1>
-                    <hr>
-                    <h3 class="mb-4">
-                        Book Details
-                    </h3>
+            <form action="" method="POST" id="book-form">
+                <div class="row">
+                    <div class="col-md-8">
 
-                    <div class="row">
-                        <div class="col-6">
-                            <h5 class="text-info">Name</h5>
-                            <input type="text" class="form-control" id="book_title">
+                        <h1 class="">Add A new Book</h1>
+                        <hr>
+                        <h3 class="mb-4">
+                            Book Details
+                        </h3>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-info">Name</h5>
+                                <input type="text" class="form-control" id="book_title" required>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="text-info">Author</h5>
+                                <input type="text" class="form-control" id="book_author" required>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <h5 class="text-info">Author</h5>
-                            <input type="text" class="form-control" id="book_author">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-info">Date</h5>
+                                <input type="date" class="form-control" id="book_date" required>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="text-info">Category</h5>
+                                <select name="category" class="form-control" id="category" required>
+                                    <option value="Thriller">Thriller</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Mystery">Mystery</option>
+
+                                </select>
+                            </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-12"> <textarea name="summary" id="summary" cols="10" rows="10" class="form-control m-auto" placeholder="Book Summary" required></textarea></div>
+                        </div>
+
+                        <hr>
+                        <h3 class="mb-4">
+                            Publisher details
+                        </h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-info">Name</h5>
+                                <input type="text" class="form-control" id="pub-name" required>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="text-info">Address</h5>
+                                <input type="text" class="form-control" id="pub_address" required>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="buttons mx-1 ml-auto">
+                                <button id="submit" class="btn btn-primary mr-2" type="submit">Submit</button>
+                                <button id="cancel" class="btn btn-btn-outline-primary">Cancel</button>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <h5 class="text-info">Date</h5>
-                            <input type="date" class="form-control" id="book_date">
-                        </div>
-                        <div class="col-6">
-                            <h5 class="text-info">Category</h5>
-                            <select name="category" class="form-control" id="category">
-                                <option value="Thriller">Thriller</option>
-                                <option value="Action">Action</option>
-                                <option value="Mystery">Mystery</option>
-
-                            </select>
-                        </div>
+                    <div id="" class="col-md-4 m-auto">
+                        <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
+                        <label for="file" class="filelabel">
+                            <img src="" id="image">
+                            <div id="camera-icon" class="m-auto text-center">
+                                <i class="fa fa-camera "></i>
+                            </div>
+                        </label>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-12"> <textarea name="summary" id="summary" cols="10" rows="10" class="form-control m-auto" placeholder="Book Summary"></textarea></div>
-                    </div>
-
-                    <hr>
-                    <h3 class="mb-4">
-                        Publisher details
-                    </h3>
-                    <div class="row">
-                        <div class="col-6">
-                            <h5 class="text-info">Name</h5>
-                            <input type="text" class="form-control" id="pub-name">
-                        </div>
-                        <div class="col-6">
-                            <h5 class="text-info">Address</h5>
-                            <input type="text" class="form-control" id="pub_address">
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="buttons mx-1 ml-auto">
-                            <button id="submit" class="btn btn-primary mr-2">Submit</button>
-                            <button id="cancel" class="btn btn-btn-outline-primary">Cancel</button>
-                        </div>
-                    </div>
-
                 </div>
-                <div id="" class="col-md-4 m-auto">
-                    <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
-                    <label for="file" class="filelabel">
-                        <img src="" id="image">
-                        <div id="camera-icon" class="m-auto text-center">
-                            <i class="fa fa-camera "></i>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
+            </form>
         </div>
     </div>
     <div class="container-fluid">
