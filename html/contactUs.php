@@ -3,15 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="icon" href="../assets/Icons/icon.png">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script defer src="../js/contactus.js"></script>
+    <script defer src="../js/contactUs.js"></script>
     <link rel="stylesheet" href="../css/contactus.css">
 </head>
 
 <body>
+    <div id="dlgbx">
+        <div id="dlgbxBody">
+            <div class="container">
+                <br><br>
+                <p id="t2">Are you sure you want to return this book?</p>
+                <div class="row justify-content-center">
+                    <div class="col-3"></div>
+                    <div class="col-8">
+                        <button id="confirm" class="btn btn-primary ml-auto">Confirm</button>
+                        <button id="cancel" class="btn btn-outline-primary ml-2">Cancel</button>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <div class="row">
             <img id="logo" src="../assets/Icons/booklogo.png" alt="">
@@ -39,11 +60,11 @@
                             <h5 id="heading1">Send us a Message</h5>
                             <form onsubmit="return validateForm()" method="post">
                                 <label id="textsize">Your Name</label>
-                                <input type="text" class="form-control" id="yourname" placeholder="Fahad Khalid">
+                                <input type="text" class="form-control" id="name" placeholder="Fahad Khalid">
                                 <label id="textsize">Your Email</label>
-                                <input type="email" class="form-control" id="youremail" placeholder="abc@gmail.com">
+                                <input type="email" class="form-control" id="email" placeholder="abc@gmail.com">
                                 <label id="textsize">Your Message</label>
-                                <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 500px;" onclick="this.value=''" placeholder="Enter a message"></textarea>
+                                <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 500px;"placeholder="Enter a message"></textarea>
                                 <br><br>
                                 <button id="click" type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
                                 <br>

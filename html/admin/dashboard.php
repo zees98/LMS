@@ -67,6 +67,7 @@ if (!isset($_SESSION["admin_name"])) {
     <link rel="stylesheet" href="../../css/admin/dashboard.css">
 </head>
 
+
 <body>
 
     <div class="container-fluid">
@@ -185,15 +186,25 @@ if (!isset($_SESSION["admin_name"])) {
 
                 <h1>Statistics</h1>
                 <div class="row my-5">
-                    <div class="col-md-4 graph">
-                        <canvas id="newUsers" height="150%">
 
-                        </canvas>
+                    <div class="col-md-5 graph ">
+                        <h3>Users</h3>
+                        <div class="row"><canvas id="newUsers" height="70%" class="mt-3">
+
+                            </canvas> </div>
                     </div>
-                    <div class="col-md-4 graph">
-                        <canvas id="categories" height="150%">
+                    <div class="col-md-5 graph ">
+                        <h3>Popular Categories</h3>
+                        <div id="column2" class="row my-auto">
 
-                        </canvas>
+                            <div id="categories" class="col-md-6 my-auto"></div>
+
+                            <div id="column2" class="col-md-6">
+                                <canvas id="pie" class="" height="150%">
+
+                                </canvas>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

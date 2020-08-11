@@ -35,6 +35,7 @@ $(document).ready(function() {
             else {
                 $("#login-btn").show();
                 $(".spinner").hide();
+                alert(data);
             }
         });
 
