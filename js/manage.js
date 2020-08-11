@@ -63,11 +63,11 @@ $(document).ready(function() {
     var url = '../../php/admin/users.php';
     var async = true;
     req.open(method, url, async);
-    req.send(); 
+    req.send();
 
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            
+
             // alert(this.responseText);
             var data = JSON.parse(this.responseText);
             console.log(data);
@@ -81,9 +81,9 @@ $(document).ready(function() {
                 var email = data[a].email;
                 var gender = data[a].gender;
                 var dob = data[a].dob;
-                
+
                 var row = generateHTMLRow(
-                    id,firstname,lastname,phone,email,gender,dob
+                    id, firstname, lastname, phone, email, gender, dob
                 );
                 console.log(row);
                 $("#manage-members").append(row);

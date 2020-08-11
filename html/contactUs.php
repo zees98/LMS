@@ -39,11 +39,11 @@
                             <h5 id="heading1">Send us a Message</h5>
                             <form onsubmit="return validateForm()" method="post">
                                 <label id="textsize">Your Name</label>
-                                <input type="text" class="form-control" id="yourname" placeholder="Fahad Khalid">
+                                <input type="text" class="form-control" id="name" placeholder="Fahad Khalid">
                                 <label id="textsize">Your Email</label>
-                                <input type="email" class="form-control" id="youremail" placeholder="abc@gmail.com">
+                                <input type="email" class="form-control" id="email" placeholder="abc@gmail.com">
                                 <label id="textsize">Your Message</label>
-                                <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 500px;" onclick="this.value=''" placeholder="Enter a message"></textarea>
+                                <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 500px;"placeholder="Enter a message"></textarea>
                                 <br><br>
                                 <button id="click" type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
                                 <br>
