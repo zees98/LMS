@@ -31,7 +31,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
     $exec_insert = mysqli_query($conn, $query);
 
     if ($exec_insert) {
-        echo "<br><br>data inserted";
+        echo "Account Created Successfully";
     } else {
         echo "<br><br>insertion error";
     }
