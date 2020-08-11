@@ -77,7 +77,7 @@ $(document).ready(function() {
        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
        request.onreadystatechange= function(e){
         if (this.readyState == 4 && this.status == 200) {
-            alert("Member " + user_id + " :" + "Deleted");
+            alert("Member " + user_id + " : " + "Deleted");
             location.reload();
             
         }

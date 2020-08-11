@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["phoneno"]) && isset($_POST["dob"]) && isset($_POST["gender"]) && isset($_POST["password"])) {
+// if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"]) && isset($_POST["phoneno"]) && isset($_POST["dob"]) && isset($_POST["gender"]) && isset($_POST["password"])) {
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
@@ -35,7 +35,7 @@ if (isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["ema
     } else {
         echo "<br><br>insertion error";
     }
-} else {
-    echo "<br>isset failed";
-}
+// } else {
+//     echo "<br>isset failed";
+// }
 ?>
