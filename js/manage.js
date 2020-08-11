@@ -1,16 +1,16 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-    $('.subMenu').click(function () {
+    $('.subMenu').click(function() {
         $("#booktablediv").slideDown();
         $("#usertablediv").slideDown();
 
 
     });
-    $('#managebook').click(function () {
+    $('#managebook').click(function() {
         $("#booktablediv").slideDown();
         $("#usertablediv").slideUp();
     });
-    $('#manageuser').click(function () {
+    $('#manageuser').click(function() {
         $("#booktablediv").slideUp();
         $("#usertablediv").slideDown();
     });
@@ -24,6 +24,7 @@ $(document).ready(function () {
         console.log("hello 2");
         Reader(file);
     });
+
     function Reader(input) {
         console.log("hello 3");
         if (input.files && input.files[0]) {
@@ -64,7 +65,7 @@ $(document).ready(function () {
     req.open(method, url, async);
     req.send(); 
 
-    req.onreadystatechange = function () {
+    req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             
             // alert(this.responseText);
