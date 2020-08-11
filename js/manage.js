@@ -18,8 +18,22 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
-    console.log(file.id);
 
+    var div = document.createElement("div");
+    var deletebutton = document.createElement("button");
+    var trashicon = document.createElement("i");
+    deletebutton.className="btn";
+    trashicon.id="trash";
+    trashicon.className="fa fa-trash";
+    trashicon.setAttribute("aria-hidden","true");
+    deletebutton.appendChild(trashicon);
+    div.appendChild(deletebutton);
+    console.log(deletebutton);
+
+    deletebutton.addEventListener("click",function(){
+        alert("hello");
+    });
+    
     file.addEventListener('change', () => {
         console.log("hello 2");
         Reader(file);
@@ -40,22 +54,23 @@ $(document).ready(function() {
 
 
     function generateHTMLRow(...args) {
-        var a = 1;
+        
         var row = "<tr>";
-        row += "<td>" + ++a + "</td>"
+        row.id="row";
         for (var i = 0; i < args.length; i++) {
             row += "<td>" + args[i] + "</td>"
         }
-        row += getTableButton();
+        row+= "<td>" + getTableButton() + "</td>";
         row += "</tr>";
-        // alert(row);
         return row;
     }
 
     function getTableButton() {
-        return '<td><button class="btn"><i class="fa fa-trash" aria-hidden="true" id="trash"></i></button>';
-
+        return  div.innerHTML;
     }
+
+    
+    
 
 
     var req = new XMLHttpRequest();
