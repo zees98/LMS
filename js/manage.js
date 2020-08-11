@@ -18,20 +18,40 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
+<<<<<<< HEAD
+
+    var div = document.createElement("div");
+    var deletebutton = document.createElement("button");
+    var trashicon = document.createElement("i");
+    deletebutton.className = "btn";
+    trashicon.id = "trash";
+    trashicon.className = "fa fa-trash";
+    trashicon.setAttribute("aria-hidden", "true");
+    deletebutton.appendChild(trashicon);
+    div.appendChild(deletebutton);
+    //  console.log(deletebutton);
+
+    deletebutton.addEventListener("click", function() {
+        alert("hello");
+    });
+
+=======
     
+>>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
     file.addEventListener('change', () => {
-        console.log("hello 2");
+
         Reader(file);
+
     });
 
     function Reader(input) {
-        console.log("hello 3");
+        //console.log("hello 3");
         if (input.files && input.files[0]) {
             var a = new FileReader();
             a.onload = (e) => {
                 img.setAttribute("src", e.target.result);
                 cameraicon.style.display = "none";
-                console.log("hello 4");
+                //console.log("hello 4");
             };
             a.readAsDataURL(input.files[0]);
         }
@@ -43,13 +63,32 @@ $(document).ready(function() {
     GetUsers();
 
     function generateHTMLRow(...args) {
+<<<<<<< HEAD
+
+        var row = "<tr>";
+        row.id = "row";
+=======
         var row = document.createElement("tr");
     
+>>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
         for (var i = 0; i < args.length; i++) {
             var td = document.createElement("td");
             td.innerText = args[i];
             row.appendChild(td);
         }
+<<<<<<< HEAD
+        row += "<td>" + getTableButton() + "</td>";
+        row += "</tr>";
+        return row;
+    }
+
+    function getTableButton() {
+        return div.innerHTML;
+    }
+
+
+
+=======
         row.appendChild(GetDeleteButton(args[0]));
         return row;
     }
@@ -87,6 +126,7 @@ $(document).ready(function() {
     }
     
     
+>>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
 
     function GetUsers(){
     var req = new XMLHttpRequest();
@@ -101,10 +141,10 @@ $(document).ready(function() {
 
             // alert(this.responseText);
             var data = JSON.parse(this.responseText);
-            console.log(data);
-            console.log(data.length);
+            //console.log(data);
+            //console.log(data.length);
             for (var a = 0; a < data.length; a++) {
-                console.log(a);
+                //console.log(a);
                 var id = data[a].id;
                 var firstname = data[a].firstname;
                 var lastname = data[a].lastname;
@@ -116,7 +156,7 @@ $(document).ready(function() {
                 var row = generateHTMLRow(
                     id, firstname, lastname, phone, email, gender, dob
                 );
-                console.log(row);
+                //console.log(row);
                 $("#manage-members").append(row);
             }
         }

@@ -1,10 +1,15 @@
+var inputfields = document.querySelectorAll("input");
+inputfields.forEach(function(input) {
+    input.disabled = true;
+});
+const file = document.querySelector('#file');
+const img = document.querySelector('#profile_img');
 
 var inputfields = document.querySelectorAll("input");
 inputfields.forEach(function (input) {
     input.disabled = true;
 });
-const file = document.querySelector('#file');
-const img = document.querySelector('#profile_img');
+
 
 $("#dashboard").click(function (e) {
     e.preventDefault();

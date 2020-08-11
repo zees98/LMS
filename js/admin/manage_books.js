@@ -21,10 +21,8 @@ function addBooks() {
 
 
 
-
-
-    $("#submit").click(function(e) {
-
+    $("#book-form").submit(function(e) {
+        e.preventDefault();
         var book_title = $("#book_title").val();
         var book_author = $("#book_author").val();
         var book_date = $("#book_date").val();
@@ -32,13 +30,9 @@ function addBooks() {
         var summary = $("#summary").val();
         var pub_name = $("#pub-name").val();
         var pub_address = $("#pub_address").val();
-
         // alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
 
         // if (!isNullOrEmpty(book_title, book_author, book_date, category, summary, pub_name, pub_address)) {
-
-        alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
-
         var addRequest = new XMLHttpRequest();
         addRequest.open("POST", "../../php/admin/add_book.php", true);
         addRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -111,6 +105,21 @@ function generateHTMLRow(...args) {
 
 
     row.appendChild(createDelButton(args[0]));
+    row.addEventListener("click", function(e) {
+        console.log(args[0]);
+        var previewBook = new XMLHttpRequest();
+        previewBook.open("POST", "../../php/admin/manage_books.php", true);
+        previewBook.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        previewBook.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                alert("Loading Book ID " + this.responseText);
+                window.location = "../../html/book_preview.php";
+            }
+        }
+        previewBook.send("bookID=" + args[0]);
+
+    });
     // alert(row);
     return row;
 }
@@ -145,10 +154,11 @@ function createDelButton(id) {
     });
     delButton.classList.add("btn");
     var trashIcon = document.createElement("i");
+    trashIcon.id = "trash";
     trashIcon.classList.add("fa", "fa-trash");
 
     delButton.appendChild(trashIcon);
-    return delButton; 
+    return delButton;
 }
 
 function getBooks() {
@@ -169,10 +179,10 @@ function getBooks() {
             var tbody = document.createElement("tbody");
             // alert(this.responseText);
             var data = JSON.parse(this.responseText);
-            console.log(data);
-            console.log(data.length);
+            // console.log(data);
+            // console.log(data.length);
             for (var a = 0; a < data.length; a++) {
-                console.log(a);
+                // console.log(a);
                 var book_id = data[a].book_id;
                 var title = data[a].title;
                 var pub_year = data[a].pub_year;
@@ -180,13 +190,14 @@ function getBooks() {
                 var cat_name = data[a].cat_name;
 
                 var row = generateHTMLRow(
-                    data[a].book_id,
-                    data[a].title,
-                    data[a].pub_year,
-                    data[a].author,
-                    data[a].cat_name
+                    book_id,
+                    title,
+                    pub_year,
+                    author,
+                    cat_name
                 );
-                console.log(row);
+                // console.log(row);
+
 
                 tbody.appendChild(row);
 

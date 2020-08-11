@@ -1,4 +1,15 @@
 <?php
+
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    $img= $_SESSION["member_img"] ;
+}
+
 $database =  "hariscorp_zfhlibrary";
 $conn = mysqli_connect(
     // Hostname
@@ -14,7 +25,7 @@ $conn = mysqli_connect(
 
 );
 
-$queryInsertUser = "select title, cat_name, name, due_date, return_date FROM `Issue` natural join Book natural join Category natural join Publisher WHERE mem_id = 5 and return_date != 'NULL'";
+$queryInsertUser = "select Book.book_id,title, cat_name, name, issue_date,due_date, return_date FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = $id and return_date is not Null";
 
 $result = mysqli_query($conn, $queryInsertUser);
 

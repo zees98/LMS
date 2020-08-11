@@ -17,6 +17,7 @@
 
 <body>
     <div id="dlgbx">
+        <p id="memberId"></p>
         <div id="dlgbxBody">
             <div class="container">
                 <br><br>
@@ -32,6 +33,7 @@
             </div>
         </div>
     </div>
+    
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <div class="row">
             <img id="logo" src="../assets/Icons/booklogo.png" alt="">
@@ -43,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                     <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
+                     <a href="../html/contactUs.php" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -146,6 +148,7 @@
                                         <th scope="col">Book Name</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Publisher</th>
+                                        <th scope="col">Issued Date</th>
                                         <th scope="col">Due Date</th>
                                         <th scope="col">Actions</th>
 
