@@ -10,10 +10,23 @@ $(document).ready(function() {
             td.innerText = args[i];
             row.appendChild(td);
         }
-        row.appendChild(GetDeleteButton(args[0]));
+        row.appendChild(Button(args[0]));
         return row;
     }
 
+    function ViewBook(user_id) {
+        var request = new XMLHttpRequest();
+        request.open("POST", "../php/view.php", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.onreadystatechange = function(e) {
+            if (this.readyState == 4 && this.status == 200) {
+                // alert("View Book " + user_id);
+                // location.reload();
+
+            }
+        }
+        request.send("id=" + user_id);
+    }
 
     function ReturnBook(user_id) {
         var request = new XMLHttpRequest();
@@ -29,7 +42,7 @@ $(document).ready(function() {
         request.send("id=" + user_id);
     }
 
-    function GetDeleteButton(id) {
+    function Button(id) {
         var re = document.createElement("p");
         re.id = "return";
         re.appendChild(document.createTextNode("Return"));
@@ -43,17 +56,18 @@ $(document).ready(function() {
         var view = document.createElement("p");
         view.id = "view";
         view.appendChild(document.createTextNode("View"));
+        var l = document.createElement("a");
+        l.setAttribute("href", "../html/viewBooks.php");
+        l.appendChild(view);
         var viewbutton = document.createElement("button");
         viewbutton.id = "hide";
         viewbutton.style.top = '15px';
-        viewbutton.appendChild(view);
+        viewbutton.appendChild(l);
         var r = document.createElement("div");
         r.classList.add("row");
         r.appendChild(viewbutton);
         r.appendChild(returnbutton);
-
-        // var deleteButton = document.createElement("button");
-        // var trashIcon = document.createElement("i");
+        console.log(r);
         viewbutton.addEventListener("click", function(e) {
             ViewBook(id);
         });

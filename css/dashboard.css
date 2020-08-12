@@ -172,6 +172,16 @@ button {
     color: white;
 }
 
+#b {
+    color: white;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     background-color: transparent
