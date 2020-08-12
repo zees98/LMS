@@ -30,7 +30,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
             $rows = mysqli_num_rows($exec_login_query);
             if ($rows == 1) {
-                echo "success";
+              
 
                 $data = mysqli_fetch_array($exec_login_query);
 
@@ -39,6 +39,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 $lname = $data["lastname"];
                 $img = $data["image_path"] ?? "";
 
+                $query = "INSERT INTO activity(`user_id`, `activity`) Values ('$id','Logged In')";
+
+                $exec = mysqli_query($conn, $query);
+                echo "success";
 
                 session_start();
                 $_SESSION["member_id"] = $id;

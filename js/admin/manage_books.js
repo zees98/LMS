@@ -30,6 +30,10 @@ function addBooks() {
         var summary = $("#summary").val();
         var pub_name = $("#pub-name").val();
         var pub_address = $("#pub_address").val();
+
+        var formData = new FormData();
+        var files = document.getElementById("file").files[0];
+        formData.append("myfiles", files);
         // alert(book_title + " " + book_author + " " + book_date + " " + category + " " + summary + " " + pub_name + " " + pub_address);
 
         // if (!isNullOrEmpty(book_title, book_author, book_date, category, summary, pub_name, pub_address)) {
@@ -44,7 +48,7 @@ function addBooks() {
                 $("#dlgbx").slideUp();
 
                 getBooks();
-
+                console.log(this.responseText);
 
 
             }
@@ -57,7 +61,8 @@ function addBooks() {
             "category=" + category + "&" +
             "summary=" + summary + "&" +
             "pub_name=" + pub_name + "&" +
-            "pub_address=" + pub_address
+            "pub_address=" + pub_address +
+            formData
         );
 
 
@@ -114,7 +119,7 @@ function generateHTMLRow(...args) {
         previewBook.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 alert("Loading Book ID " + this.responseText);
-                window.location = "../../html/book_preview.php";
+                window.location = "../../html/admin/book_preview.php";
             }
         }
         previewBook.send("bookID=" + args[0]);

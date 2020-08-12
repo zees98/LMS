@@ -16,6 +16,10 @@ $(document).ready(function() {
 
     });
 
+    $("#mem-login").click(function(e) {
+        window.location = "../../html/logIn.html";
+    });
+
     $("#login-btn").click(function(e) {
         e.preventDefault();
         $("#login-btn").hide();
