@@ -18,7 +18,6 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
-
     file.addEventListener('change', () => {
         console.log("hello 2");
         Reader(file);
@@ -44,7 +43,6 @@ $(document).ready(function() {
 
     function generateHTMLRow(...args) {
         var row = document.createElement("tr");
-
         for (var i = 0; i < args.length; i++) {
             var td = document.createElement("td");
             td.innerText = args[i];
@@ -85,42 +83,43 @@ $(document).ready(function() {
 
         request.send("id=" + user_id);
     }
+    
+    
 
+    function GetUsers(){
+    var req = new XMLHttpRequest();
+    var method = "GET";
+    var url = '../../php/admin/users.php';
+    var async = true;
+    req.open(method, url, async);
+    req.send();
 
+    req.onreadystatechange = function() {
+        
+        if (this.readyState == 4 && this.status == 200) {
 
-    function GetUsers() {
-        var req = new XMLHttpRequest();
-        var method = "GET";
-        var url = '../../php/admin/users.php';
-        var async = true;
-        req.open(method, url, async);
-        req.send();
+            // alert(this.responseText);
+            var data = JSON.parse(this.responseText);
+            //console.log(data);
+            //console.log(data.length);
+            for (var a = 0; a < data.length; a++) {
+                //console.log(a);
+                var id = data[a].id;
+                var firstname = data[a].firstname;
+                var lastname = data[a].lastname;
+                var phone = data[a].phone;
+                var email = data[a].email;
+                var gender = data[a].gender;
+                var dob = data[a].dob;
 
-        req.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-
-                // alert(this.responseText);
-                var data = JSON.parse(this.responseText);
-                console.log(data);
-                console.log(data.length);
-                for (var a = 0; a < data.length; a++) {
-                    console.log(a);
-                    var id = data[a].id;
-                    var firstname = data[a].firstname;
-                    var lastname = data[a].lastname;
-                    var phone = data[a].phone;
-                    var email = data[a].email;
-                    var gender = data[a].gender;
-                    var dob = data[a].dob;
-
-                    var row = generateHTMLRow(
-                        id, firstname, lastname, phone, email, gender, dob
-                    );
-                    console.log(row);
-                    $("#manage-members").append(row);
-                }
+                var row = generateHTMLRow(
+                    id, firstname, lastname, phone, email, gender, dob
+                );
+                //console.log(row);
+                $("#manage-members").append(row);
             }
         }
     }
+}
 
 });

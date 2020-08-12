@@ -29,7 +29,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $exec_login_query = mysqli_query($conn, $admin_login_query);
 
             $rows = mysqli_num_rows($exec_login_query);
-
+            echo "$rows";
             if ($rows == 1) {
                 echo "success";
 
@@ -38,14 +38,14 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 $id = $data["id"];
                 $fname = $data["firstname"];
                 $lname = $data["lastname"];
-                $img = $data["image_path"] ?? "";
+                // $img = $data["image_path"] ?? "";
 
 
                 session_start();
                 $_SESSION["member_id"] = $id;
                 $_SESSION["first_name"] = $fname;
                 $_SESSION["last_name"] = $lname;
-                $_SESSION["member_img"] = $img;
+                // $_SESSION["member_img"] = $img;
             } else
                 echo "failed";
         }
