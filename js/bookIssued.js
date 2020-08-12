@@ -111,7 +111,7 @@ $(document).ready(function() {
                     data[a].due_date,
                 );
                 console.log(row);
-                $(".spinner").fadeOut();
+                $(".loader").hide();
                 $("#tablebody").append(row);
 
             }

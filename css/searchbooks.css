@@ -228,3 +228,13 @@ a:hover {
 #confirm {
     width: 90px;
 }
+
+#b {
+    color: white;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}

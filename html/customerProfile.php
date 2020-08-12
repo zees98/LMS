@@ -110,14 +110,16 @@ if (!isset($_SESSION["member_id"])) {
                 <br><br><br><br><br><br><br><br><br><br><br>
                 <br>
                 <hr class="solid">
-                <div class="row">
-                    <div class="col-2">
-                        <i class="fa fa-sign-out"></i>
-                    </div>
-                    <div class="col-10" id="logoutdiv">
-                        <a href="">LogOut</a>
-                    </div>
-                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <div class="row">
+                            <div class="col-2">
+                             <i class="fa fa-sign-out"></i>
+                            </div>
+                            <div class="col-10" id="logoutdiv">
+                                 <button name="signout" id="b">LogOut</button>
+                            </div>
+                        </div>
+                    </form>
                 <hr class="solid">
             </div>
             <div class="col-lg-10" id="form">
@@ -239,3 +241,10 @@ if (!isset($_SESSION["member_id"])) {
 </body>
 
 </html>
+<?php
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: Login.html");
+}
+?>

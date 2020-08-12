@@ -77,7 +77,7 @@ $(document).ready(function() {
 
                 );
                 console.log(row);
-                $(".spinner").fadeOut();
+                $(".loader").hide();
                 $("#tablebody").append(row);
 
             }

@@ -106,14 +106,16 @@ if (!isset($_SESSION["member_id"])) {
                 <br><br><br><br><br><br><br><br><br><br><br>
                 <br>
                 <hr class="solid">
-                <div class="row">
-                    <div class="col-2">
-                        <i class="fa fa-sign-out"></i>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fa fa-sign-out"></i>
+                        </div>
+                        <div class="col-10" id="logoutdiv">
+                            <button name="signout" id="b">LogOut</button>
+                        </div>
                     </div>
-                    <div class="col-10" id="logoutdiv">
-                        <a href="">LogOut</a>
-                    </div>
-                </div>
+                </form>
                 <hr class="solid">
             </div>
             <div class="col-lg-10" id="side">
@@ -131,26 +133,13 @@ if (!isset($_SESSION["member_id"])) {
                                             <th scope="col">Time</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                    <tbody id="activity-log-body">
                                     </tbody>
                                 </table>
+                                <br><br>
+                            <div class="row justify-content-center">
+                                <div class="loader"></div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -164,9 +153,11 @@ if (!isset($_SESSION["member_id"])) {
     </div>
 
 </body>
-
-
-
-
-
 </html>
+<?php
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: Login.html");
+}
+?>

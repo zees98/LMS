@@ -91,7 +91,7 @@ function GetActivities() {
                 var row = generateHTMLRow(
                     activity, date
                 );
-                //console.log(row);
+                $(".loader").hide();
                 $("#activity-log-body").append(row);
             }
         }

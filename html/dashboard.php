@@ -6,7 +6,7 @@ if (!isset($_SESSION["member_id"])) {
     $id = $_SESSION["member_id"];
     $fname = $_SESSION["first_name"];
     $lname  = $_SESSION["last_name"]; 
-     $img= $_SESSION["member_img"] ;
+    $img= $_SESSION["member_img"] ;
 }
 ?>
 
@@ -104,15 +104,15 @@ if (!isset($_SESSION["member_id"])) {
                 <br>
                 <hr class="solid">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fa fa-sign-out"></i>
+                        <div class="row">
+                            <div class="col-2">
+                             <i class="fa fa-sign-out"></i>
+                            </div>
+                            <div class="col-10" id="logoutdiv">
+                                 <button name="signout" id="b">LogOut</button>
+                            </div>
                         </div>
-                        <div class="col-10" id="logoutdiv">
-                            <button name="signout" id="b">LogOut</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
                 <hr class="solid">
                 </div>
             
@@ -120,12 +120,11 @@ if (!isset($_SESSION["member_id"])) {
                 <div class="row">
                     <div class="col-10">
                         <div class="row justify-content-center">
-
                             <div class="col-3">
                                 <br><br>
                                 <div class="container" id="totalbooks1">
                                     <p>Total Books Issued</p>
-                                    <h1 id="totalIssued">1</h1>
+                                    <h1 id="totalIssued"></h1>
                                 </div>
                                 <br>
                             </div>
@@ -209,9 +208,8 @@ if (!isset($_SESSION["member_id"])) {
 <?php
 
 if (isset($_POST["signout"])) {
+    header("Location: logIn.html");
     session_destroy();
     session_unset();
-    header("Location: adminLogin.html");
 }
-
 ?>
