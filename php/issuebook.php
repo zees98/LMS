@@ -17,10 +17,11 @@ $conn = mysqli_connect(
     3306
 
 );
-$select_query="select title, author from `Book` where book_id={$book_id}";
+
+$select_query="select title, author from `Book` where book_id={$book_id} ";
 
 $result = mysqli_query($conn, $select_query);
-
+ 
 $data = array();
 
 while($row = mysqli_fetch_assoc($result)){

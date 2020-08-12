@@ -97,6 +97,10 @@ function GetDate(){
         req.send("duedate="+ GetDate());
     }
 
+    
+ 
+    
 });
+
 
 
