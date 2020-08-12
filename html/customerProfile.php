@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    $img= $_SESSION["member_img"] ;
+}
+?>
+
 <html>
 
 <head>
@@ -15,11 +27,18 @@
     <script defer src="../js/CustomerProfile.js"></script>
 </head>
 
-<body class="h-100">
+<body class="h-100" id="">
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <div class="row">
             <img id="logo" src="../assets/Icons/booklogo.png" alt="">
             <p id="title">ZFH</p>
+            <p id="memID">
+            <?php
+                echo $id;
+            ?>
+                
+
+            </p>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,7 +71,7 @@
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="col-10" id="profilediv">
-                        <a href="customerProfile.html" id="customerprofile">
+                        <a href="customerProfile.php" id="customerprofile">
                             <p id="t1">Profile</p>
                         </a>
                     </div>
@@ -121,7 +140,7 @@
                                 <br><br><br><br>
                                 <form>
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-3">
                                             <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
                                             <label for="fn">First Name</label>
                                             <input type="text"  id="fn">
@@ -136,7 +155,7 @@
                                     </div>
                                     <br>
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-3">
                                             <label for="email">Email</label>
                                             <input type="text"  id="email">
                                             <i class="fa fa-envelope" id="emailicon"></i>
@@ -150,7 +169,7 @@
                                     </div>
                                     <br><br>
                                     <div class="row">
-                                    <div class="col-5">
+                                    <div class="col-3">
                                             <label for="dob">DOB</label>
                                             <input type="date"  id="dob"  >
                                             <i class="fa fa-birthday-cake" id="dobicon"></i>
@@ -173,7 +192,7 @@
                                     <br><br>
                                     <div class="row">
                                         
-                                    <div class="col-5">
+                                    <div class="col-3">
                                             <label for="pass">Password</label>
                                             <input type="password" id="pass" >
                                             <i class="fa fa-lock" id="passicon"></i>
