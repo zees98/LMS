@@ -15,7 +15,7 @@ $conn = mysqli_connect(
 
 if ($conn) {
 
-    $query = "SELECT book_id, title, pub_year, author, cat_name, summary FROM (`Book` NATURAL join `Publisher`) Natural join Category where book_id = '{$bookID}'";
+    $query = "SELECT book_id, title, pub_year, author, cat_name, summary, round(avg(rating),2) FROM ((`Book` NATURAL join `Publisher`) Natural join Category) Natural join Review where book_id = '{$bookID}'";
     $res = mysqli_query($conn, $query);
 
     $row = mysqli_fetch_row($res);
@@ -41,37 +41,9 @@ if ($conn) {
 
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/book_preview.js"></script>
+    <script src="../js/BookInfo.js"></script>
     <script src="https://use.fontawesome.com/3ac16a555a.js"></script>
 
-    <style>
-        #dlgbx {
-            display: none;
-            position: fixed;
-            z-index: 5;
-            top: 0%;
-            left: 0%;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        #dlgbxBody {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 30%;
-            height: 30%;
-            margin-top: -15%;
-            margin-left: -15%;
-            background-color: white;
-            padding: 20px;
-            border-radius: 40px;
-        }
-        
-        #dlgbx table {
-            margin-top: 5%;
-        }
-    </style>
 </head>
 
 <body>
@@ -99,16 +71,30 @@ if ($conn) {
             <div class="row">
                 <div class="col-md-5 col-lg-3"><img src="../assets/books/1.jpg" alt="" width="100%"></div>
                 <div class="col-md-7 col-lg-8">
-                    <h2>
-                    <?php
+                <h2>
+                        <?php
+
                         echo $row[1];
-                    ?>
+
+                        ?>
                     </h2>
-                    <h5 class="text-info"> <?php
-                        echo $row[3];
-                    ?></h5>
-                    <h5 class="text-info">2008</h5>
-                    <h5>⭐⭐⭐⭐⭐</h5>
+                    <h5 class="text-info"><?php
+                                            echo $row[3];
+                                            ?></h5>
+                    <h5 class="text-info"><?php
+                                            echo $row[2];
+                                            ?></h5>
+                    <h1><?php
+                        if($row[6] == NULL)
+                            echo "No Rating";
+                        else
+                            echo $row[6] . "/5";
+
+                        ?>
+                        </h1>
+                    <h5><?php
+                        echo str_repeat("⭐", $row[6]);
+                        ?></h5>
                     <br>
                     <div class="container-fluid">
                         <div id="desc-control" class="row">
@@ -127,35 +113,18 @@ if ($conn) {
         </div>
 
     </div>
-    <div class="jumbotron" id="reviews">
+    <section class="jumbotron" id="reviews">
         <h1>
             Reviews
         </h1>
         <br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1"><img src="../assets/Icons/book.png" alt="" width="100%"></div>
-                <div class="col-11 m-auto">
-                    <h5 class="text-info">Zeeshan Ali ⭐⭐⭐⭐</h5>
-                    <h6>Fantastic Book - 6:02 am July 31, 2020</h6>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-1"><img src="../assets/Icons/book.png" alt="" width="100%"></div>
-                <div class="col-11 m-auto">
-                    <h5 class="text-info">Haseeb Arif ⭐</h5>
-                    <h6>Fazool Book Hai - 4:20 am July 31, 2020</h6>
-                </div>
-            </div>
-        </div>
-        <br><br>
+            <div class="container-fluid" id="">
+        </section>
         <h4>Write Your own review</h4>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-9 col-sm-8 my-auto" id="">
-                    <input class="btn" type="text" name="review" id="">
-
+                <div class="col-md-6 col-sm-8 my-auto" id="">
+                <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 800px;"placeholder="Give a review.."></textarea>
                 </div>
                 <div class="col-md-1 my-auto" id="ratingDiv">
                     <select name="rating" id="rating">
@@ -166,7 +135,7 @@ if ($conn) {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <div class="col-md-1 col-sm-4 my-auto"><button class="btn btn-primary" id="search"> <i class="fa fa-send" aria-hidden="true"></i></button></div>
+                <div class="col-md-1 col-sm-4 my-auto"><button type="button"  class="btn btn-primary" id="search">Submit</button></div>
             </div>
         </div>
     </div>

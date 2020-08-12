@@ -24,8 +24,6 @@ $(document).ready(function() {
 
         var username = $("#email").val();
         var password = $("#password").val();
-        alert(username);
-        alert(password);
         $.post("../php/customerLogin.php", {
             username: username,
             password: password,

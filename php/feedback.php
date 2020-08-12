@@ -41,3 +41,4 @@ if (
         echo "failed";
 } else
     echo "ISSET FAILED";
+?>
