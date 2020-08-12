@@ -18,26 +18,7 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
-<<<<<<< HEAD
-
-    var div = document.createElement("div");
-    var deletebutton = document.createElement("button");
-    var trashicon = document.createElement("i");
-    deletebutton.className = "btn";
-    trashicon.id = "trash";
-    trashicon.className = "fa fa-trash";
-    trashicon.setAttribute("aria-hidden", "true");
-    deletebutton.appendChild(trashicon);
-    div.appendChild(deletebutton);
-    //  console.log(deletebutton);
-
-    deletebutton.addEventListener("click", function() {
-        alert("hello");
-    });
-
-=======
     
->>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
     file.addEventListener('change', () => {
 
         Reader(file);
@@ -63,32 +44,13 @@ $(document).ready(function() {
     GetUsers();
 
     function generateHTMLRow(...args) {
-<<<<<<< HEAD
-
-        var row = "<tr>";
-        row.id = "row";
-=======
         var row = document.createElement("tr");
     
->>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
         for (var i = 0; i < args.length; i++) {
             var td = document.createElement("td");
             td.innerText = args[i];
             row.appendChild(td);
         }
-<<<<<<< HEAD
-        row += "<td>" + getTableButton() + "</td>";
-        row += "</tr>";
-        return row;
-    }
-
-    function getTableButton() {
-        return div.innerHTML;
-    }
-
-
-
-=======
         row.appendChild(GetDeleteButton(args[0]));
         return row;
     }
@@ -126,7 +88,6 @@ $(document).ready(function() {
     }
     
     
->>>>>>> 1ca5959947c060b211a3e450b3ca0fe508087f2b
 
     function GetUsers(){
     var req = new XMLHttpRequest();
