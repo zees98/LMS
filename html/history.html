@@ -55,7 +55,7 @@
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="col-10" id="profilediv">
-                        <a href="customerProfile.html" id="customerprofile">Profile</a>
+                        <a href="customerProfile.php" id="customerprofile">Profile</a>
                     </div>
                 </div>
                 <hr class="solid">

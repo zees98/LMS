@@ -6,50 +6,50 @@ const file = document.querySelector('#file');
 const img = document.querySelector('#profile_img');
 
 var inputfields = document.querySelectorAll("input");
-inputfields.forEach(function (input) {
+inputfields.forEach(function(input) {
     input.disabled = true;
 });
 
-
-$("#dashboard").click(function (e) {
+var memberid = document.querySelector("#memID").innerHTML;
+$("#dashboard").click(function(e) {
     e.preventDefault();
     $("#form").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function () {
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
 });
 
-$("#issuedbooks").click(function (e) {
+$("#issuedbooks").click(function(e) {
     e.preventDefault();
     $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function () {
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
 });
 
-$("#history").click(function (e) {
+$("#history").click(function(e) {
     e.preventDefault();
     $("#form").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function () {
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
 });
 
-$("#customerprofile").click(function (e) {
+$("#customerprofile").click(function(e) {
     e.preventDefault();
     $("#form").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function () {
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
@@ -89,7 +89,7 @@ var gender = document.querySelector("#gender");
 
 
 
-editbutton.addEventListener('click', function (e) {
+editbutton.addEventListener('click', function(e) {
     e.preventDefault();
     editbutton.style.display = "none";
     submitbutton.style.display = "block";
@@ -97,7 +97,7 @@ editbutton.addEventListener('click', function (e) {
     confirm_password.style.display = "block";
     confirm_label.style.display = "block";
     confirm_icon.style.display = "block";
-    inputfields.forEach(function (input) {
+    inputfields.forEach(function(input) {
         input.disabled = false;
     });
 });
@@ -109,113 +109,111 @@ submitbutton.addEventListener('click', (e) => {
     confirm_password.style.display = "none";
     confirm_label.style.display = "none";
     confirm_icon.style.display = "none";
-    inputfields.forEach(function (input) {
+    inputfields.forEach(function(input) {
         input.disabled = true;
     });
-    update(9);
+    update(memberid);
 
-       
+
 });
 
-ReceiveData(7);
+ReceiveData(memberid);
 
 
-    function ReceiveData(id) {
-        var receivedata = new XMLHttpRequest();
-        receivedata.open("POST", "../php/customerProfile.php", true);
-        receivedata.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        
-        receivedata.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var data = JSON.parse(this.responseText);
-                console.log(data);
-                console.log(data.length);
-                for (var i = 0; i < data.length; i++) {
-                    console.log(i);
-                    firstname.value = data[i].firstname;
-                    lastname.value = data[i].lastname;
-                    email.value = data[i].email;
-                    phoneno.value = data[i].phone;
-                    password.value = data[i].password;
-                    confirm_password.value = password.value;
-                    dob.value = data[i].dob;
-                    gender.value = data[i].gender;
-                    if(data[i].image_path==null){
+function ReceiveData(id) {
+    var receivedata = new XMLHttpRequest();
+    receivedata.open("POST", "../php/customerProfile.php", true);
+    receivedata.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    receivedata.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(data.length);
+            for (var i = 0; i < data.length; i++) {
+                console.log(i);
+                firstname.value = data[i].firstname;
+                lastname.value = data[i].lastname;
+                email.value = data[i].email;
+                phoneno.value = data[i].phone;
+                password.value = data[i].password;
+                confirm_password.value = password.value;
+                dob.value = data[i].dob;
+                gender.value = data[i].gender;
+                if (data[i].image_path == null) {
                     img.src = "../assets/icons/man.png";
-                    }
-                    else{
-                        img.src = data[i].image_path; 
-                    }
+                } else {
+                    img.src = data[i].image_path;
                 }
             }
-            
-        }
-        receivedata.send("id="+id);
-         }
-
-
-    function update(id){
-        
-        var counter=0;
-        if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === ""||(gender.value!=="Male" && gender.value!=="Female") ) {
-            alert("Please Fill All The Fields!");
-        }
-        else{
-            if (!firstname.value.match(/^[A-Za-z]+$/)) {
-                console.log("hello");
-                firstname.style.cssText = "border-color:red";
-            } else {
-                counter++;
-                firstname.style.cssText = "border-color:#0784eb";
-            }
-            if (!lastname.value.match(/^[A-Za-z]+$/)) {
-                console.log("hello");
-                lastname.style.cssText = "border-color:red";
-            } else {
-                counter++;
-                lastname.style.cssText = "border-color:#0784eb";
-            }
-            if (!email.value.match(/(^[A-Za-z0-9+_.-]+@(.+)$)/)) {
-
-                console.log("hello");
-                email.style.cssText = "border-color:red";
-            } else {
-                counter++;
-                email.style.cssText = "border-color:#0784eb";
-            }
-            if (ValidatePhoneNumber(phoneno.value)) {
-
-                phoneno.style.cssText = "border-color:red";
-            } else {
-                counter++;
-                phoneno.style.cssText = "border-color:#0784eb";
-            }
-            if (password.value.length < 8) {
-                password.style.cssText = "border-color:red";
-            } else {
-                counter++;
-                password.style.cssText = "border-color:#0784eb";
-            }
-            if (confirm_password.value !== password.value) {
-
-                confirm_password.style.cssText = "border-color:red";
-            } else {
-                counter++;
-                confirm_password.style.cssText = "border-color:#0784eb";
-            }
         }
 
-        console.log(gender.value);
-        console.log(firstname.value);
-        console.log(lastname.value);
-        console.log(email.value);
-        console.log(phoneno.value);
-        console.log(dob.value);
-        console.log(password.value);
-        console.log(confirm_password.value);
-        console.log(file.value);
+    }
+    receivedata.send("id=" + id);
+}
 
-        if(counter===6){
+
+function update(id) {
+
+    var counter = 0;
+    if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (gender.value !== "Male" && gender.value !== "Female")) {
+        alert("Please Fill All The Fields!");
+    } else {
+        if (!firstname.value.match(/^[A-Za-z]+$/)) {
+            console.log("hello");
+            firstname.style.cssText = "border-color:red";
+        } else {
+            counter++;
+            firstname.style.cssText = "border-color:#0784eb";
+        }
+        if (!lastname.value.match(/^[A-Za-z]+$/)) {
+            console.log("hello");
+            lastname.style.cssText = "border-color:red";
+        } else {
+            counter++;
+            lastname.style.cssText = "border-color:#0784eb";
+        }
+        if (!email.value.match(/(^[A-Za-z0-9+_.-]+@(.+)$)/)) {
+
+            console.log("hello");
+            email.style.cssText = "border-color:red";
+        } else {
+            counter++;
+            email.style.cssText = "border-color:#0784eb";
+        }
+        if (ValidatePhoneNumber(phoneno.value)) {
+
+            phoneno.style.cssText = "border-color:red";
+        } else {
+            counter++;
+            phoneno.style.cssText = "border-color:#0784eb";
+        }
+        if (password.value.length < 8) {
+            password.style.cssText = "border-color:red";
+        } else {
+            counter++;
+            password.style.cssText = "border-color:#0784eb";
+        }
+        if (confirm_password.value !== password.value) {
+
+            confirm_password.style.cssText = "border-color:red";
+        } else {
+            counter++;
+            confirm_password.style.cssText = "border-color:#0784eb";
+        }
+    }
+
+    console.log(gender.value);
+    console.log(firstname.value);
+    console.log(lastname.value);
+    console.log(email.value);
+    console.log(phoneno.value);
+    console.log(dob.value);
+    console.log(password.value);
+    console.log(confirm_password.value);
+    console.log(file.value);
+
+    if (counter === 6) {
         var sendData = new XMLHttpRequest();
         sendData.open("POST", "../php/updateCustomer.php", true);
         sendData.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -239,10 +237,9 @@ ReceiveData(7);
             "password=" + password.value.toLowerCase()
             // "img_url=" + img.src
         );
+    } else {
+        alert("Enter Valid Data");
     }
-else{
-    alert("Enter Valid Data");
-}
 
     function ValidatePhoneNumber(val) {
         if (!(val.length === 14 || val.length === 13)) {

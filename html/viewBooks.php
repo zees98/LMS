@@ -1,3 +1,29 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+$bookID = $_SESSION["bookID"];
+
+$conn = mysqli_connect(
+    "68.183.162.131",
+    "hariscorp_hariscorp",
+    "kdw{koz4]c[%",
+    "hariscorp_zfhlibrary",
+    3306
+);
+
+
+if ($conn) {
+
+    $query = "SELECT book_id, title, pub_year, author, cat_name, summary FROM (`Book` NATURAL join `Publisher`) Natural join Category where book_id = '{$bookID}'";
+    $res = mysqli_query($conn, $query);
+
+    $row = mysqli_fetch_row($res);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

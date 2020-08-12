@@ -26,7 +26,6 @@ $(document).ready(function() {
 
             }
         }
-
         request.send("id=" + user_id);
     }
 
@@ -56,7 +55,7 @@ $(document).ready(function() {
         // var deleteButton = document.createElement("button");
         // var trashIcon = document.createElement("i");
         viewbutton.addEventListener("click", function(e) {
-            // DeleteUser(id);
+            ViewBook(id);
         });
         returnbutton.addEventListener("click", function(e) {
             ReturnBook(id);
