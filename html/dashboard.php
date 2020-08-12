@@ -109,7 +109,7 @@ if (!isset($_SESSION["member_id"])) {
                             <i class="fa fa-sign-out"></i>
                         </div>
                         <div class="col-10" id="logoutdiv">
-                            <button name="signout">LogOut</button>
+                            <button name="signout" id="b">LogOut</button>
                         </div>
                     </div>
                 </form>

@@ -1,58 +1,55 @@
-
-
-
- $("#dashboard").click(function(e){
+$("#dashboard").click(function(e) {
     e.preventDefault();
     $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function(){
-            window.location = target;
-        }, 350);
-    } 
-});
-
-$("#issuedbooks").click(function(e){
-    e.preventDefault();
-    $("#side").fadeOut();
-    if (this.href) {
-        var target = this.href;
-        setTimeout(function(){
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
 });
 
-$("#customerprofile").click(function(e){
+$("#issuedbooks").click(function(e) {
     e.preventDefault();
     $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function(){
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
 });
 
-
-$("#history").click(function(e){
+$("#customerprofile").click(function(e) {
     e.preventDefault();
     $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function(){
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
 });
 
 
-$("#pastdue").click(function(e){
+$("#history").click(function(e) {
     e.preventDefault();
     $("#side").fadeOut();
     if (this.href) {
         var target = this.href;
-        setTimeout(function(){
+        setTimeout(function() {
+            window.location = target;
+        }, 350);
+    }
+});
+
+
+$("#pastdue").click(function(e) {
+    e.preventDefault();
+    $("#side").fadeOut();
+    if (this.href) {
+        var target = this.href;
+        setTimeout(function() {
             window.location = target;
         }, 350);
     }
@@ -72,7 +69,7 @@ function generateHTMLRow(...args) {
 
 GetActivities();
 
-function GetActivities(){
+function GetActivities() {
     var req = new XMLHttpRequest();
     var method = "GET";
     var url = '../php/history.php';
@@ -82,8 +79,6 @@ function GetActivities(){
 
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
-            alert(this.responseText);
             var data = JSON.parse(this.responseText);
             console.log(data);
             console.log(data.length);
@@ -91,10 +86,10 @@ function GetActivities(){
                 console.log(a);
                 var activity = data[a].activity;
                 var date = data[a].date;
-                
+
 
                 var row = generateHTMLRow(
-                   activity,date
+                    activity, date
                 );
                 //console.log(row);
                 $("#activity-log-body").append(row);
@@ -102,4 +97,3 @@ function GetActivities(){
         }
     }
 }
-

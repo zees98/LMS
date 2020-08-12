@@ -1,15 +1,15 @@
 <?php
 
 
-//  session_start();
-// if (!isset($_SESSION["member_id"])) {
-//     header("Location: login.html");
-// } else {
-//     $id = $_SESSION["member_id"];
-//     $fname = $_SESSION["first_name"];
-//     $lname  = $_SESSION["last_name"]; 
-//     $img= $_SESSION["member_img"] ;
-// } 
+ session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    $img= $_SESSION["member_img"] ;
+} 
 
 
 $id=7;
