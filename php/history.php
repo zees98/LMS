@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+ session_start();
 if (!isset($_SESSION["member_id"])) {
     header("Location: login.html");
 } else {
@@ -8,7 +7,7 @@ if (!isset($_SESSION["member_id"])) {
     $fname = $_SESSION["first_name"];
     $lname  = $_SESSION["last_name"]; 
     $img= $_SESSION["member_img"] ;
-}
+} 
 
 $database =  "hariscorp_zfhlibrary";
 $conn = mysqli_connect(
@@ -24,10 +23,9 @@ $conn = mysqli_connect(
     3306
 
 );
+$select_query="select activity, date from `activity` where id={$id}";
 
-$queryInsertUser = "select Book.book_id,title, cat_name, name, issue_date,due_date, return_date FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = $id and return_date is not Null";
-
-$result = mysqli_query($conn, $queryInsertUser);
+$result = mysqli_query($conn, $select_query);
 
 $data = array();
 

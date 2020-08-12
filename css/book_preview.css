@@ -102,3 +102,9 @@ input[type="text"] {
 #dlgbx table {
     margin-top: 5%;
 }
+
+#title {
+    font-size: 25px;
+    font-family: 'Lemonada', cursive;
+    color: white;
+}

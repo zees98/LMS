@@ -1,4 +1,15 @@
 <?php
+
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    $img= $_SESSION["member_img"] ;
+}
+
 $database =  "hariscorp_zfhlibrary";
 $conn = mysqli_connect(
     // Hostname
@@ -17,7 +28,7 @@ $conn = mysqli_connect(
 
 
 
-$totalIssuedBooks = "select totalIssued, totalPastDue, totalReturn from (select COUNT(Book.book_id) as totalIssued FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = 5 and return_date = 'Null') Issued join (SELECT COUNT(book_id) as totalPastDue FROM `Issue` WHERE return_date > due_date) as PastDue join (select count(Book.book_id) as totalReturn FROM `Issue` natural join Book natural join Category natural join Publisher WHERE mem_id = 5 and return_date != 'NULL') as returnBooks";
+$totalIssuedBooks = "select totalIssued, totalPastDue, totalReturn from (select COUNT(Book.book_id) as totalIssued FROM `Issue` natural join Book natural join Category natural join Publisher where mem_id = $id and return_date is Null) Issued join (SELECT COUNT(book_id) as totalPastDue FROM `Issue` WHERE mem_id = $id and return_date > due_date) as PastDue join (select count(Book.book_id) as totalReturn FROM `Issue` natural join Book natural join Category natural join Publisher WHERE mem_id = $id and return_date is not NULL) as returnBooks";
 $result = mysqli_query($conn, $totalIssuedBooks);
 $data = array();
 

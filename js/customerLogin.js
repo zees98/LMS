@@ -24,7 +24,8 @@ $(document).ready(function() {
 
         var username = $("#email").val();
         var password = $("#password").val();
-
+        alert(username);
+        alert(password);
         $.post("../php/customerLogin.php", {
             username: username,
             password: password,
@@ -33,16 +34,13 @@ $(document).ready(function() {
             if (data == "success")
                 window.location = "../html/dashboard.php";
             else {
+                alert(data);
+                alert("Account Doesnt exit");
                 $("#login-btn").show();
                 $(".spinner").hide();
                 alert(data);
             }
         });
-
-
-
     });
-
-
 
 });

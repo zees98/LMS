@@ -1,3 +1,19 @@
+<?php
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    //  $img= $_SESSION["member_img"] ;
+}
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: logIn.html");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +33,7 @@
 
 <body>
     <div id="dlgbx">
+        <p id="memberId"></p>
         <div id="dlgbxBody">
             <div class="container">
                 <br><br>
@@ -32,6 +49,7 @@
             </div>
         </div>
     </div>
+    
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <div class="row">
             <img id="logo" src="../assets/Icons/booklogo.png" alt="">
@@ -43,7 +61,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                     <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
+                     <a href="../html/contactUs.php" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -59,7 +77,9 @@
                             <img id="dp" src="../assets/fahad.JPG" alt="Avatar">
                         </div>
                         <div class="col-8" id="namediv">
-                            Fahad Khalid
+                        <?php
+                        echo $fname." ".$lname;
+                        ?>
                         </div>
                     </div>
                 </a>
@@ -69,7 +89,7 @@
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="col-10" id="profilediv">
-                        <a href="customerProfile.html" id="customerprofile">Profile</a>
+                        <a href="customerProfile.php" id="customerprofile">Profile</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -106,14 +126,16 @@
                 <br><br><br><br><br><br><br><br><br><br><br>
                 <br>
                 <hr class="solid">
-                <div class="row">
-                    <div class="col-2">
-                        <i class="fa fa-sign-out"></i>
-                    </div>
-                    <div class="col-10" id="logoutdiv">
-                        <a href="">LogOut</a>
-                    </div>
-                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <div class="row">
+                            <div class="col-2">
+                             <i class="fa fa-sign-out"></i>
+                            </div>
+                            <div class="col-10" id="logoutdiv">
+                                 <button name="signout" id="b">LogOut</button>
+                            </div>
+                        </div>
+                    </form>
                 <hr class="solid">
             </div>
             <div class="col-lg-10" id="side">
@@ -146,14 +168,20 @@
                                         <th scope="col">Book Name</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Publisher</th>
+                                        <th scope="col">Issued Date</th>
                                         <th scope="col">Due Date</th>
                                         <th scope="col">Actions</th>
 
                                     </tr>
                                 </thead>
+            
                                 <tbody id="tablebody">
                                 </tbody>
                             </table>
+                            <br><br>
+                            <div class="row justify-content-center">
+                                <div class="loader"></div>
+                            </div>
                         </div>
                         <br><br><br><br><br><br><br>
                         <br><br><br><br><br><br><br><br><br>
@@ -196,4 +224,3 @@
 </body>
 
 </html>
-

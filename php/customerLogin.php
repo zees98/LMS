@@ -29,7 +29,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $exec_login_query = mysqli_query($conn, $admin_login_query);
 
             $rows = mysqli_num_rows($exec_login_query);
-
             if ($rows == 1) {
               
 

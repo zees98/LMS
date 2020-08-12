@@ -1,3 +1,20 @@
+<?php
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    //  $img= $_SESSION["member_img"] ;
+}
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: logIn.html");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="../html/contactUs.html" class="nav-link">Contact Us</a>
+                    <a href="../html/contactUs.php" class="nav-link">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +62,9 @@
                             <img id="dp" src="../assets/fahad.JPG" alt="Avatar">
                         </div>
                         <div class="col-8" id="namediv">
-                            Fahad Khalid
+                        <?php
+                        echo $fname." ".$lname;
+                        ?>
                         </div>
                     </div>
                 </a>
@@ -55,7 +74,7 @@
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="col-10" id="profilediv">
-                        <a href="customerProfile.html" id="customerprofile">Profile</a>
+                        <a href="customerProfile.php" id="customerprofile">Profile</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -74,7 +93,7 @@
                         <i class="fa fa-history"></i>
                     </div>
                     <div class="col-10" id="historydiv">
-                        <a href="history.html" id="history">
+                        <a href="history.php" id="history">
                             <p id="t1">History</p>
                         </a>
                     </div>
@@ -92,14 +111,16 @@
                 <br><br><br><br><br><br><br><br><br><br><br>
                 <br>
                 <hr class="solid">
-                <div class="row">
-                    <div class="col-2">
-                        <i class="fa fa-sign-out"></i>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fa fa-sign-out"></i>
+                        </div>
+                        <div class="col-10" id="logoutdiv">
+                            <button name="signout" id="b">LogOut</button>
+                        </div>
                     </div>
-                    <div class="col-10" id="logoutdiv">
-                        <a href="">LogOut</a>
-                    </div>
-                </div>
+                </form>
                 <hr class="solid">
             </div>
             <div class="col-lg-10" id="side">
@@ -117,26 +138,13 @@
                                             <th scope="col">Time</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                    <tbody id="activity-log-body">
                                     </tbody>
                                 </table>
+                                <br><br>
+                            <div class="row justify-content-center">
+                                <div class="loader"></div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -150,9 +158,4 @@
     </div>
 
 </body>
-
-
-
-
-
 </html>

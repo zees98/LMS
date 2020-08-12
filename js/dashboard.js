@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $("#newarrivals").slideUp("fast");
     $("#maylike").slideUp("fast");
 
@@ -13,7 +14,6 @@ $(document).ready(function() {
 
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
             var data = JSON.parse(this.responseText);
             var pastdue = data[0].totalPastDue;
             var totalIssued = data[0].totalIssued;

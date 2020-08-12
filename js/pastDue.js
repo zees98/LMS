@@ -1,20 +1,46 @@
 $(document).ready(function() {
 
     function generateHTMLRow(...args) {
-        var a = 1;
-        var row = "<tr>";
-        row += "<td>" + ++a + "</td>"
+        var row = document.createElement("tr");
+
         for (var i = 0; i < args.length; i++) {
-            row += "<td>" + args[i] + "</td>"
+            var td = document.createElement("td");
+            td.innerText = args[i];
+            row.appendChild(td);
         }
-        row += getTableButtons();
-        row += "</tr>";
-        // alert(row);
+        row.appendChild(Button(args[0]));
         return row;
     }
 
-    function getTableButtons() {
-        return '<td><div class="row"><button id="hide"> <a><p id="view">View</p></a></button></div></td>'
+
+    function ViewBook(user_id) {
+        var request = new XMLHttpRequest();
+        request.open("POST", "../php/view.php", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.onreadystatechange = function(e) {
+            if (this.readyState == 4 && this.status == 200) {}
+        }
+        request.send("id=" + user_id);
+    }
+
+    function Button(id) {
+        var view = document.createElement("p");
+        view.id = "view";
+        view.appendChild(document.createTextNode("View"));
+        var l = document.createElement("a");
+        l.setAttribute("href", "../html/book_preview.php");
+        l.appendChild(view);
+        var viewbutton = document.createElement("button");
+        viewbutton.id = "hide";
+        viewbutton.style.top = '15px';
+        viewbutton.appendChild(l);
+        var r = document.createElement("div");
+        r.classList.add("row");
+        r.appendChild(viewbutton);
+        viewbutton.addEventListener("click", function(e) {
+            ViewBook(id);
+        });
+        return r;;
     }
 
     var req = new XMLHttpRequest();
@@ -32,22 +58,26 @@ $(document).ready(function() {
             console.log(data.length);
             for (var a = 0; a < data.length; a++) {
                 console.log(a);
+                var id = data[a].book_id;
                 var title = data[a].title;
                 var publisher = data[a].name;
                 var cat_name = data[a].cat_name;
-                var issue_date = data[a].due_date;
+                var issue_date = data[a].issue_date;
+                var due_date = data[a].due_date;
                 var return_date = data[a].return_date;
 
                 var row = generateHTMLRow(
+                    id,
                     data[a].title,
                     data[a].cat_name,
                     data[a].name,
+                    data[a].issue_date,
                     data[a].due_date,
                     data[a].return_date,
 
                 );
                 console.log(row);
-                $(".spinner").fadeOut();
+                $(".loader").hide();
                 $("#tablebody").append(row);
 
             }

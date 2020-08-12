@@ -17,22 +17,6 @@
 </head>
 
 <body>
-    <div id="dlgbx">
-        <div id="dlgbxBody">
-            <div class="container">
-                <br><br>
-                <p id="t2">Are you sure you want to return this book?</p>
-                <div class="row justify-content-center">
-                    <div class="col-3"></div>
-                    <div class="col-8">
-                        <button id="confirm" class="btn btn-primary ml-auto">Confirm</button>
-                        <button id="cancel" class="btn btn-outline-primary ml-2">Cancel</button>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
-            </div>
-        </div>
-    </div>
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <div class="row">
             <img id="logo" src="../assets/Icons/booklogo.png" alt="">

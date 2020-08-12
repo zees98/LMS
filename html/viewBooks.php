@@ -1,10 +1,40 @@
+<?php
+
+if (!isset($_SESSION))
+    session_start();
+$bookID = $_SESSION["BookId"];
+
+$conn = mysqli_connect(
+    "68.183.162.131",
+    "hariscorp_hariscorp",
+    "kdw{koz4]c[%",
+    "hariscorp_zfhlibrary",
+    3306
+);
+
+
+if ($conn) {
+
+    $query = "SELECT book_id, title, pub_year, author, cat_name, summary FROM (`Book` NATURAL join `Publisher`) Natural join Category where book_id = '{$bookID}'";
+    $res = mysqli_query($conn, $query);
+
+    $row = mysqli_fetch_row($res);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../assets/Icons/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Details</title>
+    <title>Book | <?php
+                        echo $row[1];
+                    ?></title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/book_preview.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -69,8 +99,14 @@
             <div class="row">
                 <div class="col-md-5 col-lg-3"><img src="../assets/books/1.jpg" alt="" width="100%"></div>
                 <div class="col-md-7 col-lg-8">
-                    <h2>Mr Nachron's List</h2>
-                    <h5 class="text-info">Mike Corbett</h5>
+                    <h2>
+                    <?php
+                        echo $row[1];
+                    ?>
+                    </h2>
+                    <h5 class="text-info"> <?php
+                        echo $row[3];
+                    ?></h5>
                     <h5 class="text-info">2008</h5>
                     <h5>⭐⭐⭐⭐⭐</h5>
                     <br>
@@ -82,9 +118,9 @@
                         </div>
                     </div>
                     <h6 class="text-justify mt-4 mt-md-4 mt-lg-4 p-md-3 p-lg-4 p-sm-3" id="description">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id beatae quidem dolorem commodi maxime explicabo. Eaque illum eligendi velit, qui voluptatem animi laborum, commodi tenetur eius doloribus a, similique tempora atque! Nam dolor laboriosam temporibus
-                        nulla aspernatur libero quam commodi a aperiam magnam ipsam id cumque quis, ut quisquam illum dolore amet ipsa, ducimus blanditiis quod doloremque! Adipisci, nemo maiores fuga expedita accusantium enim neque a perspiciatis ab nesciunt
-                        nam eaque deserunt minima dicta repellendus, magni vitae officiis tenetur. Dolor quidem cum veritatis consequatur illo esse, ipsum dolorem quo sint rem molestias reiciendis dolore tempore voluptatibus magni, ex ipsa doloremque.
+                    <?php
+                        echo $row[5];
+                    ?>
                     </h6>
                 </div>
             </div>

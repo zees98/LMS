@@ -2,6 +2,7 @@
 
 if (!isset($_SESSION))
     session_start();
+    // $_SESSION["bookID"];
 $bookID = $_SESSION["bookID"];
 
 $conn = mysqli_connect(
@@ -20,7 +21,6 @@ if ($conn) {
 
     $row = mysqli_fetch_row($res);
 }
-
 ?>
 
 
@@ -29,8 +29,14 @@ if ($conn) {
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../assets/Icons/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Details</title>
+    <title>Book | 
+        <?php
+            echo $row[1];
+        ?>
+    </title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/book_preview.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -48,14 +54,14 @@ if ($conn) {
         <div id="dlgbxBody">
             <h1 class="">Issue The Book Now</h1>
             <table class="table">
+                <thead>
                 <th>Book Name</th>
                 <th>Author </th>
                 <th>Due Date</th>
-                <tr>
-                    <td>Mr. Nachon's List</td>
-                    <td>Mike Corbett</td>
-                    <td>20-Aug-2020</td>
-                </tr>
+                </thead>
+                <tbody id="issue-book-body">
+                
+                </tbody>
             </table>
             <div class="container-fluid">
                 <div class="row">
@@ -66,15 +72,22 @@ if ($conn) {
         </div>
     </div>
 
-    <div class="navbar navbar-dark navbar-expand">
-        <div class="navbar-brand">ZFH Library</div>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item m-2 "><a href="" class="nav-link">Home<a></li>
-            <li class="nav-item m-2 "><a href="" class="nav-link">Login<a></li>
-            <li class="nav-item m-2 "><a href="" class="nav-link">Sign up<a></li>
-        </ul>
-
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
+        <div class="row">
+            <img id="logo" src="../assets/Icons/booklogo.png" alt="">
+            <p id="title">ZFH</p>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../html/dashboard.php" class="nav-link"><img id="dp1" src="../assets/fahad.jpg" alt="Avatar"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="jumbotron">
         <h1>Book Information</h1>
@@ -90,8 +103,16 @@ if ($conn) {
 
                         ?>
                     </h2>
-                    <h5 class="text-info">Mike Corbett</h5>
-                    <h5 class="text-info">2008</h5>
+                    <h5 class="text-info">
+                    <?php
+                        echo $row[3];
+                    ?>
+                    </h5>
+                    <h5 class="text-info">
+                    <?php
+                        echo $row[2];
+                    ?>
+                    </h5>
                     <h5>⭐⭐⭐⭐⭐</h5>
                     <br>
                     <button id="issueBtn" class="btn btn-primary">Issue Now</button>
@@ -105,14 +126,9 @@ if ($conn) {
                         </div>
                     </div>
                     <h6 class="text-justify mt-4 mt-md-4 mt-lg-4 p-md-3 p-lg-4 p-sm-3" id="description">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id beatae quidem dolorem commodi
-                        maxime explicabo. Eaque illum eligendi velit, qui voluptatem animi laborum, commodi tenetur eius
-                        doloribus a, similique tempora atque! Nam dolor laboriosam temporibus nulla aspernatur libero
-                        quam commodi a aperiam magnam ipsam id cumque quis, ut quisquam illum dolore amet ipsa, ducimus
-                        blanditiis quod doloremque! Adipisci, nemo maiores fuga expedita accusantium enim neque a
-                        perspiciatis ab nesciunt nam eaque deserunt minima dicta repellendus, magni vitae officiis
-                        tenetur. Dolor quidem cum veritatis consequatur illo esse, ipsum dolorem quo sint rem molestias
-                        reiciendis dolore tempore voluptatibus magni, ex ipsa doloremque.
+                    <?php
+                        echo $row[5];
+                    ?>
                     </h6>
                 </div>
             </div>
