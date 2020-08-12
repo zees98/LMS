@@ -8,8 +8,11 @@ $conn = mysqli_connect(
     3306
 );
 
-if (!isset($_POST["bookID"])) {
+if (!isset($_POST["bookID"]) && !isset($_POST["review"])) {
     getBooks($conn);
+} else if (isset($_POST["review"])) {
+
+    getReviews($conn);
 } else {
     if (!isset($_SESSION))
         session_start();
@@ -34,4 +37,16 @@ function getBooks($conn)
 
         echo json_encode($data);
     }
+}
+function getReviews($conn)
+{
+    if (!isset($_SESSION))
+        session_start();
+    $query = "SELECT firstname,review_text,rating,date FROM hariscorp_zfhlibrary.Review  INNER JOIN Member on (mem_id = id) where book_id = '{$_SESSION["bookID"]}';";
+    $res = mysqli_query($conn, $query);
+    $data = array();
+    while ($row2 = mysqli_fetch_assoc($res)) {
+        $data[] = $row2;
+    }
+    echo json_encode($data);
 }

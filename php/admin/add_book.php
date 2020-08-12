@@ -25,8 +25,10 @@ if (
     $summary = $_POST["summary"];
     $pub_name = $_POST["pub_name"];
     $pub_address = $_POST["pub_address"];
+    $file = $_FILES['myfiles'];
 
-    echo $bookname;
+    echo $file['name'];
+
 
 
     $conn = mysqli_connect(

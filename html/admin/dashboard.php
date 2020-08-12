@@ -30,6 +30,10 @@ if (!isset($_SESSION["admin_name"])) {
         $user_data = mysqli_fetch_row($user_res);
         $book_data = mysqli_fetch_row($book_res);
         $pending_data = mysqli_fetch_row($pending_res);
+
+
+        $activityTable = "SELECT user_id, concat(concat (firstname,' ' ),lastname) as name, activity, date FROM Member inner join hariscorp_zfhlibrary.activity on(user_id = Member.id);";
+        $exec_query = mysqli_query($conn, $activityTable);
     }
 
     // Log out admin
@@ -217,63 +221,17 @@ if (!isset($_SESSION["admin_name"])) {
                         <th>Activity</th>
                         <th>Date</th>
 
+                        <?php
 
-                        <tr>
-                            <td>1</td>
-                            <td>Zeeshan Ali</td>
-                            <td>Created Account</td>
-                            <td>7 Aug 2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Zeeshan Ali</td>
-                            <td>Created Account</td>
-                            <td>7 Aug 2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Zeeshan Ali</td>
-                            <td>Created Account</td>
-                            <td>7 Aug 2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Zeeshan Ali</td>
-                            <td>Created Account</td>
-                            <td>7 Aug 2020</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Zeeshan Ali</td>
-                            <td>Created Account</td>
-                            <td>7 Aug 2020</td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Muhammad Fahad Bin Khalid</td>
-                            <td>Issued A Book</td>
-                            <td>5 Aug 2020</td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Haseeb Arif</td>
-                            <td>Membership Cancelled</td>
-                            <td>5 Aug 2020</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Haseeb Arif</td>
-                            <td>Membership Cancelled</td>
-                            <td>5 Aug 2020</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Haseeb Arif</td>
-                            <td>Membership Cancelled</td>
-                            <td>5 Aug 2020</td>
-                        </tr>
+                        while ($row = mysqli_fetch_assoc($exec_query)) {
+                            echo "<tr>";
+                            echo  "<td>" . $row["user_id"] . "</td>";
+                            echo "<td>".$row["name"]."</td>";
+                            echo "<td>".$row["activity"]."</td>";
+                            echo "<td>".$row["date"]."</td>";
+                            echo "</tr>";
+                        }
+                        ?>
                     </table>
 
                 </div>

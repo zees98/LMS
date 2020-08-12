@@ -111,13 +111,15 @@ if (!isset($_SESSION["admin_name"])) {
 
                     </div>
                     <div id="" class="col-md-4 m-auto">
-                        <input type='file' id="file" accept="image/png,image/jpg,image/jpeg" hidden>
-                        <label for="file" class="filelabel">
-                            <img src="" id="image">
+                        <input type='file' id="file" accept="image/png,image/jpg,image/jpeg">
+                        <div class="row"> <img src="" id="image" width="100%"></div>
+
+                        <div class="row">
                             <div id="camera-icon" class="m-auto text-center">
                                 <i class="fa fa-camera "></i>
                             </div>
-                        </label>
+                        </div>
+
                     </div>
                 </div>
             </form>

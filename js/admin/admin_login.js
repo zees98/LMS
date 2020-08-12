@@ -16,6 +16,10 @@ $(document).ready(function() {
 
     });
 
+    $("#mem-login").click(function(e) {
+        window.location = "../../html/logIn.html";
+    });
+
     $("#login-btn").click(function(e) {
         e.preventDefault();
         $("#login-btn").hide();
@@ -28,7 +32,7 @@ $(document).ready(function() {
             username: username,
             password: password,
         }).done(function(data) {
-            console.log(data); 
+            console.log(data);
             if (data == "success")
                 window.location = "../../html/admin/dashboard.php";
             else {
