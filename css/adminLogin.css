@@ -80,6 +80,14 @@ a {
     width: 400px;
 }
 
+#b {
+    border: none;
+    border-radius: 20px;
+    background-color: #42e0be;
+    color: white;
+    width: 400px;
+}
+
 .spinner {
     border-radius: 100%;
     background-color: cyan;
@@ -139,4 +147,17 @@ a {
     cursor: pointer;
     overflow: hidden;
     outline: none;
+}
+
+#or {
+    padding-left: 190px;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    color: white;
 }

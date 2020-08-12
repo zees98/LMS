@@ -114,10 +114,6 @@ if (!isset($_SESSION["admin_name"])) {
                                 <i class="fa fa-sign-out"></i>
                                 Sign Out
                             </button>
-                            <button name="login" class="btn btn-dark m-2">
-                                <i class="fa fa-sign-in"></i>
-                                Log In as Member
-                            </button>
                         </div>
                     </div>
                 </form>

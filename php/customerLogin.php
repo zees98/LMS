@@ -5,11 +5,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password = $_POST["password"];
 
 
-    // if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
-    //     echo "Incorrect Email";
-    // } else if (!(strlen($password) > 8)) {
-    //     echo "Incorrect Password";
-    // } else {
+    if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        echo "Incorrect Email";
+    } else if (!(strlen($password) >= 8)) {
+        echo "Incorrect Password";
+    } else {
         $conn = mysqli_connect(
             "68.183.162.131",
             "hariscorp_hariscorp",
@@ -48,5 +48,5 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             } else
                 echo "failed";
         }
-    // }
+    }
 }

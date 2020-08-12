@@ -8,6 +8,11 @@ if (!isset($_SESSION["member_id"])) {
     $lname  = $_SESSION["last_name"]; 
     // $img= $_SESSION["member_img"] ;
 }
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: logIn.html");
+}
 ?>
 
 <html>
@@ -241,10 +246,3 @@ if (!isset($_SESSION["member_id"])) {
 </body>
 
 </html>
-<?php
-if (isset($_POST["signout"])) {
-    session_destroy();
-    session_unset();
-    header("Location: Login.html");
-}
-?>

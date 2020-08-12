@@ -8,6 +8,11 @@ if (!isset($_SESSION["member_id"])) {
     $lname  = $_SESSION["last_name"]; 
     //  $img= $_SESSION["member_img"] ;
 }
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: logIn.html");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,7 +89,7 @@ if (!isset($_SESSION["member_id"])) {
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="col-10" id="profilediv">
-                        <a href="customerProfile.html" id="customerprofile">Profile</a>
+                        <a href="customerProfile.php" id="customerprofile">Profile</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -124,7 +129,7 @@ if (!isset($_SESSION["member_id"])) {
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                         <div class="row">
                             <div class="col-2">
-                             <  i class="fa fa-sign-out"></i>
+                             <i class="fa fa-sign-out"></i>
                             </div>
                             <div class="col-10" id="logoutdiv">
                                  <button name="signout" id="b">LogOut</button>
@@ -219,11 +224,3 @@ if (!isset($_SESSION["member_id"])) {
 </body>
 
 </html>
-
-<?php
-if (isset($_POST["signout"])) {
-    session_destroy();
-    session_unset();
-    header("Location: logIn.html");
-}
-?>

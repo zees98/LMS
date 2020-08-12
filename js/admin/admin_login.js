@@ -19,6 +19,8 @@ $(document).ready(function() {
     $("#login-btn").click(function(e) {
         e.preventDefault();
         $("#login-btn").hide();
+        $('#or').hide();
+        $('#b').hide();
         $("#custom-form").append("<div class='spinner mx-auto'></div>");
 
         var username = $("#email").val();
@@ -28,11 +30,13 @@ $(document).ready(function() {
             username: username,
             password: password,
         }).done(function(data) {
-            console.log(data); 
+            console.log(data);
             if (data == "success")
                 window.location = "../../html/admin/dashboard.php";
             else {
                 $("#login-btn").show();
+                $('#or').show();
+                $('#b').show();
                 $(".spinner").hide();
             }
         });

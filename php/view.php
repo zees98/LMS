@@ -14,6 +14,7 @@ if (!isset($_SESSION["member_id"])) {
      $id=$_POST['id'];
      echo "$id";
      $_SESSION["BookId"] = $id;
+     $_SESSION["bookID"] = $id;
  }
  else{
      echo "isset failed";
