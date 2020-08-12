@@ -95,6 +95,7 @@ $(document).ready(function() {
     req.send();
 
     req.onreadystatechange = function() {
+        
         if (this.readyState == 4 && this.status == 200) {
 
             // alert(this.responseText);
@@ -119,5 +120,6 @@ $(document).ready(function() {
             }
         }
     }
+}
 
 });
