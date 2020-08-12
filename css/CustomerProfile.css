@@ -85,7 +85,7 @@ input {
     border-bottom-style: groove;
     background-color: white;
     padding-left: 40px;
-    width: 245px;
+    width: 290px;
 }
 
 input:focus {
@@ -181,6 +181,10 @@ a {
     color: white;
 }
 
+#memID {
+    visibility: hidden;
+}
+
 #t1 {
     font-weight: bolder;
 }
@@ -198,4 +202,3 @@ a {
 #t1 {
     font-weight: bolder;
 }
-
