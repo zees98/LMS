@@ -1,8 +1,14 @@
 <?php
 
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: logIn.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $book_id = $_SESSION["bookID"];
+}
+
 $duedate = $_POST['duedate'];
-$book_id=22;
-$member_id=7;
 $message="Book Issued";
 
 $database =  "hariscorp_zfhlibrary";

@@ -29,6 +29,7 @@ window.onload = (e) => {
         // console.log(confirm_password.value);
         // console.log(file.value)
         // console.log(firstname.value.length);
+        var counter=0;
         
         if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (male.checked === false && female.checked === false)) {
             errormessage.innerHTML = "Please Fill All The Fields!";
@@ -40,14 +41,14 @@ window.onload = (e) => {
                 console.log("hello");
                 firstname.style.cssText = "border-color:red";
             } else {
-
+                counter++;
                 firstname.style.cssText = "border-color:#0784eb";
             }
             if (!lastname.value.match(/^[A-Za-z]+$/)) {
                 console.log("hello");
                 lastname.style.cssText = "border-color:red";
             } else {
-
+                counter++;
                 lastname.style.cssText = "border-color:#0784eb";
             }
             if (!email.value.match(/(^[A-Za-z0-9+_.-]+@(.+)$)/)) {
@@ -55,26 +56,27 @@ window.onload = (e) => {
                 console.log("hello");
                 email.style.cssText = "border-color:red";
             } else {
-
+                counter++;
                 email.style.cssText = "border-color:#0784eb";
             }
             if (ValidatePhoneNumber(phoneno.value)) {
 
                 phoneno.style.cssText = "border-color:red";
             } else {
-
+                counter++;
                 phoneno.style.cssText = "border-color:#0784eb";
             }
             if (password.value.length < 8) {
                 password.style.cssText = "border-color:red";
             } else {
-
+                counter++;
                 password.style.cssText = "border-color:#0784eb";
             }
             if (confirm_password.value !== password.value) {
 
                 confirm_password.style.cssText = "border-color:red";
             } else {
+                counter++;
                 confirm_password.style.cssText = "border-color:#0784eb";
             }
             if (male.checked) {
@@ -84,14 +86,15 @@ window.onload = (e) => {
                 gender = female.value;
             }
         }
-
-        var sendData = new XMLHttpRequest();
+        if(counter===6){
+        var sendData = new XMLHttpRequest(); 
         sendData.open("POST", "customerregistration.php", true);
         sendData.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         sendData.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 alert(this.responseText);
+                window.location.href = "html/logIn.html";
                 console.log("success!");
             } else {
                 console.log("failed");
@@ -109,9 +112,14 @@ window.onload = (e) => {
             "password=" + password.value.toLowerCase()
             // "img_url=" + img.src
         );
-
+        }
+        else{
+            alert("Failed!");
+        }
 
     });
+
+
 
     function ValidatePhoneNumber(val) {
         if (!(val.length === 14 || val.length === 13)) {

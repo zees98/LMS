@@ -28,7 +28,7 @@ $(document).ready(function() {
         view.id = "view";
         view.appendChild(document.createTextNode("View"));
         var l = document.createElement("a");
-        l.setAttribute("href", "../html/viewBooks.php");
+        l.setAttribute("href", "../html/book_preview.php");
         l.appendChild(view);
         var viewbutton = document.createElement("button");
         viewbutton.id = "hide";
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
                 );
                 console.log(row);
-                $(".spinner").fadeOut();
+                $(".loader").hide();
                 $("#tablebody").append(row);
 
             }

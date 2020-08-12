@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION["member_id"])) {
-    header("Location: login.html");
+    header("Location: logIn.html");
 } else {
     $i = $_SESSION["member_id"];
     $fname = $_SESSION["first_name"];
@@ -14,6 +14,7 @@ if (!isset($_SESSION["member_id"])) {
      $id=$_POST['id'];
      echo "$id";
      $_SESSION["BookId"] = $id;
+     $_SESSION["bookID"] = $id;
  }
  else{
      echo "isset failed";

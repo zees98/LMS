@@ -1,3 +1,19 @@
+<?php
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    //  $img= $_SESSION["member_img"] ;
+}
+if (isset($_POST["signout"])) {
+    session_destroy();
+    session_unset();
+    header("Location: logIn.html");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +77,9 @@
                             <img id="dp" src="../assets/fahad.JPG" alt="Avatar">
                         </div>
                         <div class="col-8" id="namediv">
-                            Fahad Khalid
+                        <?php
+                        echo $fname." ".$lname;
+                        ?>
                         </div>
                     </div>
                 </a>
@@ -71,7 +89,7 @@
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="col-10" id="profilediv">
-                        <a href="customerProfile.html" id="customerprofile">Profile</a>
+                        <a href="customerProfile.php" id="customerprofile">Profile</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -108,14 +126,16 @@
                 <br><br><br><br><br><br><br><br><br><br><br>
                 <br>
                 <hr class="solid">
-                <div class="row">
-                    <div class="col-2">
-                        <i class="fa fa-sign-out"></i>
-                    </div>
-                    <div class="col-10" id="logoutdiv">
-                        <a href="">LogOut</a>
-                    </div>
-                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <div class="row">
+                            <div class="col-2">
+                             <i class="fa fa-sign-out"></i>
+                            </div>
+                            <div class="col-10" id="logoutdiv">
+                                 <button name="signout" id="b">LogOut</button>
+                            </div>
+                        </div>
+                    </form>
                 <hr class="solid">
             </div>
             <div class="col-lg-10" id="side">
@@ -154,9 +174,14 @@
 
                                     </tr>
                                 </thead>
+            
                                 <tbody id="tablebody">
                                 </tbody>
                             </table>
+                            <br><br>
+                            <div class="row justify-content-center">
+                                <div class="loader"></div>
+                            </div>
                         </div>
                         <br><br><br><br><br><br><br>
                         <br><br><br><br><br><br><br><br><br>
@@ -185,7 +210,7 @@
                 <br>
 
                 <div class="row justify-content-end">
-                    <a href="#">
+                    <a href="searchbooks.php">
                         <h4>See More</h4>
                     </a>
                 </div>
@@ -199,4 +224,3 @@
 </body>
 
 </html>
-

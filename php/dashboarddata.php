@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION["member_id"])) {
-    header("Location: login.html");
+    header("Location: logIn.html");
 } else {
     $id = $_SESSION["member_id"];
     $fname = $_SESSION["first_name"];

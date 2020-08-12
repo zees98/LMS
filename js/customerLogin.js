@@ -2,6 +2,16 @@ $(document).ready(function() {
 
     const forget_email=document.querySelector('#forgetemail');
     const new_password=document.querySelector('#forgetpassword');
+    var checkbox = document.querySelector("#showPassword");
+    var pass = document.querySelector("#password");
+    checkbox.addEventListener('click',()=>{
+        if (pass.type === "password") {
+            pass.type = "text";
+          } else {
+            pass.type = "password";
+          }
+    });
+    
 
     $("#forgot").click(function(e) {
         //Show and hide alert box
@@ -29,7 +39,8 @@ $(document).ready(function() {
 
         var username = $("#email").val();
         var password = $("#password").val();
-
+        alert(username);
+        alert(password);
         $.post("../php/customerLogin.php", {
             username: username,
             password: password,
@@ -38,15 +49,13 @@ $(document).ready(function() {
             if (data == "success")
                 window.location = "../html/dashboard.php";
             else {
+                alert(data);
                 alert("Account Doesnt exit");
                 $("#login-btn").show();
                 $(".spinner").hide();
                 alert(data);
             }
         });
-
-
-
     });
 
     function SendData(){
