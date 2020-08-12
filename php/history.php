@@ -1,6 +1,4 @@
 <?php
-
-
  session_start();
 if (!isset($_SESSION["member_id"])) {
     header("Location: login.html");
@@ -10,9 +8,6 @@ if (!isset($_SESSION["member_id"])) {
     $lname  = $_SESSION["last_name"]; 
     $img= $_SESSION["member_img"] ;
 } 
-
-
-$id=7;
 
 $database =  "hariscorp_zfhlibrary";
 $conn = mysqli_connect(

@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: login.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $fname = $_SESSION["first_name"];
+    $lname  = $_SESSION["last_name"]; 
+    //  $img= $_SESSION["member_img"] ;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +72,9 @@
                             <img id="dp" src="../assets/fahad.JPG" alt="Avatar">
                         </div>
                         <div class="col-8" id="namediv">
-                            Fahad Khalid
+                        <?php
+                        echo $fname." ".$lname;
+                        ?>
                         </div>
                     </div>
                 </a>

@@ -6,7 +6,7 @@ if (!isset($_SESSION["member_id"])) {
     $id = $_SESSION["member_id"];
     $fname = $_SESSION["first_name"];
     $lname  = $_SESSION["last_name"]; 
-    $img= $_SESSION["member_img"] ;
+    // $img= $_SESSION["member_img"] ;
 }
 ?>
 
@@ -61,7 +61,9 @@ if (!isset($_SESSION["member_id"])) {
                             <img id="dp" src="../assets/fahad.JPG" alt="Avatar">
                         </div>
                         <div class="col-8" id="namediv">
-                            Fahad Khalid
+                        <?php
+                        echo $fname." ".$lname;
+                        ?>
                         </div>
                     </div>
                 </a>
@@ -92,7 +94,7 @@ if (!isset($_SESSION["member_id"])) {
                         <i class="fa fa-history"></i>
                     </div>
                     <div class="col-10" id="historydiv">
-                        <a href="history.html" id="history"> History</a>
+                        <a href="history.php" id="history"> History</a>
                     </div>
                 </div>
                 <hr class="solid">

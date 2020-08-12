@@ -1,12 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION["member_id"])) {
-    header("Location: login.html");
+    header("Location: logIn.html");
 } else {
     $id = $_SESSION["member_id"];
     $fname = $_SESSION["first_name"];
     $lname  = $_SESSION["last_name"]; 
-    $img= $_SESSION["member_img"] ;
+     $img= $_SESSION["member_img"] ;
 }
 ?>
 
@@ -87,7 +87,7 @@ if (!isset($_SESSION["member_id"])) {
                         <i class="fa fa-history"></i>
                     </div>
                     <div class="col-10" id="historydiv">
-                        <a href="history.html" id="history"> History</a>
+                        <a href="history.php" id="history"> History</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -170,7 +170,7 @@ if (!isset($_SESSION["member_id"])) {
                         <br>
 
                         <div class="row justify-content-end">
-                            <a href="../html/searchbooks.html">
+                            <a href="../html/searchbooks.php">
                                 <h4 id="showmore"> See More</h4>
                             </a>
                         </div>
