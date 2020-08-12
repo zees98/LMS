@@ -132,3 +132,15 @@ a:hover {
     overflow: hidden;
     outline: none;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#02171f), to(#ffff));
+    background-image: -webkit-linear-gradient(bottom, #02171f 0%, #ffff 100%);
+    background-image: linear-gradient(to top, #02171f 0%, #ffff 100%);
+}

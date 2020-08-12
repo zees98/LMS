@@ -210,7 +210,7 @@ if (isset($_POST["signout"])) {
                 <br>
 
                 <div class="row justify-content-end">
-                    <a href="#">
+                    <a href="searchbooks.php">
                         <h4>See More</h4>
                     </a>
                 </div>
