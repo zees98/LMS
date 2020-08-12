@@ -2,7 +2,8 @@
 
 if (!isset($_SESSION))
     session_start();
-$bookID = $_SESSION["bookID"];
+    // $_SESSION["bookID"];
+$bookID = 17;
 
 $conn = mysqli_connect(
     "68.183.162.131",
@@ -48,14 +49,14 @@ if ($conn) {
         <div id="dlgbxBody">
             <h1 class="">Issue The Book Now</h1>
             <table class="table">
+                <thead>
                 <th>Book Name</th>
                 <th>Author </th>
                 <th>Due Date</th>
-                <tr>
-                    <td>Mr. Nachon's List</td>
-                    <td>Mike Corbett</td>
-                    <td>20-Aug-2020</td>
-                </tr>
+                </thead>
+                <tbody id="issue-book-body">
+                
+                </tbody>
             </table>
             <div class="container-fluid">
                 <div class="row">
