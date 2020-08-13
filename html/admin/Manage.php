@@ -157,7 +157,7 @@ if (!isset($_SESSION["admin_name"])) {
 
                     </div>
                     <li>
-                        <i class="fa fa-cart-plus"></i> Catalogue
+                        <a href="feedback.php"> <i class="fa fa-star"></i> Feedback </a>
                     </li>
                     <li>
                         <i class="fa fa-gear"></i> Settings

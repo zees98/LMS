@@ -251,3 +251,7 @@ a {
     font-weight: lighter;
     font-size: 13px;
 }
+
+iframe {
+    padding-left: 30px;
+}

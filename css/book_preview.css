@@ -108,3 +108,12 @@ input[type="text"] {
     font-family: 'Lemonada', cursive;
     color: white;
 }
+
+#write {
+    padding-left: 20px;
+}
+
+#r,
+#write {
+    font-family: 'Lemonada', cursive;
+}
