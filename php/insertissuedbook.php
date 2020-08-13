@@ -1,8 +1,14 @@
 <?php
 
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: logIn.html");
+} else {
+    $id = $_SESSION["member_id"];
+    $book_id = $_SESSION["bookID"];
+}
+
 $duedate = $_POST['duedate'];
-$book_id=22;
-$member_id=7;
 $message="Book Issued";
 
 $database =  "hariscorp_zfhlibrary";
@@ -19,6 +25,13 @@ $conn = mysqli_connect(
     3306
 
 );
+
+$select_query= "Select * from `Issue` where mem_id={$member_id} and book_id={$book_id}";
+$res=mysqli_query($conn, $select_query);
+if($res){
+    echo "Book is Already Issued!";
+}
+else{
 $insert_query="INSERT INTO `Issue`(`mem_id`, `book_id`, `due_date`) VALUES ('$member_id','$book_id','$duedate')";
 
 $result1 = mysqli_query($conn, $insert_query);
@@ -32,7 +45,7 @@ if ($result1) {
 } else {
     echo "<br><br>Failed";
 }
-
+}
 $conn -> close();
 
 

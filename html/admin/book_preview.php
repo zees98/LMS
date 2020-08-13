@@ -96,6 +96,9 @@ if ($conn) {
                                             echo $row[2];
                                             ?></h5>
                     <h1><?php
+                        if($row[6] == NULL)
+                        echo "No Rating";
+                    else
                         echo $row[6] . "/5";
 
                         ?></h1>

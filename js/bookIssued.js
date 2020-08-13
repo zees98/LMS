@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    
 
 
     function generateHTMLRow(...args) {
@@ -57,7 +58,8 @@ $(document).ready(function() {
         view.id = "view";
         view.appendChild(document.createTextNode("View"));
         var l = document.createElement("a");
-        l.setAttribute("href", "../html/viewBooks.php");
+
+        l.setAttribute("href", "../html/book_preview.php");
         l.appendChild(view);
         var viewbutton = document.createElement("button");
         viewbutton.id = "hide";
@@ -175,5 +177,31 @@ $(document).ready(function() {
                 window.location = target;
             }, 350);
         }
+    });
+
+    $("#login-btn").click(function(e) {
+        e.preventDefault();
+        $("#login-btn").hide();
+        $("#formDiv").append("<div class='spinner mx-auto'></div>");
+
+        var username = $("#email").val();
+        var password = $("#password").val();
+        alert(username);
+        alert(password);
+        $.post("../php/customerLogin.php", {
+            username: username,
+            password: password,
+        }).done(function(data) {
+            console.log(data);
+            if (data == "success")
+                window.location = "../html/dashboard.php";
+            else {
+                alert(data);
+                alert("Account Doesnt exit");
+                $("#login-btn").show();
+                $(".spinner").hide();
+                alert(data);
+            }
+        });
     });
 });

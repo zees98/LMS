@@ -1,7 +1,13 @@
 <?php
 
-$book_id=22;
-$member_id=7;
+session_start();
+if (!isset($_SESSION["member_id"])) {
+    header("Location: logIn.html");
+} else {
+    $book_id = $_SESSION["bookID"];
+}
+
+
 
 $database =  "hariscorp_zfhlibrary";
 $conn = mysqli_connect(
@@ -17,10 +23,11 @@ $conn = mysqli_connect(
     3306
 
 );
-$select_query="select title, author from `Book` where book_id={$book_id}";
+
+$select_query="select title, author from `Book` where book_id={$book_id} ";
 
 $result = mysqli_query($conn, $select_query);
-
+ 
 $data = array();
 
 while($row = mysqli_fetch_assoc($result)){

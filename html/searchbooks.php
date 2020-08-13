@@ -43,11 +43,9 @@ if (isset($_POST["signout"])) {
                         <option value="Action">Action</option>
                         <option value="Mystery">Mystery</option>
                         <option value="Romance">Romance</option>
-                        <option value="Horror">Horror</option>
+                        <option value="Adventure">Adventure</option>
                         <option value="Sci-Fi">Sci-Fi</option>
                         <option value="Fantasy">Fantasy</option>
-                        <option value="Classics">Classics</option>
-                        <option value="Cookbooks">Cookbooks</option>
 
                     </select>
                     <br>
@@ -139,9 +137,19 @@ if (isset($_POST["signout"])) {
                 </div>
                 <hr class="solid">
 
+<<<<<<< HEAD
                 <div class="row">
                     <div class="col-2">
                         <i class="fa fa-history"></i>
+=======
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fa fa-history"></i>
+                        </div>
+                        <div class="col-10" id="historydiv">
+                            <a href="history.php" id="history"> History</a>
+                        </div>
+>>>>>>> 6adacacd07290b96f046065a817c990d4a571443
                     </div>
                     <div class="col-10" id="historydiv">
                         <a href="history.html" id="history"> History</a>
