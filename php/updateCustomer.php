@@ -9,7 +9,7 @@
     $dob = $_POST["dob"];
     $gender = $_POST["gender"];
     $password = $_POST["password"];
-    // $imgurl = $_POST["img_url"];
+    $imgurl = $_POST["img_url"];
 
 
     // $id=28;
@@ -34,7 +34,7 @@
     } else {
         echo "failed";
     }
-$update_query= "update Member set firstname='{$firstname}', lastname='{$lastname}', email='{$email}', password='{$password}',phone='{$phoneno}',dob='{$dob}',gender='{$gender}' WHERE id='{$id}'";
+$update_query= "update Member set firstname='{$firstname}', lastname='{$lastname}', email='{$email}', password='{$password}',phone='{$phoneno}',dob='{$dob}',gender='{$gender}',image_path='{$imgurl}' WHERE id='{$id}'";
     $exec_query = mysqli_query($conn, $update_query);
 
     if ($exec_query) {

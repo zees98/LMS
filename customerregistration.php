@@ -8,7 +8,7 @@
     $dob = $_POST["dob"];
     $gender = $_POST["gender"];
     $password = $_POST["password"];
-    // $imgurl = $_POST["img_url"];
+    $imgurl = $_POST["img_url"];
 
     
 
@@ -26,7 +26,7 @@
         echo "failed";
     }
 
-    $query = "INSERT INTO `Member`(`firstname`, `lastname`, `email`, `password`, `phone`, `dob`, `gender`) VALUES ('$firstname','$lastname','$email','$password','$phoneno', '$dob','$gender')";
+    $query = "INSERT INTO `Member`(`firstname`, `lastname`, `email`, `password`, `phone`, `dob`, `gender`,`image_path`) VALUES ('$firstname','$lastname','$email','$password','$phoneno', '$dob','$gender','$imgurl')";
 
     $exec_insert = mysqli_query($conn, $query);
 

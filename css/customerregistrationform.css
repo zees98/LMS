@@ -167,3 +167,9 @@ input:focus {
 #heading {
     padding-left: 10px;
 }
+
+#image{
+    margin: 5px;
+    width: 95%;
+    height: 95%;
+}

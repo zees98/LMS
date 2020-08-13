@@ -15,6 +15,8 @@ window.onload = (e) => {
     const errormessage = document.querySelector("#msg");
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#icon');
+    
+    cameraicon.style.display="none";
 
     var gender = "hello";
 
@@ -31,7 +33,7 @@ window.onload = (e) => {
         // console.log(firstname.value.length);
         var counter=0;
         
-        if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (male.checked === false && female.checked === false)) {
+        if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === ""  || (male.checked === false && female.checked === false)) {
             errormessage.innerHTML = "Please Fill All The Fields!";
             setTimeout(() => errormessage.remove(), 3000);
         } else {
@@ -109,8 +111,8 @@ window.onload = (e) => {
             "phoneno=" + phoneno.value.toLowerCase() + "&" +
             "dob=" + dob.value.toLowerCase() + "&" +
             "gender=" + gender + "&" +
-            "password=" + password.value.toLowerCase()
-            // "img_url=" + img.src
+            "password=" + password.value.toLowerCase()+ "&" +
+            "img_url=" + img.src
         );
         }
         else{
@@ -134,19 +136,19 @@ window.onload = (e) => {
     }
 
 
-    file.addEventListener('change', () => {
-        Reader(file);
-    });
+    // file.addEventListener('change', () => {
+    //     Reader(file);
+    // });
 
-    function Reader(input) {
-        if (input.files && input.files[0]) {
-            var a = new FileReader();
-            a.onload = (e) => {
-                img.setAttribute("src", e.target.result);
-                cameraicon.style.display = "none";
+//     function Reader(input) {
+//         if (input.files && input.files[0]) {
+//             var a = new FileReader();
+//             a.onload = (e) => {
+//                 img.setAttribute("src", e.target.result);
+//                 cameraicon.style.display = "none";
 
-            };
-            a.readAsDataURL(input.files[0]);
-        }
-    };
+//             };
+//             a.readAsDataURL(input.files[0]);
+//         }
+//     };
 }
