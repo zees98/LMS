@@ -119,9 +119,10 @@ if ($conn) {
         </h1>
         <br>
             <div class="container-fluid" id="">
-        </section>
-        <h4>Write Your own review</h4>
-        <div class="container-fluid">
+    </section>
+       <h4 id="write">Write Your own review</h4>
+        <div class="container">
+            
             <div class="row">
                 <div class="col-md-6 col-sm-8 my-auto" id="">
                 <textarea name="message" id="message" style="border-color: grey; height: 200px; width: 800px;"placeholder="Give a review.."></textarea>
