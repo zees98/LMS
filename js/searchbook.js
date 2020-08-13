@@ -93,9 +93,39 @@ $(document).ready(function() {
         suggestbox.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         suggestbox.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+
                 console.log(this.responseText)
                 var comp_data = JSON.parse(this.responseText);
                 if (comp_data.length > 0) {
+
+
+                    textfield.on("change", function(e) {
+
+                        $("#searchedBooks").empty();
+                        var resultsPage = document.getElementById("searchedBooks");
+
+
+                        var rowEl = document.createElement("div");
+                        rowEl.classList.add("row");
+
+                        for (row in comp_data) {
+                            rowEl.appendChild(createBookcards(
+                                comp_data[row].book_id,
+                                comp_data[row].title,
+                                comp_data[row].author,
+                                comp_data[row].rating
+                            ));
+                        }
+                        resultsPage.appendChild(rowEl);
+
+
+
+                    });
+
+
+
+
+
                     $(".suggestions").empty();
                     console.log(this.responseText);
                     var comp_data = JSON.parse(this.responseText);
@@ -108,6 +138,7 @@ $(document).ready(function() {
                         div.addEventListener("click", function(e) {
                             setBookIDSession(comp_data[row].book_id)
                         });
+
                     }
                     $(".suggestions").slideDown();
                 } else {
@@ -124,6 +155,9 @@ $(document).ready(function() {
 
 
 
+
+
+
 });
 
 function setBookIDSession(id) {
@@ -137,4 +171,49 @@ function setBookIDSession(id) {
     }
     bookIDSessionReq.send("id=" + id);
 
+}
+
+function createBookcards(id, bookname, author, rating) {
+    var col = document.createElement("div");
+    col.classList.add("col-lg-4", "col-md-6", "mb-5");
+
+    var card = document.createElement("DIV");
+    card.classList.add("card");
+    card.style.width = "18rem";
+
+    var img = document.createElement("img");
+    img.classList.add("card-img-top");
+
+    img.setAttribute("src", "../assets/books/2.jpg");
+    img.setAttribute("alt", "No Images");
+
+    var cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    var h4 = document.createElement("h4");
+    h4.innerText = bookname;
+    h4.classList.add("card-text");
+    var h5 = document.createElement("h5");
+    h5.innerText = author;
+    h5.classList.add("card-text");
+
+    var h6 = document.createElement("h6");
+    h6.innerText = "⭐".repeat(rating);
+    h6.classList.add("card-text");
+
+    col.appendChild(card);
+    card.appendChild(img);
+    card.appendChild(cardBody);
+
+    cardBody.appendChild(h4);
+    cardBody.appendChild(h5);
+    cardBody.appendChild(h6);
+
+    col.addEventListener("click", function(e) {
+
+        setBookIDSession(id);
+
+    });
+
+    return col;
 }

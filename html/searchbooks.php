@@ -137,22 +137,12 @@ if (isset($_POST["signout"])) {
                 </div>
                 <hr class="solid">
 
-<<<<<<< HEAD
                 <div class="row">
                     <div class="col-2">
                         <i class="fa fa-history"></i>
-=======
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fa fa-history"></i>
-                        </div>
-                        <div class="col-10" id="historydiv">
-                            <a href="history.php" id="history"> History</a>
-                        </div>
->>>>>>> 6adacacd07290b96f046065a817c990d4a571443
                     </div>
                     <div class="col-10" id="historydiv">
-                        <a href="history.html" id="history"> History</a>
+                        <a href="history.php" id="history"> History</a>
                     </div>
                 </div>
                 <hr class="solid">
@@ -188,8 +178,8 @@ if (isset($_POST["signout"])) {
                         <div id="search-container" class="container">
                             <input type="search" id="searchbar" placeholder="Search Here....">
                             <div id="suggestions" class="suggestions">
-                               
-                                
+
+
                             </div>
                         </div>
                     </div>
@@ -205,8 +195,8 @@ if (isset($_POST["signout"])) {
                 </div>
                 <div class="row">
                     <div class="col-1"></div>
-                    <div class="col-11">
-                        <br><br>
+                    <div id="searchedBooks" class="col-11">
+                        <!-- <br><br>
                         <div class="row">
 
                             <div class="col-lg-4 col-md-6">
@@ -221,7 +211,7 @@ if (isset($_POST["signout"])) {
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-6">
+                            <div id="book" class="col-lg-4 col-md-6">
                                 <br>
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="../assets/books/2.jpg" alt="Card image cap">
@@ -281,7 +271,7 @@ if (isset($_POST["signout"])) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>

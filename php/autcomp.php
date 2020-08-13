@@ -15,7 +15,7 @@ if (isset($_REQUEST["string"])) {
 
     // echo $results;
     if (strlen($text) > 0) {
-        $query = "SELECT book_id, title FROM hariscorp_zfhlibrary.Book WHERE title LIKE '%$text%'";
+        $query = "SELECT book_id,title,author,avg(rating) as rating FROM hariscorp_zfhlibrary.Book NATURAL JOIN Review WHERE title LIKE '%$text%' group by book_id";
         // echo $query;
         $results = mysqli_query($conn, $query);
         $data = array();

@@ -18,6 +18,9 @@ $(document).ready(function() {
     const file = document.querySelector('#file');
     const img = document.querySelector('#image');
     const cameraicon = document.querySelector('#camera-icon');
+    cameraicon.addEventListener("click", function(e) {
+        file.click();
+    });
     file.addEventListener('change', () => {
         console.log("hello 2");
         Reader(file);
@@ -29,7 +32,7 @@ $(document).ready(function() {
             var a = new FileReader();
             a.onload = (e) => {
                 img.setAttribute("src", e.target.result);
-                cameraicon.style.display = "none";
+                // cameraicon.style.display = "none";
                 console.log("hello 4");
             };
             a.readAsDataURL(input.files[0]);
