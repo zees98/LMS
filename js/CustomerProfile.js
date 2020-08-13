@@ -5,6 +5,7 @@ inputfields.forEach(function(input) {
 const file = document.querySelector('#file');
 const img = document.querySelector('#profile_img');
 
+
 var inputfields = document.querySelectorAll("input");
 inputfields.forEach(function(input) {
     input.disabled = true;
@@ -141,7 +142,7 @@ function ReceiveData(id) {
                 dob.value = data[i].dob;
                 gender.value = data[i].gender;
                 if (data[i].image_path == null) {
-                    img.src = "../assets/icons/man.png";
+                    img.src = "../assets/Icons/user.png";
                 } else {
                     img.src = data[i].image_path;
                 }
@@ -156,7 +157,7 @@ function ReceiveData(id) {
 function update(id) {
 
     var counter = 0;
-    if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || file.value === "" || (gender.value !== "Male" && gender.value !== "Female")) {
+    if (firstname.value === "" || lastname.value === "" || email.value === "" || phoneno.value === "" || dob.value === "" || password.value === "" || confirm_password === "" || (gender.value !== "Male" && gender.value !== "Female")) {
         alert("Please Fill All The Fields!");
     } else {
         if (!firstname.value.match(/^[A-Za-z]+$/)) {
@@ -234,8 +235,8 @@ function update(id) {
             "phoneno=" + phoneno.value.toLowerCase() + "&" +
             "dob=" + dob.value.toLowerCase() + "&" +
             "gender=" + gender.value + "&" +
-            "password=" + password.value.toLowerCase()
-            // "img_url=" + img.src
+            "password=" + password.value.toLowerCase() + "&"+
+            "img_url=" + img.src
         );
     } else {
         alert("Enter Valid Data");
