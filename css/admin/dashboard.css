@@ -111,3 +111,15 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
     background-color: red;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#00e6e6), to(#00090c));
+    background-image: -webkit-linear-gradient(bottom, #00e6e6 0%, #00090c 100%);
+    background-image: linear-gradient(to top, #00e6e6 0%, #00090c 100%);
+}

@@ -51,7 +51,7 @@ if (!isset($_SESSION["admin_name"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Admin</title>
-
+    <link rel="icon" href="..\..\assets\Icons\icon.png">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
