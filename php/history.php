@@ -23,7 +23,7 @@ $conn = mysqli_connect(
     3306
 
 );
-$select_query="select activity, date from `activity` where id={$id}";
+$select_query="select activity, date from `activity` where user_id={$id}";
 
 $result = mysqli_query($conn, $select_query);
 

@@ -65,26 +65,26 @@ if ($conn) {
     </nav>
 
     <div class="jumbotron">
-        <h1>Book Information</h1>
+    <h1 id="r">Book Information</h1>
         <br>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5 col-lg-3"><img src="../assets/books/1.jpg" alt="" width="100%"></div>
                 <div class="col-md-7 col-lg-8">
-                <h2>
+                <h2 id="r">
                         <?php
 
                         echo $row[1];
 
                         ?>
                     </h2>
-                    <h5 class="text-info"><?php
+                    <h5 class="text-info" id="r"><?php
                                             echo $row[3];
                                             ?></h5>
-                    <h5 class="text-info"><?php
+                    <h5 class="text-info" id="r"><?php
                                             echo $row[2];
                                             ?></h5>
-                    <h1><?php
+                    <h1 id="r"><?php
                         if($row[6] == NULL)
                             echo "No Rating";
                         else
@@ -114,14 +114,14 @@ if ($conn) {
 
     </div>
     <section class="jumbotron" id="reviews">
-        <h1>
+    <h1 id="r">
             Reviews
         </h1>
         <br>
             <div class="container-fluid" id="">
     </section>
        <h4 id="write">Write Your own review</h4>
-        <div class="container">
+        <div class="container-fluid">
             
             <div class="row">
                 <div class="col-md-6 col-sm-8 my-auto" id="">

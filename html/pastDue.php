@@ -30,7 +30,7 @@ if (isset($_POST["signout"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashBoard</title>
+    <title>Returned Books</title>
 </head>
 
 
@@ -211,10 +211,10 @@ if (isset($_POST["signout"])) {
                 <br>
 
                 <div class="row justify-content-end">
-                    <a href="#">
-                        <h4>See More</h4>
-                    </a>
-                </div>
+                            <a href="../html/searchbooks.php">
+                                <h4 id="showmore"> See More</h4>
+                            </a>
+                        </div>
                 <br><br><br>
             </div>
 

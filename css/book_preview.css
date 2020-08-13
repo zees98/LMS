@@ -110,6 +110,10 @@ input[type="text"] {
 }
 
 #write {
-    padding-left: 50px;
+    padding-left: 20px;
+}
+
+#r,
+#write {
     font-family: 'Lemonada', cursive;
 }

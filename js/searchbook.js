@@ -166,7 +166,7 @@ function setBookIDSession(id) {
     bookIDSessionReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     bookIDSessionReq.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            window.location = "../html/viewBooks.php";
+            window.location = "../html/book_preview.php";
         }
     }
     bookIDSessionReq.send("id=" + id);
