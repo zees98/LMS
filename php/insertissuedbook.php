@@ -26,17 +26,17 @@ $conn = mysqli_connect(
 
 );
 
-$select_query= "Select * from `Issue` where mem_id={$member_id} and book_id={$book_id}";
+$select_query= "Select * from `Issue` where mem_id={$id} and book_id={$book_id}";
 $res=mysqli_query($conn, $select_query);
 if($res){
     echo "Book is Already Issued!";
 }
 else{
-$insert_query="INSERT INTO `Issue`(`mem_id`, `book_id`, `due_date`) VALUES ('$member_id','$book_id','$duedate')";
+$insert_query="INSERT INTO `Issue`(`mem_id`, `book_id`, `due_date`) VALUES ('$id','$book_id','$duedate')";
 
 $result1 = mysqli_query($conn, $insert_query);
 
-$insert2_query="INSERT INTO `activity`(`user_id`, `activity`) VALUES ('$member_id','$message')";
+$insert2_query="INSERT INTO `activity`(`user_id`, `activity`) VALUES ('$id','$message')";
 
 $result2 = mysqli_query($conn, $insert2_query);
 
