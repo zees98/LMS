@@ -59,7 +59,7 @@ $(document).ready(function() {
         view.appendChild(document.createTextNode("View"));
         var l = document.createElement("a");
 
-        l.setAttribute("href", "../html/book_preview.php");
+        l.setAttribute("href", "../html/view.php");
         l.appendChild(view);
         var viewbutton = document.createElement("button");
         viewbutton.id = "hide";

@@ -4,11 +4,11 @@ session_start();
 if (!isset($_SESSION["member_id"])) {
     header("Location: logIn.html");
 } else {
-    $id = $_SESSION["member_id"];
-    $book_id = $_SESSION["bookID"];
-}
-
-$duedate = $_POST['duedate'];
+    // $_SESSION["book_id"];   $_SESSION["member_id"]; '2020-08-23'; 
+$member_id =$_SESSION["member_id"];
+$book_id =  $_SESSION["bookID"];
+echo $book_id;
+$duedate = $_POST["duedate"];
 $message="Book Issued";
 
 $database =  "hariscorp_zfhlibrary";
@@ -28,10 +28,12 @@ $conn = mysqli_connect(
 
 $select_query= "Select * from `Issue` where mem_id={$member_id} and book_id={$book_id}";
 $res=mysqli_query($conn, $select_query);
-if($res){
+
+if(mysqli_num_rows($res)!=0){
     echo "Book is Already Issued!";
 }
 else{
+    echo "Book is not Issued!";
 $insert_query="INSERT INTO `Issue`(`mem_id`, `book_id`, `due_date`) VALUES ('$member_id','$book_id','$duedate')";
 
 $result1 = mysqli_query($conn, $insert_query);
@@ -47,6 +49,6 @@ if ($result1) {
 }
 }
 $conn -> close();
-
+}
 
 ?>

@@ -37,7 +37,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 $id = $data["id"];
                 $fname = $data["firstname"];
                 $lname = $data["lastname"];
-                $img = $data["image_path"] ?? "";
+                $img = $data["image_path"];
 
                 $query = "INSERT INTO activity(`user_id`, `activity`) Values ('$id','Logged In')";
 
