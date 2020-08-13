@@ -86,19 +86,21 @@ a:hover {
 }
 
 #searchbar {
-    width: 300px;
+    width: 100%;
     background-color: #00131a;
     border-radius: 20px;
     border: none;
     color: white;
     outline: none;
-    padding-left: 20px;
+    padding: 5px;
 }
 
-#searchbar:hover {
-    border: 2px solid #0784eb;
+
+/* 
+#searchbar:focus {
+    border-bottom: 2px solid #0784eb;
     outline: none;
-}
+} */
 
 #searchbar::-webkit-search-cancel-button {
     -webkit-appearance: none;
@@ -237,4 +239,34 @@ a:hover {
     cursor: pointer;
     overflow: hidden;
     outline: none;
+}
+
+.suggestions {
+    background-color: #00131a;
+    color: white;
+    margin: 0 auto;
+    padding: 2%;
+    /* border-top: 2px solid #aa13aa; */
+}
+
+.suggestions div {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.suggestions div:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+#search-container {
+    background-color: #00131a;
+    margin: 0 auto;
+    width: 100%;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    border-radius: 20px;
+}
+
+#focus-border {
+    border: 2px solid rgb(50, 50, 150);
 }
