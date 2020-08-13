@@ -88,7 +88,7 @@ $(document).ready(function() {
         req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         req.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-
+                alert(this.responseText);
                 console.log("success!");
             } else {
                 console.log("failed");

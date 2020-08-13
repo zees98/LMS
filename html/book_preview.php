@@ -123,7 +123,6 @@ if ($conn) {
                         ?></h5>
                     <br>
                     <button id="issueBtn" class="btn btn-primary">Issue Now</button>
-                    <button class="btn btn-outline-primary"  id="save">Save for Later</button>
                     <br><br>
                     <div class="container-fluid">
                         <div id="desc-control" class="row">
