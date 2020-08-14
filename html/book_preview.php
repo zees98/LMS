@@ -84,7 +84,7 @@ if ($conn) {
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="../html/dashboard.php" class="nav-link"><img id="dp1" src="../assets/fahad.jpg" alt="Avatar"></a>
+                    <a href="../html/dashboard.php" class="nav-link"><img id="dp1" src="../assets/Icons/user.png" alt="Avatar"></a>
                 </li>
             </ul>
         </div>

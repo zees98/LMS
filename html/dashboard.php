@@ -58,7 +58,7 @@ if (isset($_POST["signout"])) {
                     <div class="row">
                         <div class="col-4">
                             <br>
-                            <img id="dp" src="../assets/fahad.JPG" alt="Avatar">
+                            <img id="dp" src="../assets/Icons/user.png" alt="Avatar">
                         </div>
                         <div class="col-8" id="namediv">
                         <?php
